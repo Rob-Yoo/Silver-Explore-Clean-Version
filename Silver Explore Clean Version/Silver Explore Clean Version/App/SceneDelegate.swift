@@ -13,10 +13,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        
+        let navigationController = UINavigationController(rootViewController: HomeViewController())
+        navigationController.isNavigationBarHidden = true
+
+        window?.rootViewController = navigationController
+        // 루트 뷰 컨트롤러 설정
+
+        window?.makeKeyAndVisible() // 윈도우를 화면에 보여줌
+        window?.windowScene = windowScene // 윈도우 씬 설정
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

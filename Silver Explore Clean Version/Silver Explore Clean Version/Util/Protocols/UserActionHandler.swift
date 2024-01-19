@@ -6,5 +6,5 @@
 //
 
 protocol UserActionHandler {
-    func addEventHandler()
+    func addUserActionHandler()
 }

@@ -42,7 +42,7 @@ final class TitleView: UIView {
     }
 }
 
-extension TitleView: Presentable {
+extension TitleView: ViewProtocol {
     func buildViewHierachy() {
         self.addSubview(titleLabel)
         self.addSubview(subtitleLabel)

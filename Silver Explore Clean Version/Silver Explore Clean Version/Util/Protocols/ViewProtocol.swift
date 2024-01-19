@@ -5,7 +5,7 @@
 //  Created by Jinyoung Yoo on 1/19/24.
 //
 
-protocol View {
+protocol ViewProtocol {
     func buildViewHierachy()
     func applyConstraintsToView()
 }

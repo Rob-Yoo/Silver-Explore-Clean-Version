@@ -5,4 +5,9 @@
 //  Created by Jinyoung Yoo on 1/19/24.
 //
 
-import Foundation
+enum Content {
+    case TouchGestureExplore
+    case KioskExplore
+    case AIExplore
+    case none
+}

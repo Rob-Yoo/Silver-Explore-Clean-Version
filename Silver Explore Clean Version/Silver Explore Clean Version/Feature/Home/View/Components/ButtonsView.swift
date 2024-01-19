@@ -44,7 +44,7 @@ final class ButtonsView: UIView {
     }
 }
 
-extension ButtonsView: Presentable {
+extension ButtonsView: ViewProtocol {
     func buildViewHierachy() {
         self.addSubview(touchGestureExploreBtn)
         self.addSubview(kioskExploreBtn)
