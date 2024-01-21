@@ -16,42 +16,32 @@ extension HomeViewController: ViewProtocol {
     }
     
     func applyConstraintsToView() {
-        addBackgroundImageViewConstraints()
+        addBackGroundImageViewConstraints()
         addTitleViewConstraints()
         addButtonsViewConstraints()
     }
     
-    private func addBackgroundImageViewConstraints() {
-        let constraints = [
-            self.backgroundImageView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-            self.backgroundImageView.heightAnchor.constraint(equalTo: self.view.heightAnchor)
-        ]
-        
-        self.backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(constraints)
+    private func addBackGroundImageViewConstraints() {
+        self.backgroundImageView
+            .widthAnchor(self.view.widthAnchor)
+            .heightAnchor(self.view.heightAnchor)
     }
     
     private func addTitleViewConstraints() {
-        let constraints = [
-            self.titleView.widthAnchor.constraint(equalTo: self.titleView.titleLabel.widthAnchor),
-            self.titleView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.15),
-            self.titleView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.titleView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150)
-        ]
-        
-        self.titleView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(constraints)
+        self.titleView
+            .topAnchor(self.view.topAnchor, padding: 150)
+            .widthAnchor(self.titleView.titleLabel.widthAnchor)
+            .heightAnchor(self.view.heightAnchor, multiplier: 0.15)
+            .centerXAnchor(self.view.centerXAnchor)
     }
     
     private func addButtonsViewConstraints() {
-        let constraints = [
-            self.buttonsView.widthAnchor.constraint(equalToConstant: UIImage.touchGestureExplorer.size.width),
-            self.buttonsView.heightAnchor.constraint(equalToConstant: UIImage.touchGestureExplorer.size.height * 3.5),
-            self.buttonsView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.buttonsView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: self.view.frame.height * 0.1)
-        ]
+        let viewWidth = UIImage.touchGestureExplorer.size.width
+        let viewHeight = UIImage.touchGestureExplorer.size.height * 3.5
         
-        self.buttonsView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate(constraints)
+        self.buttonsView
+            .centerXAnchor(self.view.centerXAnchor)
+            .centerYAnchor(self.view.centerYAnchor, constant: 100)
+            .size(.init(width: viewWidth, height: viewHeight))
     }
 }

@@ -12,7 +12,6 @@ final class ButtonsView: UIView {
         let btn = UIButton()
         
         btn.setImage(.touchGestureExplorer, for: .normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
@@ -20,7 +19,6 @@ final class ButtonsView: UIView {
         let btn = UIButton()
         
         btn.setImage(.kioskExplorer, for: .normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
@@ -28,7 +26,6 @@ final class ButtonsView: UIView {
         let btn = UIButton()
         
         btn.setImage(.aiExplorer, for: .normal)
-        btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
     
@@ -55,41 +52,19 @@ extension ButtonsView: ViewProtocol {
         let btnWidth = UIImage.touchGestureExplorer.size.width
         let btnHeight = UIImage.touchGestureExplorer.size.height
         
-        applyTouchGestureExploreBtnConstraints(btnWidth, btnHeight)
-        applyKioskExploreBtnConstraints(btnWidth, btnHeight)
-        applyAIExploreBtnConstraints(btnWidth, btnHeight)
-    }
-    
-    private func applyTouchGestureExploreBtnConstraints(_ btnWidth: CGFloat, _ btnHeight: CGFloat) {
-        let touchGestureExploreBtnConstraints = [
-            self.touchGestureExploreBtn.topAnchor.constraint(equalTo: self.topAnchor),
-            self.touchGestureExploreBtn.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.touchGestureExploreBtn.widthAnchor.constraint(equalToConstant: btnWidth),
-            self.touchGestureExploreBtn.heightAnchor.constraint(equalToConstant: btnHeight)
-        ]
+        self.touchGestureExploreBtn
+            .topAnchor(self.topAnchor)
+            .centerXAnchor(self.centerXAnchor)
+            .size(.init(width: btnWidth, height: btnHeight))
         
-        NSLayoutConstraint.activate(touchGestureExploreBtnConstraints)
-    }
-    
-    private func applyKioskExploreBtnConstraints(_ btnWidth: CGFloat, _ btnHeight: CGFloat) {
-        let kioskExploreBtnConstraints = [
-            self.kioskExploreBtn.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.kioskExploreBtn.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            self.kioskExploreBtn.widthAnchor.constraint(equalToConstant: btnWidth),
-            self.kioskExploreBtn.heightAnchor.constraint(equalToConstant: btnHeight)
-        ]
+        self.kioskExploreBtn
+            .centerXAnchor(self.centerXAnchor)
+            .centerYAnchor(self.centerYAnchor)
+            .size(.init(width: btnWidth, height: btnHeight))
         
-        NSLayoutConstraint.activate(kioskExploreBtnConstraints)
-    }
-    
-    private func applyAIExploreBtnConstraints(_ btnWidth: CGFloat, _ btnHeight: CGFloat) {
-        let aiExploreBtnConstraints = [
-            self.aiExploreBtn.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            self.aiExploreBtn.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.aiExploreBtn.widthAnchor.constraint(equalToConstant: btnWidth),
-            self.aiExploreBtn.heightAnchor.constraint(equalToConstant: btnHeight)
-        ]
-        
-        NSLayoutConstraint.activate(aiExploreBtnConstraints)
+        self.aiExploreBtn
+            .bottomAnchor(self.bottomAnchor)
+            .centerXAnchor(self.centerXAnchor)
+            .size(.init(width: btnWidth, height: btnHeight))
     }
 }

@@ -15,7 +15,6 @@ final class TitleView: UIView {
         label.font = .systemFont(ofSize: 60, weight: .medium)
         label.textAlignment = .center
         label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -26,7 +25,6 @@ final class TitleView: UIView {
         label.font = .systemFont(ofSize: 25, weight: .light)
         label.textAlignment = .center
         label.textColor = .darkGray
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -49,17 +47,14 @@ extension TitleView: ViewProtocol {
     }
     
     func applyConstraintsToView() {
-        let constraints = [
-            self.titleLabel.widthAnchor.constraint(equalToConstant: 300),
-            self.titleLabel.heightAnchor.constraint(equalToConstant: 170),
-            self.titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10),
-            self.subtitleLabel.widthAnchor.constraint(equalToConstant: 200),
-            self.subtitleLabel.heightAnchor.constraint(equalToConstant: 140),
-            self.subtitleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.subtitleLabel.centerYAnchor.constraint(equalTo: self.titleLabel.centerYAnchor, constant: 50)
-        ]
+        self.titleLabel
+            .centerXAnchor(self.centerXAnchor)
+            .centerYAnchor(self.centerYAnchor, constant: -30)
+            .size(.init(width: 300, height: 170))
         
-        NSLayoutConstraint.activate(constraints)
+        self.subtitleLabel
+            .centerXAnchor(self.centerXAnchor)
+            .centerYAnchor(self.centerYAnchor, constant: 30)
+            .size(.init(width: 200, height: 140))
     }
 }
