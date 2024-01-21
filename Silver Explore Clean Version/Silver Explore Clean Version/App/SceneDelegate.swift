@@ -18,7 +18,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navigationController = UINavigationController(rootViewController: HomeViewController())
         navigationController.isNavigationBarHidden = true
-
+        
+        NavigationManager.shared.addNavigationController(navigationController)
+        
         window?.rootViewController = navigationController
         // 루트 뷰 컨트롤러 설정
 
