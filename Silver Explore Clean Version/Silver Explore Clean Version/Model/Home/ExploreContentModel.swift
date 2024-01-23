@@ -5,7 +5,7 @@
 //  Created by Jinyoung Yoo on 1/19/24.
 //
 
-class ExploreContent: Publisher {
+class ExploreContentModel: Publisher {
     enum Content {
         case TouchGestureExplore
         case KioskExplore
@@ -13,7 +13,7 @@ class ExploreContent: Publisher {
         case none
     }
     
-    var observers = [Observer]()
+    fileprivate var observers = [Observer]()
     var selectedContent: Content = .none {
         didSet {
             self.notify()
