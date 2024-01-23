@@ -32,7 +32,7 @@ final class TitleView: UIView {
         super.init(frame: .zero)
         self.backgroundColor = .clear
         buildViewHierachy()
-        applyConstraintsToView()
+        configureViewConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -46,7 +46,7 @@ extension TitleView: ViewProtocol {
         self.addSubview(subtitleLabel)
     }
     
-    func applyConstraintsToView() {
+    func configureViewConstraints() {
         self.titleLabel
             .centerXAnchor(self.centerXAnchor)
             .centerYAnchor(self.centerYAnchor, constant: -30)

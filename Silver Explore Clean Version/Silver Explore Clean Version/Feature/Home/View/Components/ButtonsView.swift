@@ -33,7 +33,7 @@ final class ButtonsView: UIView {
         super.init(frame: .zero)
         self.backgroundColor = .clear
         buildViewHierachy()
-        applyConstraintsToView()
+        configureViewConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -48,7 +48,7 @@ extension ButtonsView: ViewProtocol {
         self.addSubview(aiExploreBtn)
     }
     
-    func applyConstraintsToView() {
+    func configureViewConstraints() {
         let btnWidth = UIImage.touchGestureExplorer.size.width
         let btnHeight = UIImage.touchGestureExplorer.size.height
         

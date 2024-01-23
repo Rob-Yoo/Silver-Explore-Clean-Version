@@ -10,7 +10,7 @@ protocol ViewManagerProtocol: ViewProtocol, UserActionProtocol {}
 
 protocol ViewProtocol {
     func buildViewHierachy()
-    func applyConstraintsToView()
+    func configureViewConstraints()
 }
 
 protocol UserActionProtocol {
