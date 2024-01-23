@@ -12,7 +12,8 @@ class HomeViewController: UIViewController {
     private let backgroundImageView = UIImageView(image: .mainBackground)
     private let titleView = TitleView()
     private let buttonsView = ButtonsView()
-    private let exploreContent = ExploreContent() // Model
+    private let model = HomeModel()
+    private var exploreContentCreator: ExploreContentFactory!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class HomeViewController: UIViewController {
         buildViewHierachy()
         configureViewConstraints()
         addUserActionListener()
-        exploreContent.addObserver(self)
+        model.addObserver(self)
     }
 }
 
@@ -33,9 +34,9 @@ extension HomeViewController: ViewManagerProtocol {
     }
     
     func configureViewConstraints() {
-        addBackGroundImageViewConstraints()
-        addTitleViewConstraints()
-        addButtonsViewConstraints()
+        self.addBackGroundImageViewConstraints()
+        self.addTitleViewConstraints()
+        self.addButtonsViewConstraints()
     }
     
     func addUserActionListener() {
@@ -71,27 +72,30 @@ extension HomeViewController: ViewManagerProtocol {
     }
 }
 
-//MARK: - Responsibility of Updating Model
+//MARK: - User Action Handling
 extension HomeViewController {
     @objc private func touchGestureExploreBtnTapped() {
-        self.exploreContent.selectedContent = .TouchGestureExplore
+        self.exploreContentCreator = TouchGestureExploreCreator()
+        self.model.selectedContent = .TouchGestureExplore
     }
     
     @objc private func kioskExploreBtnTapped() {
-        self.exploreContent.selectedContent = .KioskExplore
+        self.exploreContentCreator = KioskExploreCreator()
+        self.model.selectedContent = .KioskExplore
     }
 
     @objc private func aiExploreBtnTapped() {
-        self.exploreContent.selectedContent = .AIExplore
+        self.exploreContentCreator = AIExploreCreator()
+        self.model.selectedContent = .AIExplore
     }
 }
 
 //MARK: - Observing Model
 extension HomeViewController: Observer {
     func update() {
-        let contentOnboarding = ContentOnboardingViewController(selectedContent: self.exploreContent.selectedContent)
+        let exploreContentVC = self.exploreContentCreator.createExploreContentVC()
 
-        NavigationManager.shared.push(contentOnboarding)
+        NavigationManager.shared.push(exploreContentVC)
     }
 }
 

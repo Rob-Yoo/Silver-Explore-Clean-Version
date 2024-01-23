@@ -6,8 +6,6 @@
 //
 
 protocol Publisher {
-    var observers: [Observer] { get }
-    
     func addObserver(_ observer: Observer)
     func removeObserver(_ observer: Observer)
     func notify()

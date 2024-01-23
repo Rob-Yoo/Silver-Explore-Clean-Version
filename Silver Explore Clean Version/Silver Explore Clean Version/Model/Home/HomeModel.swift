@@ -5,15 +5,15 @@
 //  Created by Jinyoung Yoo on 1/19/24.
 //
 
-class ExploreContentModel: Publisher {
-    enum Content {
-        case TouchGestureExplore
-        case KioskExplore
-        case AIExplore
-        case none
-    }
-    
-    fileprivate var observers = [Observer]()
+enum Content {
+    case TouchGestureExplore
+    case KioskExplore
+    case AIExplore
+    case none
+}
+
+class HomeModel: Publisher {
+    private var observers = [Observer]()
     var selectedContent: Content = .none {
         didSet {
             self.notify()
