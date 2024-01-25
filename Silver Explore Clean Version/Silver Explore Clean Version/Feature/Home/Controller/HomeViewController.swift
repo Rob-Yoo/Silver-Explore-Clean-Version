@@ -18,10 +18,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buildViewHierachy()
-        configureViewConstraints()
-        addUserActionListener()
-        model.addObserver(self)
+        self.buildViewHierachy()
+        self.configureViewConstraints()
+        self.addUserActionListener()
+
+        self.model.addObserver(self)
     }
 }
 
@@ -100,26 +101,26 @@ extension HomeViewController: Observer {
 }
 
 
-#if DEBUG
-import SwiftUI
-struct ViewControllerRepresentable: UIViewControllerRepresentable {
-    
-func updateUIViewController(_ uiView: UIViewController,context: Context) {
-        // leave this empty
-}
-@available(iOS 13.0.0, *)
-func makeUIViewController(context: Context) -> UIViewController{
-        HomeViewController()
-    }
-}
-@available(iOS 13.0, *)
-struct ViewControllerRepresentable_PreviewProvider: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ViewControllerRepresentable()
-                .ignoresSafeArea()
-                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
-        }
-        
-    }
-} #endif
+//#if DEBUG
+//import SwiftUI
+//struct ViewControllerRepresentable: UIViewControllerRepresentable {
+//    
+//func updateUIViewController(_ uiView: UIViewController,context: Context) {
+//        // leave this empty
+//}
+//@available(iOS 13.0.0, *)
+//func makeUIViewController(context: Context) -> UIViewController{
+//        HomeViewController()
+//    }
+//}
+//@available(iOS 13.0, *)
+//struct ViewControllerRepresentable_PreviewProvider: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            ViewControllerRepresentable()
+//                .ignoresSafeArea()
+//                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
+//        }
+//        
+//    }
+//} #endif
