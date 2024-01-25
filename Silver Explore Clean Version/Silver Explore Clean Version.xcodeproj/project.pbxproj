@@ -15,6 +15,10 @@
 		CC3DE29D2B5A918D004175E4 /* ViewManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE29C2B5A918D004175E4 /* ViewManagerProtocol.swift */; };
 		CC3DE29F2B5A934F004175E4 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE29E2B5A934F004175E4 /* ButtonsView.swift */; };
 		CC3DE2A42B5A9D7B004175E4 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE2A32B5A9D7B004175E4 /* HomeModel.swift */; };
+		CC9857AE2B622F16000D621A /* ARObjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857AD2B622F16000D621A /* ARObjectData.swift */; };
+		CC9857B12B623F1B000D621A /* ARObjectActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B02B623F1B000D621A /* ARObjectActionProtocol.swift */; };
+		CC9857B32B62408C000D621A /* Arr.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B22B62408C000D621A /* Arr.swift */; };
+		CC9857B72B624D2D000D621A /* ARCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B62B624D2D000D621A /* ARCharacter.swift */; };
 		CCADA62C2B5952AD000C373E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCADA62B2B5952AD000C373E /* AppDelegate.swift */; };
 		CCADA62E2B5952AD000C373E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCADA62D2B5952AD000C373E /* SceneDelegate.swift */; };
 		CCADA6302B5952AD000C373E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCADA62F2B5952AD000C373E /* HomeViewController.swift */; };
@@ -24,7 +28,7 @@
 		CCB67B8B2B5FE0E6001B2A07 /* KioskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B8A2B5FE0E6001B2A07 /* KioskViewController.swift */; };
 		CCB67B8D2B5FE159001B2A07 /* AIExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B8C2B5FE159001B2A07 /* AIExploreViewController.swift */; };
 		CCB67B912B5FE263001B2A07 /* ExploreContentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B902B5FE263001B2A07 /* ExploreContentFactory.swift */; };
-		CCB67B972B5FF7AF001B2A07 /* ConcreteFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B962B5FF7AF001B2A07 /* ConcreteFactories.swift */; };
+		CCB67B972B5FF7AF001B2A07 /* ConcreteCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B962B5FF7AF001B2A07 /* ConcreteCreators.swift */; };
 		CCB67B992B5FF813001B2A07 /* TouchGestureExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B982B5FF813001B2A07 /* TouchGestureExploreViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		CC3DE29C2B5A918D004175E4 /* ViewManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManagerProtocol.swift; sourceTree = "<group>"; };
 		CC3DE29E2B5A934F004175E4 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		CC3DE2A32B5A9D7B004175E4 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		CC9857AD2B622F16000D621A /* ARObjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARObjectData.swift; sourceTree = "<group>"; };
+		CC9857B02B623F1B000D621A /* ARObjectActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARObjectActionProtocol.swift; sourceTree = "<group>"; };
+		CC9857B22B62408C000D621A /* Arr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arr.swift; sourceTree = "<group>"; };
+		CC9857B62B624D2D000D621A /* ARCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacter.swift; sourceTree = "<group>"; };
 		CCADA6282B5952AD000C373E /* Silver Explore Clean Version.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silver Explore Clean Version.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCADA62B2B5952AD000C373E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCADA62D2B5952AD000C373E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +56,7 @@
 		CCB67B8A2B5FE0E6001B2A07 /* KioskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskViewController.swift; sourceTree = "<group>"; };
 		CCB67B8C2B5FE159001B2A07 /* AIExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIExploreViewController.swift; sourceTree = "<group>"; };
 		CCB67B902B5FE263001B2A07 /* ExploreContentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreContentFactory.swift; sourceTree = "<group>"; };
-		CCB67B962B5FF7AF001B2A07 /* ConcreteFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteFactories.swift; sourceTree = "<group>"; };
+		CCB67B962B5FF7AF001B2A07 /* ConcreteCreators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteCreators.swift; sourceTree = "<group>"; };
 		CCB67B982B5FF813001B2A07 /* TouchGestureExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureExploreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +110,32 @@
 				CC3DE2992B5A842E004175E4 /* TitleView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		CC9857AB2B622DE3000D621A /* TouchGestureExplore */ = {
+			isa = PBXGroup;
+			children = (
+				CC9857AC2B622DED000D621A /* ARCharacter */,
+			);
+			path = TouchGestureExplore;
+			sourceTree = "<group>";
+		};
+		CC9857AC2B622DED000D621A /* ARCharacter */ = {
+			isa = PBXGroup;
+			children = (
+				CC9857B62B624D2D000D621A /* ARCharacter.swift */,
+				CC9857B22B62408C000D621A /* Arr.swift */,
+			);
+			path = ARCharacter;
+			sourceTree = "<group>";
+		};
+		CC9857B42B6240F2000D621A /* ARObject */ = {
+			isa = PBXGroup;
+			children = (
+				CC9857AD2B622F16000D621A /* ARObjectData.swift */,
+				CC9857B02B623F1B000D621A /* ARObjectActionProtocol.swift */,
+			);
+			path = ARObject;
 			sourceTree = "<group>";
 		};
 		CCADA61F2B5952AD000C373E = {
@@ -158,6 +192,8 @@
 		CCADA6412B595327000C373E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CC9857B42B6240F2000D621A /* ARObject */,
+				CC9857AB2B622DE3000D621A /* TouchGestureExplore */,
 				CC3DE2A22B5A9D6F004175E4 /* Home */,
 			);
 			path = Model;
@@ -285,7 +321,7 @@
 		CCB67B952B5FF735001B2A07 /* Concretes */ = {
 			isa = PBXGroup;
 			children = (
-				CCB67B962B5FF7AF001B2A07 /* ConcreteFactories.swift */,
+				CCB67B962B5FF7AF001B2A07 /* ConcreteCreators.swift */,
 			);
 			path = Concretes;
 			sourceTree = "<group>";
@@ -364,19 +400,23 @@
 				CC325D2C2B5D3236007C93DC /* Publisher.swift in Sources */,
 				CCB67B8D2B5FE159001B2A07 /* AIExploreViewController.swift in Sources */,
 				CCB67B992B5FF813001B2A07 /* TouchGestureExploreViewController.swift in Sources */,
+				CC9857B12B623F1B000D621A /* ARObjectActionProtocol.swift in Sources */,
+				CC9857B72B624D2D000D621A /* ARCharacter.swift in Sources */,
 				CC325D242B5CB7FF007C93DC /* UIView+Extension.swift in Sources */,
+				CC9857B32B62408C000D621A /* Arr.swift in Sources */,
 				CC3DE29A2B5A842E004175E4 /* TitleView.swift in Sources */,
 				CCADA6302B5952AD000C373E /* HomeViewController.swift in Sources */,
 				CCADA62C2B5952AD000C373E /* AppDelegate.swift in Sources */,
 				CC3DE29F2B5A934F004175E4 /* ButtonsView.swift in Sources */,
 				CCADA62E2B5952AD000C373E /* SceneDelegate.swift in Sources */,
 				CC3DE2A42B5A9D7B004175E4 /* HomeModel.swift in Sources */,
-				CCB67B972B5FF7AF001B2A07 /* ConcreteFactories.swift in Sources */,
+				CCB67B972B5FF7AF001B2A07 /* ConcreteCreators.swift in Sources */,
 				CCB67B8B2B5FE0E6001B2A07 /* KioskViewController.swift in Sources */,
 				CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */,
 				CC3DE29D2B5A918D004175E4 /* ViewManagerProtocol.swift in Sources */,
 				CCB67B912B5FE263001B2A07 /* ExploreContentFactory.swift in Sources */,
 				CC325D282B5D2E94007C93DC /* NavigationManager.swift in Sources */,
+				CC9857AE2B622F16000D621A /* ARObjectData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
