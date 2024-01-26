@@ -4,8 +4,6 @@
 //
 //  Created by Jinyoung Yoo on 1/25/24.
 //
-
-import ARKit
 import UIKit
 
 protocol JumpActionProtocol {

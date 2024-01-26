@@ -8,17 +8,18 @@
 import UIKit
 import ARKit
 
-class Arr {
+class Arr: ARCharacterProtocol {
     private var objectData: ARObjectData
-    private var eulerAngleOfCharacterNode: SCNVector3
-    private var longPressStartTime: CFTimeInterval = 0.0
-    private var initialScale: CGFloat
-    private var updatedScale: CGFloat = 0.0
+    private var actionData: ARCharacterActionData
     
     init(containerNode: SCNNode) {
+        let initialEulerAngle: SCNVector3
+        let initialScale: CGFloat
+        
         self.objectData = ARObjectData(characterContainerNode: containerNode, characterNodeName: String(describing: Arr.self))
-        self.eulerAngleOfCharacterNode = self.objectData.characterNode.eulerAngles
-        self.initialScale = CGFloat(self.objectData.characterNode.scale.x)
+        initialEulerAngle = self.objectData.characterNode.eulerAngles
+        initialScale = CGFloat(self.objectData.characterNode.scale.x)
+        self.actionData = ARCharacterActionData(initialEulerAngle: initialEulerAngle, initialScale: initialScale)
     }
     
     static func makeContainerNode() -> SCNNode? {
@@ -37,10 +38,15 @@ class Arr {
         node.addChildNode(arrNode)
         return node
     }
+    
+    func setScneneView(sceneView: ARSCNView) {
+        self.objectData.setSceneView(sceneView: sceneView)
+    }
+
 }
 
 //MARK: - Action Methods Implementation
-extension Arr: ARCharacter {
+extension Arr {
     func jump() {
         let jumpAction = SCNAction.moveBy(x: 0, y: 0.03, z: 0, duration: 0.2)
         let fallAction = SCNAction.moveBy(x: 0, y: -0.03, z: 0, duration: 0.2)
@@ -52,17 +58,19 @@ extension Arr: ARCharacter {
     func highJump(_ gesture: UILongPressGestureRecognizer) {
         if (gesture.state == .began) {
             readyAction()
-            longPressStartTime = CACurrentMediaTime()
+            self.actionData.longPressStartTime = CACurrentMediaTime()
         } else if (gesture.state == .ended) {
             let longPressEndTime = CACurrentMediaTime()
-            let longPressDuration = longPressEndTime - longPressStartTime
+            let longPressDuration = longPressEndTime - self.actionData.longPressStartTime
             highJumpAction(longPressDuration: longPressDuration)
         }
 
         func readyAction() {
             let scaleAction = SCNAction.customAction(duration: 0.0) {
                 (_, _) in
-                self.objectData.characterNode.scale = SCNVector3(self.initialScale, self.initialScale - 0.000003, self.initialScale)
+                let initialScale = self.actionData.initialScale
+
+                self.objectData.characterNode.scale = SCNVector3(initialScale, initialScale - 0.000003, initialScale)
             }
             self.objectData.characterNode.runAction(scaleAction)
         }
@@ -84,10 +92,10 @@ extension Arr: ARCharacter {
     func scaleUpAndDown(_ gesture: UIPinchGestureRecognizer) {
         switch gesture.state {
         case .began:
-            updatedScale = CGFloat(self.objectData.characterNode.scale.x)
+            self.actionData.updatedScale = CGFloat(self.objectData.characterNode.scale.x)
         case .changed:
             let scale = gesture.scale
-            let scaleValue = updatedScale * scale
+            let scaleValue = self.actionData.updatedScale * scale
             let scaleAction = SCNAction.scale(to: scaleValue, duration: 0.0)
 
             self.objectData.characterNode.runAction(scaleAction)
@@ -117,7 +125,7 @@ extension Arr: ARCharacter {
     
     func eulerAngleRotate(_ gesture: UIPanGestureRecognizer) {
         if (gesture.state == .ended || gesture.state == .cancelled) {
-            resetARCharacterAngle(targetNode: self.objectData.characterNode)
+            resetAngle()
         } else {
             let translation = gesture.translation(in: self.objectData.sceneView)
             let rotationAngleX = CGFloat(translation.x) * 0.001
@@ -139,15 +147,18 @@ extension Arr: ARCharacter {
         }
     }
     
-    func resetARCharacterAngle(targetNode: SCNNode) {
-        let resetAngleAction = SCNAction.rotateTo(x: CGFloat(eulerAngleOfCharacterNode.x), y: CGFloat(eulerAngleOfCharacterNode.y), z: CGFloat(eulerAngleOfCharacterNode.z), duration: 0.2)
+    func resetAngle() {
+        let initialEulerAngles = self.actionData.initialEulerAngle
+        let resetAngleAction = SCNAction.rotateTo(x: CGFloat(initialEulerAngles.x), y: CGFloat(initialEulerAngles.y), z: CGFloat(initialEulerAngles.z), duration: 0.2)
         
-        targetNode.runAction(resetAngleAction)
+        self.objectData.characterNode.runAction(resetAngleAction)
     }
     
-    func resetARCharacterScale() {
+    func resetScale() {
         let resetScaleAction = SCNAction.customAction(duration: 0.2) { (_, _) in
-            self.objectData.characterNode.scale = SCNVector3(self.initialScale, self.initialScale, self.initialScale)
+            let initialScale = self.actionData.initialScale
+
+            self.objectData.characterNode.scale = SCNVector3(initialScale, initialScale, initialScale)
         }
         
         self.objectData.characterNode.runAction(resetScaleAction)
