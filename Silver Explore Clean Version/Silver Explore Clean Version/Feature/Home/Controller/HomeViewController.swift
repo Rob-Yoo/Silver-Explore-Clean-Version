@@ -13,7 +13,6 @@ class HomeViewController: UIViewController {
     private let titleView = TitleView()
     private let buttonsView = ButtonsView()
     private let model = HomeModel()
-    private var exploreContentCreator: ExploreContentFactory!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,17 +75,14 @@ extension HomeViewController: ViewManagerProtocol {
 //MARK: - User Action Handling
 extension HomeViewController {
     @objc private func touchGestureExploreBtnTapped() {
-        self.exploreContentCreator = TouchGestureExploreCreator()
         self.model.selectedContent = .TouchGestureExplore
     }
     
     @objc private func kioskExploreBtnTapped() {
-        self.exploreContentCreator = KioskExploreCreator()
         self.model.selectedContent = .KioskExplore
     }
 
     @objc private func aiExploreBtnTapped() {
-        self.exploreContentCreator = AIExploreCreator()
         self.model.selectedContent = .AIExplore
     }
 }
@@ -94,33 +90,33 @@ extension HomeViewController {
 //MARK: - Observing Model
 extension HomeViewController: Observer {
     func update() {
-        let exploreContentVC = self.exploreContentCreator.createExploreContentVC()
-
-        NavigationManager.shared.push(exploreContentVC)
+        if let exploreContentVC = ExploreContentFactory.createExploreContentVC(content: self.model.selectedContent) {
+            NavigationManager.shared.push(exploreContentVC)
+        }
     }
 }
 
 
-//#if DEBUG
-//import SwiftUI
-//struct ViewControllerRepresentable: UIViewControllerRepresentable {
-//    
-//func updateUIViewController(_ uiView: UIViewController,context: Context) {
-//        // leave this empty
-//}
-//@available(iOS 13.0.0, *)
-//func makeUIViewController(context: Context) -> UIViewController{
-//        HomeViewController()
-//    }
-//}
-//@available(iOS 13.0, *)
-//struct ViewControllerRepresentable_PreviewProvider: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            ViewControllerRepresentable()
-//                .ignoresSafeArea()
-//                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
-//        }
-//        
-//    }
-//} #endif
+#if DEBUG
+import SwiftUI
+struct ViewControllerRepresentable: UIViewControllerRepresentable {
+    
+func updateUIViewController(_ uiView: UIViewController,context: Context) {
+        // leave this empty
+}
+@available(iOS 13.0.0, *)
+func makeUIViewController(context: Context) -> UIViewController{
+        HomeViewController()
+    }
+}
+@available(iOS 13.0, *)
+struct ViewControllerRepresentable_PreviewProvider: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ViewControllerRepresentable()
+                .ignoresSafeArea()
+                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
+        }
+        
+    }
+} #endif
