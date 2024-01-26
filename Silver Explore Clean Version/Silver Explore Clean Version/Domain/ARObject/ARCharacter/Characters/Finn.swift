@@ -8,7 +8,7 @@
 import UIKit
 import ARKit
 
-class Finn: ARCharacterProtocol {
+final class Finn: ARCharacterProtocol {
     private var objectData: ARObjectData
     private var actionData: ARCharacterActionData
     

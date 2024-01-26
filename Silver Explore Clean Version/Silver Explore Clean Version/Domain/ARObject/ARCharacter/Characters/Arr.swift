@@ -8,7 +8,7 @@
 import UIKit
 import ARKit
 
-class Arr: ARCharacterProtocol {
+final class Arr: ARCharacterProtocol {
     private var objectData: ARObjectData
     private var actionData: ARCharacterActionData
     
