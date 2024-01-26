@@ -12,7 +12,7 @@ enum Content {
     case none
 }
 
-class HomeModel: Publisher {
+final class HomeModel: Publisher {
     private var observers = [Observer]()
     var selectedContent: Content = .none {
         didSet {

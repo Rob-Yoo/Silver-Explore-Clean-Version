@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     let id = String(describing: HomeViewController.self)
     private let backgroundImageView = UIImageView(image: .mainBackground)
-    private let titleView = TitleView()
+    private let titleView = TitleLabelView(title: "은빛 탐험가", subtitle: "The Silver Explore")
     private let buttonsView = ButtonsView()
     private let model = HomeModel()
 
@@ -97,26 +97,26 @@ extension HomeViewController: Observer {
 }
 
 
-#if DEBUG
-import SwiftUI
-struct ViewControllerRepresentable: UIViewControllerRepresentable {
-    
-func updateUIViewController(_ uiView: UIViewController,context: Context) {
-        // leave this empty
-}
-@available(iOS 13.0.0, *)
-func makeUIViewController(context: Context) -> UIViewController{
-        HomeViewController()
-    }
-}
-@available(iOS 13.0, *)
-struct ViewControllerRepresentable_PreviewProvider: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ViewControllerRepresentable()
-                .ignoresSafeArea()
-                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
-        }
-        
-    }
-} #endif
+//#if DEBUG
+//import SwiftUI
+//struct ViewControllerRepresentable: UIViewControllerRepresentable {
+//    
+//func updateUIViewController(_ uiView: UIViewController,context: Context) {
+//        // leave this empty
+//}
+//@available(iOS 13.0.0, *)
+//func makeUIViewController(context: Context) -> UIViewController{
+//        HomeViewController()
+//    }
+//}
+//@available(iOS 13.0, *)
+//struct ViewControllerRepresentable_PreviewProvider: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            ViewControllerRepresentable()
+//                .ignoresSafeArea()
+//                .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
+//        }
+//        
+//    }
+//} #endif
