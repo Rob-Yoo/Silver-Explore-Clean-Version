@@ -18,6 +18,9 @@ final class TitleLabelView: UIView {
         label.font = .systemFont(ofSize: 60, weight: .medium)
         label.textAlignment = .center
         label.textColor = .black
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+
         return label
     }(self.title)
     
@@ -28,6 +31,9 @@ final class TitleLabelView: UIView {
         label.font = .systemFont(ofSize: 25, weight: .light)
         label.textAlignment = .center
         label.textColor = .darkGray
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+    
         return label
     }(self.subtitle)
     
@@ -46,7 +52,7 @@ final class TitleLabelView: UIView {
     }
 }
 
-extension TitleLabelView: ViewProtocol {
+extension TitleLabelView {
     func buildViewHierachy() {
         self.addSubview(titleLabel)
         if !(self.subtitle.isEmpty) { self.addSubview(subtitleLabel) }

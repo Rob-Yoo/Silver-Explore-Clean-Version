@@ -26,6 +26,7 @@ extension UIView {
         return self
     }
 
+    @discardableResult
     func leadingAnchor(_ leading: NSLayoutXAxisAnchor, padding value : CGFloat = .zero) -> Self {
         if (self.translatesAutoresizingMaskIntoConstraints) { self.translatesAutoresizingMaskIntoConstraints.toggle() }
 

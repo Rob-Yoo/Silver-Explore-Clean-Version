@@ -41,7 +41,7 @@ final class ButtonsView: UIView {
     }
 }
 
-extension ButtonsView: ViewProtocol {
+extension ButtonsView {
     func buildViewHierachy() {
         self.addSubview(touchGestureExploreBtn)
         self.addSubview(kioskExploreBtn)
