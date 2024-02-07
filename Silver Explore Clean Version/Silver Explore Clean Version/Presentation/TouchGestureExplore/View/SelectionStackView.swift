@@ -43,7 +43,7 @@ final class SelectionView: UIView {
     private var image: UIImage
     private var name: String
 
-    private lazy var imageView = { image in
+    private(set) lazy var imageView = { image in
         let imgView = UIImageView()
         
         imgView.image = image
@@ -51,7 +51,7 @@ final class SelectionView: UIView {
         return imgView
     }(self.image)
 
-    private lazy var nameLabel = { name in
+    private(set) lazy var nameLabel = { name in
         let label = UILabel()
         
         label.text = name
@@ -61,7 +61,7 @@ final class SelectionView: UIView {
         return label
     }(self.name)
 
-    var radioButton = RadioButton()
+    private(set) var radioButton = RadioButton()
     
     init(image: UIImage, name: String) {
         self.name = name

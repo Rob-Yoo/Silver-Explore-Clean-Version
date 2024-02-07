@@ -14,9 +14,9 @@ import UIKit
 }
 
 final class HomeView: UIView {
-    private let backgroundImageView = UIImageView(image: .mainBackground)
-    private let titleLabelView = TitleLabelView(title: "은빛 탐험가", subtitle: "The Silver Explore")
-    private let buttonsView = ExploreButtonsView()
+    private(set) var backgroundImageView = UIImageView(image: .mainBackground)
+    private(set) var titleLabelView = TitleLabelView(title: "은빛 탐험가", subtitle: "The Silver Explore")
+    private(set) var buttonsView = ExploreButtonsView()
     
     weak var homeViewDelegate: HomeViewDelegate?
     

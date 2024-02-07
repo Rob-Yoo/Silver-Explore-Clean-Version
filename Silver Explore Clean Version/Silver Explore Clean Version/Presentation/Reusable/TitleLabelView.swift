@@ -11,7 +11,7 @@ final class TitleLabelView: UIView {
     private var title: String
     private var subtitle: String
 
-    lazy var titleLabel: UILabel = { title in
+    private(set) lazy var titleLabel: UILabel = { title in
         let label = UILabel()
         
         label.text = title
@@ -24,7 +24,7 @@ final class TitleLabelView: UIView {
         return label
     }(self.title)
     
-    lazy var subtitleLabel: UILabel = { subtitle in
+    private(set) lazy var subtitleLabel: UILabel = { subtitle in
         let label = UILabel()
         
         label.text = subtitle

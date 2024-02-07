@@ -58,7 +58,7 @@ extension TouchGestureExploreViewController: CharacterSelectViewDelegate {
     }
 }
 
-//MARK - Observing Model
+//MARK: - Observing Model
 extension TouchGestureExploreViewController: Observer {
     func update() {
         guard let view = self.willUpdateView else { return }

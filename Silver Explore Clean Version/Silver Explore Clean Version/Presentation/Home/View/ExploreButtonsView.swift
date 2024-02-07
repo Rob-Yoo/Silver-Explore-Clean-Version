@@ -8,9 +8,9 @@
 import UIKit
 
 final class ExploreButtonsView: UIView {
-    var touchGestureExploreBtn = ImageButton(image: .touchGestureExplorer)
-    var kioskExploreBtn = ImageButton(image: .kioskExplorer)
-    var aiExploreBtn: UIButton = ImageButton(image: .aiExplorer)
+    private(set) var touchGestureExploreBtn = ImageButton(image: .touchGestureExplorer)
+    private(set) var kioskExploreBtn = ImageButton(image: .kioskExplorer)
+    private(set) var aiExploreBtn: UIButton = ImageButton(image: .aiExplorer)
     
     init() {
         super.init(frame: .zero)

@@ -5,7 +5,7 @@
 //  Created by Jinyoung Yoo on 2/7/24.
 //
 
-import ARKit
+import Foundation
 
 class CharacterSelectionModel {
     private var observers = [Observer]()
