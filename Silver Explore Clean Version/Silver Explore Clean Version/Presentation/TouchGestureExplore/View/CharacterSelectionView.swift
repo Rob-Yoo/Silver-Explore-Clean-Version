@@ -10,8 +10,8 @@ import UIKit
 @objc protocol CharacterSelectViewDelegate: AnyObject {
     @objc func prevButtonTapped()
     @objc func exploreStartButtonTapped()
-    @objc func arrSelected()
-    @objc func finnSelected()
+    @objc func arrSelected(recognizer: UITapGestureRecognizer)
+    @objc func finnSelected(recognizer: UITapGestureRecognizer)
 }
 
 final class CharacterSelectionView: UIView {
