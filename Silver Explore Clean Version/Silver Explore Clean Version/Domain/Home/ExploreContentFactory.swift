@@ -11,7 +11,7 @@ struct ExploreContentFactory {
     static func createExploreContentVC(content: Content) -> UIViewController? {
         switch content {
         case .TouchGestureExplore:
-            return TouchGestureExploreViewController()
+            return ARCharacterSelectionViewController()
         case .KioskExplore:
             return KioskViewController()
         case .AIExplore:

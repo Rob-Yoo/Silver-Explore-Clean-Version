@@ -7,18 +7,18 @@
 
 import UIKit
 
-class TouchGestureExploreViewController: UIViewController {
-    var id = String(describing: TouchGestureExploreViewController.self)
-    private let characterSelectView = CharacterSelectView()
+class ARCharacterSelectionViewController: UIViewController {
+    var id = String(describing: ARCharacterSelectionViewController.self)
+    private let characterSelectionView = CharacterSelectionView()
     private let model = CharacterSelectionModel()
     private var willUpdateView: UIView?
     
     override func loadView() {
         super.loadView()
         
-        self.view = characterSelectView
-        self.characterSelectView.characterSelectViewDelegate = self
-        self.characterSelectView.addUserActionListener()
+        self.view = characterSelectionView
+        self.characterSelectionView.characterSelectViewDelegate = self
+        self.characterSelectionView.addUserActionListener()
     }
 
     override func viewDidLoad() {
@@ -28,19 +28,19 @@ class TouchGestureExploreViewController: UIViewController {
 }
 
 //MARK: - User Action Handling
-extension TouchGestureExploreViewController: CharacterSelectViewDelegate {
+extension ARCharacterSelectionViewController: CharacterSelectViewDelegate {
     @objc func prevButtonTapped() {
         NavigationManager.shared.pop()
     }
     
     @objc func arrSelected() {
-        self.willUpdateView = self.characterSelectView.selectionStackView.arrSelectionView
+        self.willUpdateView = self.characterSelectionView.selectionStackView.arrSelectionView
         
         self.model.arCharacterCreator = ArrCreator()
     }
     
     @objc func finnSelected() {
-        self.willUpdateView = self.characterSelectView.selectionStackView.finnSelectionView
+        self.willUpdateView = self.characterSelectionView.selectionStackView.finnSelectionView
         
         self.model.arCharacterCreator = FinnCreator()
     }
@@ -59,11 +59,11 @@ extension TouchGestureExploreViewController: CharacterSelectViewDelegate {
 }
 
 //MARK: - Observing Model
-extension TouchGestureExploreViewController: Observer {
+extension ARCharacterSelectionViewController: Observer {
     func update() {
         guard let view = self.willUpdateView else { return }
 
-        self.characterSelectView.update(view)
+        self.characterSelectionView.update(view)
     }
 }
 
@@ -76,7 +76,7 @@ func updateUIViewController(_ uiView: UIViewController,context: Context) {
 }
 @available(iOS 13.0.0, *)
 func makeUIViewController(context: Context) -> UIViewController{
-        TouchGestureExploreViewController()
+        ARCharacterSelectionViewController()
     }
 }
 @available(iOS 13.0, *)

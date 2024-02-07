@@ -23,6 +23,11 @@ final class Arr: ARCharacterProtocol {
     }
     
     static func makeContainerNode() -> SCNNode? {
+        /*
+            makeContainerNode를 타입 메서드로 지정하는 이유
+            - 초기화 구문에 SCNNode가 필요하고 SCNNode를 만드는 코드가 길어 함수로 빼려하는데, 인스턴스 메서드는 초기화 문
+            내에서 사용할 수 없기 때문에 외부에서 생성하고 초기화 시켜주기 위해서 타입 메서드로 만듬
+         */
         let node: SCNNode = SCNNode()
 
         guard let arrScene = SCNScene(named: "art.scnassets/Arr/Arr.scn") else {

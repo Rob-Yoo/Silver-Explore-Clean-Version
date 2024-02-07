@@ -23,7 +23,7 @@
 		CC9857B72B624D2D000D621A /* ARCharacterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B62B624D2D000D621A /* ARCharacterProtocol.swift */; };
 		CC9857B92B6260F3000D621A /* ExploreContentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B82B6260F3000D621A /* ExploreContentFactory.swift */; };
 		CCAC2CAF2B6B6D8300D73E69 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CAE2B6B6D8300D73E69 /* HomeView.swift */; };
-		CCAC2CB12B6B8C8100D73E69 /* CharacterSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB02B6B8C8100D73E69 /* CharacterSelectView.swift */; };
+		CCAC2CB12B6B8C8100D73E69 /* CharacterSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB02B6B8C8100D73E69 /* CharacterSelectionView.swift */; };
 		CCAC2CB32B6BA96800D73E69 /* SelectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */; };
 		CCAC2CB52B6BBF0300D73E69 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB42B6BBF0300D73E69 /* RadioButton.swift */; };
 		CCADA62C2B5952AD000C373E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCADA62B2B5952AD000C373E /* AppDelegate.swift */; };
@@ -34,7 +34,7 @@
 		CCADA64F2B595AD2000C373E /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = CCADA64E2B595AD2000C373E /* art.scnassets */; };
 		CCB67B8B2B5FE0E6001B2A07 /* KioskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B8A2B5FE0E6001B2A07 /* KioskViewController.swift */; };
 		CCB67B8D2B5FE159001B2A07 /* AIExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B8C2B5FE159001B2A07 /* AIExploreViewController.swift */; };
-		CCB67B992B5FF813001B2A07 /* TouchGestureExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B982B5FF813001B2A07 /* TouchGestureExploreViewController.swift */; };
+		CCB67B992B5FF813001B2A07 /* ARCharacterSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B982B5FF813001B2A07 /* ARCharacterSelectionViewController.swift */; };
 		CCC53EFE2B739C9A00B1C7E5 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53EFD2B739C9A00B1C7E5 /* ImageButton.swift */; };
 		CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */; };
 		CCC53F022B73C3F600B1C7E5 /* ARCharacterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */; };
@@ -58,7 +58,7 @@
 		CC9857B62B624D2D000D621A /* ARCharacterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterProtocol.swift; sourceTree = "<group>"; };
 		CC9857B82B6260F3000D621A /* ExploreContentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreContentFactory.swift; sourceTree = "<group>"; };
 		CCAC2CAE2B6B6D8300D73E69 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		CCAC2CB02B6B8C8100D73E69 /* CharacterSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectView.swift; sourceTree = "<group>"; };
+		CCAC2CB02B6B8C8100D73E69 /* CharacterSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectionView.swift; sourceTree = "<group>"; };
 		CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionStackView.swift; sourceTree = "<group>"; };
 		CCAC2CB42B6BBF0300D73E69 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		CCADA6282B5952AD000C373E /* Silver Explore Clean Version.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silver Explore Clean Version.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +71,7 @@
 		CCADA64E2B595AD2000C373E /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		CCB67B8A2B5FE0E6001B2A07 /* KioskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskViewController.swift; sourceTree = "<group>"; };
 		CCB67B8C2B5FE159001B2A07 /* AIExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIExploreViewController.swift; sourceTree = "<group>"; };
-		CCB67B982B5FF813001B2A07 /* TouchGestureExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureExploreViewController.swift; sourceTree = "<group>"; };
+		CCB67B982B5FF813001B2A07 /* ARCharacterSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterSelectionViewController.swift; sourceTree = "<group>"; };
 		CCC53EFD2B739C9A00B1C7E5 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectionModel.swift; sourceTree = "<group>"; };
 		CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterFactory.swift; sourceTree = "<group>"; };
@@ -282,7 +282,7 @@
 		CCADA64A2B595A70000C373E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CCAC2CB02B6B8C8100D73E69 /* CharacterSelectView.swift */,
+				CCAC2CB02B6B8C8100D73E69 /* CharacterSelectionView.swift */,
 				CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */,
 			);
 			path = View;
@@ -299,7 +299,7 @@
 		CCADA64D2B595A98000C373E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CCB67B982B5FF813001B2A07 /* TouchGestureExploreViewController.swift */,
+				CCB67B982B5FF813001B2A07 /* ARCharacterSelectionViewController.swift */,
 				CCC53F032B73CBA100B1C7E5 /* ARCharcterViewController.swift */,
 			);
 			path = Controller;
@@ -412,7 +412,7 @@
 				CC325D2C2B5D3236007C93DC /* Publisher.swift in Sources */,
 				CCB67B8D2B5FE159001B2A07 /* AIExploreViewController.swift in Sources */,
 				CCC53F042B73CBA100B1C7E5 /* ARCharcterViewController.swift in Sources */,
-				CCB67B992B5FF813001B2A07 /* TouchGestureExploreViewController.swift in Sources */,
+				CCB67B992B5FF813001B2A07 /* ARCharacterSelectionViewController.swift in Sources */,
 				CC9857B12B623F1B000D621A /* ActionProtocol.swift in Sources */,
 				CC9857B72B624D2D000D621A /* ARCharacterProtocol.swift in Sources */,
 				CCAC2CB32B6BA96800D73E69 /* SelectionStackView.swift in Sources */,
@@ -421,7 +421,7 @@
 				CC9857B32B62408C000D621A /* Arr.swift in Sources */,
 				CC3DE29A2B5A842E004175E4 /* TitleLabelView.swift in Sources */,
 				CC4779412B63CBC000333CD2 /* PrevButton.swift in Sources */,
-				CCAC2CB12B6B8C8100D73E69 /* CharacterSelectView.swift in Sources */,
+				CCAC2CB12B6B8C8100D73E69 /* CharacterSelectionView.swift in Sources */,
 				CCADA6302B5952AD000C373E /* HomeViewController.swift in Sources */,
 				CCADA62C2B5952AD000C373E /* AppDelegate.swift in Sources */,
 				CCC53F022B73C3F600B1C7E5 /* ARCharacterFactory.swift in Sources */,
