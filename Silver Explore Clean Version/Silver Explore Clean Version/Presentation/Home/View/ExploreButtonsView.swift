@@ -7,50 +7,28 @@
 
 import UIKit
 
-final class ButtonsView: UIView {
-    var touchGestureExploreBtn: UIButton = {
-        let btn = UIButton()
-        
-        btn.setImage(.touchGestureExplorer, for: .normal)
-        return btn
-    }()
-    
-    var kioskExploreBtn: UIButton = {
-        let btn = UIButton()
-        
-        btn.setImage(.kioskExplorer, for: .normal)
-        return btn
-    }()
-    
-    var aiExploreBtn: UIButton = {
-        let btn = UIButton()
-        
-        btn.setImage(.aiExplorer, for: .normal)
-        return btn
-    }()
+final class ExploreButtonsView: UIView {
+    var touchGestureExploreBtn = ImageButton(image: .touchGestureExplorer)
+    var kioskExploreBtn = ImageButton(image: .kioskExplorer)
+    var aiExploreBtn: UIButton = ImageButton(image: .aiExplorer)
     
     init() {
         super.init(frame: .zero)
         self.backgroundColor = .clear
-        buildViewHierachy()
-        configureViewConstraints()
+        configureSubViews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-extension ButtonsView {
-    func buildViewHierachy() {
+    
+    private func configureSubViews() {
+        let btnWidth = UIImage.touchGestureExplorer.size.width
+        let btnHeight = UIImage.touchGestureExplorer.size.height
+        
         self.addSubview(touchGestureExploreBtn)
         self.addSubview(kioskExploreBtn)
         self.addSubview(aiExploreBtn)
-    }
-    
-    func configureViewConstraints() {
-        let btnWidth = UIImage.touchGestureExplorer.size.width
-        let btnHeight = UIImage.touchGestureExplorer.size.height
         
         self.touchGestureExploreBtn
             .topAnchor(self.topAnchor)

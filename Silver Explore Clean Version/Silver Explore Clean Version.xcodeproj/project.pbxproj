@@ -12,9 +12,9 @@
 		CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D292B5D3201007C93DC /* Observer.swift */; };
 		CC325D2C2B5D3236007C93DC /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D2B2B5D3236007C93DC /* Publisher.swift */; };
 		CC3DE29A2B5A842E004175E4 /* TitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE2992B5A842E004175E4 /* TitleLabelView.swift */; };
-		CC3DE29F2B5A934F004175E4 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE29E2B5A934F004175E4 /* ButtonsView.swift */; };
+		CC3DE29F2B5A934F004175E4 /* ExploreButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE29E2B5A934F004175E4 /* ExploreButtonsView.swift */; };
 		CC3DE2A42B5A9D7B004175E4 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE2A32B5A9D7B004175E4 /* HomeModel.swift */; };
-		CC4779412B63CBC000333CD2 /* PrevButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4779402B63CBC000333CD2 /* PrevButtonView.swift */; };
+		CC4779412B63CBC000333CD2 /* PrevButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4779402B63CBC000333CD2 /* PrevButton.swift */; };
 		CC78E3442B6397320038088C /* Finn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E3432B6397320038088C /* Finn.swift */; };
 		CC78E3472B63997C0038088C /* ARCharacterActionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E3462B63997C0038088C /* ARCharacterActionData.swift */; };
 		CC9857AE2B622F16000D621A /* ARObjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857AD2B622F16000D621A /* ARObjectData.swift */; };
@@ -23,6 +23,9 @@
 		CC9857B72B624D2D000D621A /* ARCharacterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B62B624D2D000D621A /* ARCharacterProtocol.swift */; };
 		CC9857B92B6260F3000D621A /* ExploreContentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B82B6260F3000D621A /* ExploreContentFactory.swift */; };
 		CCAC2CAF2B6B6D8300D73E69 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CAE2B6B6D8300D73E69 /* HomeView.swift */; };
+		CCAC2CB12B6B8C8100D73E69 /* CharacterSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB02B6B8C8100D73E69 /* CharacterSelectView.swift */; };
+		CCAC2CB32B6BA96800D73E69 /* SelectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */; };
+		CCAC2CB52B6BBF0300D73E69 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB42B6BBF0300D73E69 /* RadioButton.swift */; };
 		CCADA62C2B5952AD000C373E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCADA62B2B5952AD000C373E /* AppDelegate.swift */; };
 		CCADA62E2B5952AD000C373E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCADA62D2B5952AD000C373E /* SceneDelegate.swift */; };
 		CCADA6302B5952AD000C373E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCADA62F2B5952AD000C373E /* HomeViewController.swift */; };
@@ -32,6 +35,10 @@
 		CCB67B8B2B5FE0E6001B2A07 /* KioskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B8A2B5FE0E6001B2A07 /* KioskViewController.swift */; };
 		CCB67B8D2B5FE159001B2A07 /* AIExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B8C2B5FE159001B2A07 /* AIExploreViewController.swift */; };
 		CCB67B992B5FF813001B2A07 /* TouchGestureExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB67B982B5FF813001B2A07 /* TouchGestureExploreViewController.swift */; };
+		CCC53EFE2B739C9A00B1C7E5 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53EFD2B739C9A00B1C7E5 /* ImageButton.swift */; };
+		CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */; };
+		CCC53F022B73C3F600B1C7E5 /* ARCharacterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */; };
+		CCC53F042B73CBA100B1C7E5 /* ARCharcterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53F032B73CBA100B1C7E5 /* ARCharcterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,9 +47,9 @@
 		CC325D292B5D3201007C93DC /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		CC325D2B2B5D3236007C93DC /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		CC3DE2992B5A842E004175E4 /* TitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabelView.swift; sourceTree = "<group>"; };
-		CC3DE29E2B5A934F004175E4 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		CC3DE29E2B5A934F004175E4 /* ExploreButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreButtonsView.swift; sourceTree = "<group>"; };
 		CC3DE2A32B5A9D7B004175E4 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		CC4779402B63CBC000333CD2 /* PrevButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevButtonView.swift; sourceTree = "<group>"; };
+		CC4779402B63CBC000333CD2 /* PrevButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevButton.swift; sourceTree = "<group>"; };
 		CC78E3432B6397320038088C /* Finn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finn.swift; sourceTree = "<group>"; };
 		CC78E3462B63997C0038088C /* ARCharacterActionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterActionData.swift; sourceTree = "<group>"; };
 		CC9857AD2B622F16000D621A /* ARObjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARObjectData.swift; sourceTree = "<group>"; };
@@ -51,6 +58,9 @@
 		CC9857B62B624D2D000D621A /* ARCharacterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterProtocol.swift; sourceTree = "<group>"; };
 		CC9857B82B6260F3000D621A /* ExploreContentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreContentFactory.swift; sourceTree = "<group>"; };
 		CCAC2CAE2B6B6D8300D73E69 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CCAC2CB02B6B8C8100D73E69 /* CharacterSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectView.swift; sourceTree = "<group>"; };
+		CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionStackView.swift; sourceTree = "<group>"; };
+		CCAC2CB42B6BBF0300D73E69 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		CCADA6282B5952AD000C373E /* Silver Explore Clean Version.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silver Explore Clean Version.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCADA62B2B5952AD000C373E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCADA62D2B5952AD000C373E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +72,10 @@
 		CCB67B8A2B5FE0E6001B2A07 /* KioskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskViewController.swift; sourceTree = "<group>"; };
 		CCB67B8C2B5FE159001B2A07 /* AIExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIExploreViewController.swift; sourceTree = "<group>"; };
 		CCB67B982B5FF813001B2A07 /* TouchGestureExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureExploreViewController.swift; sourceTree = "<group>"; };
+		CCC53EFD2B739C9A00B1C7E5 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
+		CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectionModel.swift; sourceTree = "<group>"; };
+		CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterFactory.swift; sourceTree = "<group>"; };
+		CCC53F032B73CBA100B1C7E5 /* ARCharcterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharcterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,14 +140,15 @@
 			path = Characters;
 			sourceTree = "<group>";
 		};
-		CC78E3492B63BE2D0038088C /* Components */ = {
+		CC78E3492B63BE2D0038088C /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
 				CC3DE2992B5A842E004175E4 /* TitleLabelView.swift */,
-				CC3DE29E2B5A934F004175E4 /* ButtonsView.swift */,
-				CC4779402B63CBC000333CD2 /* PrevButtonView.swift */,
+				CC4779402B63CBC000333CD2 /* PrevButton.swift */,
+				CCAC2CB42B6BBF0300D73E69 /* RadioButton.swift */,
+				CCC53EFD2B739C9A00B1C7E5 /* ImageButton.swift */,
 			);
-			path = Components;
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		CC78E34A2B63BEA20038088C /* ARObject */ = {
@@ -149,6 +164,8 @@
 		CC9857AB2B622DE3000D621A /* TouchGestureExplore */ = {
 			isa = PBXGroup;
 			children = (
+				CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */,
+				CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */,
 			);
 			path = TouchGestureExplore;
 			sourceTree = "<group>";
@@ -165,6 +182,7 @@
 		CCAC2CAD2B6B6D7600D73E69 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CC3DE29E2B5A934F004175E4 /* ExploreButtonsView.swift */,
 				CCAC2CAE2B6B6D8300D73E69 /* HomeView.swift */,
 			);
 			path = View;
@@ -213,7 +231,7 @@
 		CCADA6402B595316000C373E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				CC78E3492B63BE2D0038088C /* Components */,
+				CC78E3492B63BE2D0038088C /* Reusable */,
 				CCB67B872B5FE058001B2A07 /* AIExplore */,
 				CCB67B862B5FE035001B2A07 /* KioskExplore */,
 				CCADA6492B595A4F000C373E /* TouchGestureExplore */,
@@ -264,6 +282,8 @@
 		CCADA64A2B595A70000C373E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CCAC2CB02B6B8C8100D73E69 /* CharacterSelectView.swift */,
+				CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				CCB67B982B5FF813001B2A07 /* TouchGestureExploreViewController.swift */,
+				CCC53F032B73CBA100B1C7E5 /* ARCharcterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -398,23 +419,30 @@
 				CC78E3442B6397320038088C /* Finn.swift in Sources */,
 				CC325D2C2B5D3236007C93DC /* Publisher.swift in Sources */,
 				CCB67B8D2B5FE159001B2A07 /* AIExploreViewController.swift in Sources */,
+				CCC53F042B73CBA100B1C7E5 /* ARCharcterViewController.swift in Sources */,
 				CCB67B992B5FF813001B2A07 /* TouchGestureExploreViewController.swift in Sources */,
 				CC9857B12B623F1B000D621A /* ActionProtocol.swift in Sources */,
 				CC9857B72B624D2D000D621A /* ARCharacterProtocol.swift in Sources */,
+				CCAC2CB32B6BA96800D73E69 /* SelectionStackView.swift in Sources */,
+				CCC53EFE2B739C9A00B1C7E5 /* ImageButton.swift in Sources */,
 				CC325D242B5CB7FF007C93DC /* UIView+Extension.swift in Sources */,
 				CC9857B32B62408C000D621A /* Arr.swift in Sources */,
 				CC3DE29A2B5A842E004175E4 /* TitleLabelView.swift in Sources */,
-				CC4779412B63CBC000333CD2 /* PrevButtonView.swift in Sources */,
+				CC4779412B63CBC000333CD2 /* PrevButton.swift in Sources */,
+				CCAC2CB12B6B8C8100D73E69 /* CharacterSelectView.swift in Sources */,
 				CCADA6302B5952AD000C373E /* HomeViewController.swift in Sources */,
 				CCADA62C2B5952AD000C373E /* AppDelegate.swift in Sources */,
-				CC3DE29F2B5A934F004175E4 /* ButtonsView.swift in Sources */,
+				CCC53F022B73C3F600B1C7E5 /* ARCharacterFactory.swift in Sources */,
+				CC3DE29F2B5A934F004175E4 /* ExploreButtonsView.swift in Sources */,
 				CCADA62E2B5952AD000C373E /* SceneDelegate.swift in Sources */,
 				CC78E3472B63997C0038088C /* ARCharacterActionData.swift in Sources */,
 				CC3DE2A42B5A9D7B004175E4 /* HomeModel.swift in Sources */,
 				CC9857B92B6260F3000D621A /* ExploreContentFactory.swift in Sources */,
 				CCB67B8B2B5FE0E6001B2A07 /* KioskViewController.swift in Sources */,
+				CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */,
 				CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */,
 				CC325D282B5D2E94007C93DC /* NavigationManager.swift in Sources */,
+				CCAC2CB52B6BBF0300D73E69 /* RadioButton.swift in Sources */,
 				CCAC2CAF2B6B6D8300D73E69 /* HomeView.swift in Sources */,
 				CC9857AE2B622F16000D621A /* ARObjectData.swift in Sources */,
 			);

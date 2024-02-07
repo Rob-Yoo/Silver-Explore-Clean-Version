@@ -19,7 +19,7 @@ final class TitleLabelView: UIView {
         label.textAlignment = .center
         label.textColor = .black
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
+        label.minimumScaleFactor = 0.8
 
         return label
     }(self.title)
@@ -28,11 +28,11 @@ final class TitleLabelView: UIView {
         let label = UILabel()
         
         label.text = subtitle
-        label.font = .systemFont(ofSize: 25, weight: .light)
+        label.font = .systemFont(ofSize: 30, weight: .light)
         label.textAlignment = .center
         label.textColor = .darkGray
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
+        label.minimumScaleFactor = 0.8
     
         return label
     }(self.subtitle)
@@ -64,13 +64,13 @@ extension TitleLabelView {
         self.titleLabel
             .centerXAnchor(self.centerXAnchor)
             .centerYAnchor(self.centerYAnchor, constant: centerYAnchorValue)
-            .size(.init(width: 300, height: 170))
+            .size(.init(width: 600, height: 200))
         
         if !(self.subtitle.isEmpty) {
             self.subtitleLabel
                 .centerXAnchor(self.centerXAnchor)
-                .centerYAnchor(self.centerYAnchor, constant: 30)
-                .size(.init(width: 200, height: 140))
+                .centerYAnchor(self.centerYAnchor, constant: 40)
+                .size(.init(width: 600, height: 200))
         }
     }
 }

@@ -8,62 +8,62 @@
 import UIKit
 
 class TouchGestureExploreViewController: UIViewController {
-    private let backgroundImageView = UIImageView(image: .mainBackground)
-    private let titleLabelView = TitleLabelView(title: "AR 캐릭터 선택하기")
-    private let prevButtonView = PrevButtonView()
+    var id = String(describing: TouchGestureExploreViewController.self)
+    private let characterSelectView = CharacterSelectView()
+    private let model = CharacterSelectionModel()
+    private var willUpdateView: UIView?
+    
+    override func loadView() {
+        super.loadView()
+        
+        self.view = characterSelectView
+        self.characterSelectView.characterSelectViewDelegate = self
+        self.characterSelectView.addUserActionListener()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.buildViewHierachy()
-        self.configureViewConstraints()
-        self.addUserActionListener()
-    }
-}
-
-//MARK: - Responsibility of View Managing
-extension TouchGestureExploreViewController {
-    func buildViewHierachy() {
-        self.view.addSubview(backgroundImageView)
-        self.view.addSubview(titleLabelView)
-        self.view.addSubview(prevButtonView)
-    }
-    
-    func configureViewConstraints() {
-        self.addBackgroundImageViewConstraints()
-        self.addTitleLabelViewConstraints()
-        self.addPrevButtonViewConstraints()
-    }
-    
-    private func addBackgroundImageViewConstraints() {
-        self.backgroundImageView
-            .widthAnchor(self.view.widthAnchor)
-            .heightAnchor(self.view.heightAnchor)
-    }
-    
-    private func addTitleLabelViewConstraints() {
-        self.titleLabelView
-            .topAnchor(self.view.topAnchor, padding: 150)
-            .widthAnchor(self.titleLabelView.titleLabel.widthAnchor)
-            .heightAnchor(self.view.heightAnchor, multiplier: 0.15)
-            .centerXAnchor(self.view.centerXAnchor)
-    }
-    
-    private func addPrevButtonViewConstraints() {
-        self.prevButtonView
-            .topAnchor(self.view.safeAreaLayoutGuide.topAnchor, padding: 20)
-            .leadingAnchor(self.view.leadingAnchor, padding: 20)
+        self.model.addObserver(self)
     }
 }
 
 //MARK: - User Action Handling
-extension TouchGestureExploreViewController {
-    func addUserActionListener() {
-        self.prevButtonView.prevButton.addTarget(self, action: #selector(prevButtonTapped), for: .touchUpInside)
+extension TouchGestureExploreViewController: CharacterSelectViewDelegate {
+    @objc func prevButtonTapped() {
+        NavigationManager.shared.pop()
     }
     
-    @objc private func prevButtonTapped() {
-        NavigationManager.shared.pop()
+    @objc func arrSelected() {
+        self.willUpdateView = self.characterSelectView.selectionStackView.arrSelectionView
+        
+        self.model.arCharacterCreator = ArrCreator()
+    }
+    
+    @objc func finnSelected() {
+        self.willUpdateView = self.characterSelectView.selectionStackView.finnSelectionView
+        
+        self.model.arCharacterCreator = FinnCreator()
+    }
+
+    @objc func exploreStartButtonTapped() {
+        guard let arCharacter = self.model.arCharacter else {
+            print("캐릭터가 선택되지 않았습니다.")
+            // TODO: - 캐릭터 선택되지 않았다는 알림 띄우기
+            return
+        }
+
+        let arCharacterVC = ARCharcterViewController(arCharacter: arCharacter) 
+        
+        NavigationManager.shared.push(arCharacterVC)
+    }
+}
+
+//MARK - Observing Model
+extension TouchGestureExploreViewController: Observer {
+    func update() {
+        guard let view = self.willUpdateView else { return }
+
+        self.characterSelectView.update(view)
     }
 }
 

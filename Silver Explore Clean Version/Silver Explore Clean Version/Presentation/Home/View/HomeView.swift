@@ -13,10 +13,10 @@ import UIKit
     @objc func aiExploreBtnTapped()
 }
 
-class HomeView: UIView {
+final class HomeView: UIView {
     private let backgroundImageView = UIImageView(image: .mainBackground)
     private let titleLabelView = TitleLabelView(title: "은빛 탐험가", subtitle: "The Silver Explore")
-    private let buttonsView = ButtonsView()
+    private let buttonsView = ExploreButtonsView()
     
     weak var homeViewDelegate: HomeViewDelegate?
     
