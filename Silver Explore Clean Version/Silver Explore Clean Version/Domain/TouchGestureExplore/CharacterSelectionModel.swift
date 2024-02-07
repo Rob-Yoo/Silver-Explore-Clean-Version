@@ -7,10 +7,6 @@
 
 import ARKit
 
-enum Character {
-    case Arr, Finn, none
-}
-
 class CharacterSelectionModel {
     private var observers = [Observer]()
     var arCharacterCreator: ARCharacterCreator? {

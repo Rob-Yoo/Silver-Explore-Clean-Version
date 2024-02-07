@@ -11,6 +11,12 @@ protocol ARCharacterCreator {
     func createARCharacter() -> ARCharacterProtocol
 }
 
+struct ARCharacterFactory {
+    static func createARCharcter(_ arCharacterCreator: ARCharacterCreator) -> ARCharacterProtocol {
+        return arCharacterCreator.createARCharacter()
+    }
+}
+
 struct ArrCreator: ARCharacterCreator {
     func createARCharacter() -> ARCharacterProtocol {
         guard let containerNode = Arr.makeContainerNode() else {
@@ -28,11 +34,5 @@ struct FinnCreator: ARCharacterCreator {
         }
         
         return Finn(containerNode: containerNode)
-    }
-}
-
-struct ARCharacterFactory {
-    static func createARCharcter(_ arCharacterCreator: ARCharacterCreator) -> ARCharacterProtocol {
-        return arCharacterCreator.createARCharacter()
     }
 }
