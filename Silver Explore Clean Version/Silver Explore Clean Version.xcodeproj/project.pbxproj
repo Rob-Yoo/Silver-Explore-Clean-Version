@@ -117,6 +117,7 @@
 		CC3DE2A22B5A9D6F004175E4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CC9857B82B6260F3000D621A /* ExploreContentFactory.swift */,
 				CC3DE2A32B5A9D7B004175E4 /* HomeModel.swift */,
 			);
 			path = Home;
@@ -253,7 +254,6 @@
 		CCADA6422B59532F000C373E /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				CCB67B932B5FF6F8001B2A07 /* Factory */,
 				CC3DE2952B5A77A0004175E4 /* Navigatior */,
 				CC3DE29B2B5A913B004175E4 /* Protocols */,
 				CC3DE2962B5A7AD3004175E4 /* Extensions */,
@@ -335,14 +335,6 @@
 				CCB67B8A2B5FE0E6001B2A07 /* KioskViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		CCB67B932B5FF6F8001B2A07 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				CC9857B82B6260F3000D621A /* ExploreContentFactory.swift */,
-			);
-			path = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
