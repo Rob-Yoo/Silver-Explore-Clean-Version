@@ -113,6 +113,6 @@ extension CharacterSelectView {
     }
     
     func update(_ willUpdateView: UIView) {
-        self.selectionStackView.update(willUpdateView)
+        self.selectionStackView.update(isSelectedView: willUpdateView)
     }
 }

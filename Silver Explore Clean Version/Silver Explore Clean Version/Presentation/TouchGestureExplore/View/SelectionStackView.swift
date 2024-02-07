@@ -32,9 +32,11 @@ final class SelectionStackView: UIStackView {
         }
     }
     
-    func update(_ selectionView: UIView) {
+    func update(isSelectedView: UIView) {
         selectionViews.forEach {
-            $0.radioButton.isChecked = ($0 == selectionView)
+            let isSelected = ($0 == isSelectedView)
+
+            $0.radioButton.update(isSelected)
         }
     }
 }

@@ -9,11 +9,6 @@ import UIKit
 
 final class RadioButton: UIButton {
     private let imageSize = 40.0
-    var isChecked = false {
-        didSet {
-            update()
-        }
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,8 +26,8 @@ final class RadioButton: UIButton {
         self.tintColor = .systemBlue
     }
     
-    private func update() {
-        let image = UIImage(systemName: self.isChecked ? "checkmark.circle.fill" : "circle")?
+    func update(_ isSelected: Bool) {
+        let image = UIImage(systemName: isSelected ? "checkmark.circle.fill" : "circle")?
             .withConfiguration(UIImage.SymbolConfiguration(pointSize: 40.0))
 
         self.setImage(image, for: .normal)
