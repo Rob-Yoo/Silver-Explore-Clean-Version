@@ -34,18 +34,16 @@ extension ARCharacterSelectionViewController: CharacterSelectViewDelegate {
     }
     
     @objc func arrSelected(recognizer: UITapGestureRecognizer) {
-        if let arrSelectionview = recognizer.view {
-            self.willUpdateView = arrSelectionview
-        }
+        guard let arrSelectionview = recognizer.view else { return }
         
+        self.willUpdateView = arrSelectionview
         self.model.arCharacterCreator = ArrCreator()
     }
     
     @objc func finnSelected(recognizer: UITapGestureRecognizer) {
-        if let finnSelectionView = recognizer.view {
-            self.willUpdateView = finnSelectionView
-        }
+        guard let finnSelectionView = recognizer.view else { return }
         
+        self.willUpdateView = finnSelectionView
         self.model.arCharacterCreator = FinnCreator()
     }
 
