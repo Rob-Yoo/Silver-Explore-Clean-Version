@@ -36,7 +36,7 @@
 		CCC53EFE2B739C9A00B1C7E5 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53EFD2B739C9A00B1C7E5 /* ImageButton.swift */; };
 		CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */; };
 		CCC53F022B73C3F600B1C7E5 /* ARCharacterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */; };
-		CCC53F042B73CBA100B1C7E5 /* ARCharcterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53F032B73CBA100B1C7E5 /* ARCharcterViewController.swift */; };
+		CCC53F042B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53F032B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,7 +71,7 @@
 		CCC53EFD2B739C9A00B1C7E5 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectionModel.swift; sourceTree = "<group>"; };
 		CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterFactory.swift; sourceTree = "<group>"; };
-		CCC53F032B73CBA100B1C7E5 /* ARCharcterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharcterViewController.swift; sourceTree = "<group>"; };
+		CCC53F032B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureExploreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,7 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				CCB67B982B5FF813001B2A07 /* ARCharacterSelectionViewController.swift */,
-				CCC53F032B73CBA100B1C7E5 /* ARCharcterViewController.swift */,
+				CCC53F032B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 				CC78E3442B6397320038088C /* Finn.swift in Sources */,
 				CC325D2C2B5D3236007C93DC /* Publisher.swift in Sources */,
 				CCB67B8D2B5FE159001B2A07 /* AIExploreViewController.swift in Sources */,
-				CCC53F042B73CBA100B1C7E5 /* ARCharcterViewController.swift in Sources */,
+				CCC53F042B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift in Sources */,
 				CCB67B992B5FF813001B2A07 /* ARCharacterSelectionViewController.swift in Sources */,
 				CC9857B12B623F1B000D621A /* ActionProtocol.swift in Sources */,
 				CC9857B72B624D2D000D621A /* ARCharacterProtocol.swift in Sources */,

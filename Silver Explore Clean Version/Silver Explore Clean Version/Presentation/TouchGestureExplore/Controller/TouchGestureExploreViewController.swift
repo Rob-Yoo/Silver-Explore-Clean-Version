@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ARCharcterViewController: UIViewController {
+class TouchGestureExploreViewController: UIViewController {
 
     private let arCharacter: ARCharacterProtocol
     

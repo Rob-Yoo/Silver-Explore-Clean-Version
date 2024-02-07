@@ -52,7 +52,7 @@ extension ARCharacterSelectionViewController: CharacterSelectViewDelegate {
             return
         }
 
-        let arCharacterVC = ARCharcterViewController(arCharacter: arCharacter) 
+        let arCharacterVC = TouchGestureExploreViewController(arCharacter: arCharacter) 
         
         NavigationManager.shared.push(arCharacterVC)
     }
