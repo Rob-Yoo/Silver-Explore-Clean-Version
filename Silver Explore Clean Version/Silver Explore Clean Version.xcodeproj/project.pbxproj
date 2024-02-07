@@ -13,7 +13,6 @@
 		CC325D2C2B5D3236007C93DC /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D2B2B5D3236007C93DC /* Publisher.swift */; };
 		CC3DE29A2B5A842E004175E4 /* TitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE2992B5A842E004175E4 /* TitleLabelView.swift */; };
 		CC3DE29F2B5A934F004175E4 /* ExploreButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE29E2B5A934F004175E4 /* ExploreButtonsView.swift */; };
-		CC3DE2A42B5A9D7B004175E4 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE2A32B5A9D7B004175E4 /* HomeModel.swift */; };
 		CC4779412B63CBC000333CD2 /* PrevButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4779402B63CBC000333CD2 /* PrevButton.swift */; };
 		CC78E3442B6397320038088C /* Finn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E3432B6397320038088C /* Finn.swift */; };
 		CC78E3472B63997C0038088C /* ARCharacterActionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E3462B63997C0038088C /* ARCharacterActionData.swift */; };
@@ -21,7 +20,6 @@
 		CC9857B12B623F1B000D621A /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B02B623F1B000D621A /* ActionProtocol.swift */; };
 		CC9857B32B62408C000D621A /* Arr.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B22B62408C000D621A /* Arr.swift */; };
 		CC9857B72B624D2D000D621A /* ARCharacterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B62B624D2D000D621A /* ARCharacterProtocol.swift */; };
-		CC9857B92B6260F3000D621A /* ExploreContentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B82B6260F3000D621A /* ExploreContentFactory.swift */; };
 		CCAC2CAF2B6B6D8300D73E69 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CAE2B6B6D8300D73E69 /* HomeView.swift */; };
 		CCAC2CB12B6B8C8100D73E69 /* CharacterSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB02B6B8C8100D73E69 /* CharacterSelectionView.swift */; };
 		CCAC2CB32B6BA96800D73E69 /* SelectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */; };
@@ -48,7 +46,6 @@
 		CC325D2B2B5D3236007C93DC /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		CC3DE2992B5A842E004175E4 /* TitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabelView.swift; sourceTree = "<group>"; };
 		CC3DE29E2B5A934F004175E4 /* ExploreButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreButtonsView.swift; sourceTree = "<group>"; };
-		CC3DE2A32B5A9D7B004175E4 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		CC4779402B63CBC000333CD2 /* PrevButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevButton.swift; sourceTree = "<group>"; };
 		CC78E3432B6397320038088C /* Finn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finn.swift; sourceTree = "<group>"; };
 		CC78E3462B63997C0038088C /* ARCharacterActionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterActionData.swift; sourceTree = "<group>"; };
@@ -56,7 +53,6 @@
 		CC9857B02B623F1B000D621A /* ActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 		CC9857B22B62408C000D621A /* Arr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arr.swift; sourceTree = "<group>"; };
 		CC9857B62B624D2D000D621A /* ARCharacterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterProtocol.swift; sourceTree = "<group>"; };
-		CC9857B82B6260F3000D621A /* ExploreContentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreContentFactory.swift; sourceTree = "<group>"; };
 		CCAC2CAE2B6B6D8300D73E69 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CCAC2CB02B6B8C8100D73E69 /* CharacterSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectionView.swift; sourceTree = "<group>"; };
 		CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionStackView.swift; sourceTree = "<group>"; };
@@ -112,15 +108,6 @@
 				CC325D2B2B5D3236007C93DC /* Publisher.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		CC3DE2A22B5A9D6F004175E4 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				CC9857B82B6260F3000D621A /* ExploreContentFactory.swift */,
-				CC3DE2A32B5A9D7B004175E4 /* HomeModel.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		CC78E3452B63995A0038088C /* General */ = {
@@ -246,7 +233,6 @@
 			children = (
 				CC78E34A2B63BEA20038088C /* ARObject */,
 				CC9857AB2B622DE3000D621A /* TouchGestureExplore */,
-				CC3DE2A22B5A9D6F004175E4 /* Home */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -428,8 +414,6 @@
 				CC3DE29F2B5A934F004175E4 /* ExploreButtonsView.swift in Sources */,
 				CCADA62E2B5952AD000C373E /* SceneDelegate.swift in Sources */,
 				CC78E3472B63997C0038088C /* ARCharacterActionData.swift in Sources */,
-				CC3DE2A42B5A9D7B004175E4 /* HomeModel.swift in Sources */,
-				CC9857B92B6260F3000D621A /* ExploreContentFactory.swift in Sources */,
 				CCB67B8B2B5FE0E6001B2A07 /* KioskViewController.swift in Sources */,
 				CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */,
 				CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */,

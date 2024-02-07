@@ -8,9 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    let id = String(describing: HomeViewController.self)
     private let homeView = HomeView()
-    private let model = HomeModel()
 
     override func loadView() {
         super.loadView()
@@ -22,31 +20,21 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.model.addObserver(self)
     }
 }
 
 //MARK: - User Action Handling
 extension HomeViewController: HomeViewDelegate {
     @objc func touchGestureExploreBtnTapped() {
-        self.model.selectedContent = .TouchGestureExplore
+        NavigationManager.shared.push(ARCharacterSelectionViewController())
     }
     
     @objc func kioskExploreBtnTapped() {
-        self.model.selectedContent = .KioskExplore
+        NavigationManager.shared.push(KioskViewController())
     }
 
     @objc func aiExploreBtnTapped() {
-        self.model.selectedContent = .AIExplore
-    }
-}
-
-//MARK: - Observing Model
-extension HomeViewController: Observer {
-    func update() {
-        if let exploreContentVC = ExploreContentFactory.createExploreContentVC(content: self.model.selectedContent) {
-            NavigationManager.shared.push(exploreContentVC)
-        }
+        NavigationManager.shared.push(AIExploreViewController())
     }
 }
 
