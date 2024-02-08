@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TitleLabelView: UIView {
+final class TitleView: UIView {
     private var title: String
     private var subtitle: String
 
@@ -52,7 +52,7 @@ final class TitleLabelView: UIView {
     }
 }
 
-extension TitleLabelView {
+extension TitleView {
     func buildViewHierachy() {
         self.addSubview(titleLabel)
         if !(self.subtitle.isEmpty) { self.addSubview(subtitleLabel) }

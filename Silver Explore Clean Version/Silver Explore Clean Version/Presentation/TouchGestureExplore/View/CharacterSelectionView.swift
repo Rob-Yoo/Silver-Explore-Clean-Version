@@ -17,7 +17,7 @@ import UIKit
 final class CharacterSelectionView: UIView {
     private(set) var backgroundImageView = UIImageView(image: .mainBackground)
     private(set) var prevButton = PrevButton()
-    private(set) var titleLabelView = TitleLabelView(title: "AR 캐릭터 선택하기", subtitle: "원하는 캐릭터를 터치해주세요")
+    private(set) var titleView = TitleView(title: "AR 캐릭터 선택하기", subtitle: "원하는 캐릭터를 터치해주세요")
     private(set) var selectionStackView = SelectionStackView()
     private(set) var exploreStartBtn = ImageButton(image: .exploreStart)
     
@@ -37,7 +37,7 @@ final class CharacterSelectionView: UIView {
 extension CharacterSelectionView {
     private func configureSubViews() {
         self.configureBackgroundImageView()
-        self.configureTitleLabelView()
+        self.configureTitleView()
         self.configurePrevButton()
         self.configureSelectionView()
         self.configureExploreStartBtn()
@@ -51,12 +51,12 @@ extension CharacterSelectionView {
             .heightAnchor(self.heightAnchor)
     }
     
-    private func configureTitleLabelView() {
-        self.addSubview(titleLabelView)
+    private func configureTitleView() {
+        self.addSubview(titleView)
         
-        self.titleLabelView
+        self.titleView
             .topAnchor(self.topAnchor, padding: 100)
-            .widthAnchor(self.titleLabelView.titleLabel.widthAnchor)
+            .widthAnchor(self.titleView.titleLabel.widthAnchor)
             .heightAnchor(self.heightAnchor, multiplier: 0.15)
             .centerXAnchor(self.centerXAnchor)
     }

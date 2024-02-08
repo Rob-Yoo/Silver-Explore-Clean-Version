@@ -15,7 +15,7 @@ import UIKit
 
 final class HomeView: UIView {
     private(set) var backgroundImageView = UIImageView(image: .mainBackground)
-    private(set) var titleLabelView = TitleLabelView(title: "은빛 탐험가", subtitle: "The Silver Explore")
+    private(set) var titleView = TitleView(title: "은빛 탐험가", subtitle: "The Silver Explore")
     private(set) var buttonsView = ExploreButtonsView()
     
     weak var homeViewDelegate: HomeViewDelegate?
@@ -34,7 +34,7 @@ final class HomeView: UIView {
 extension HomeView {
     private func configureSubviews() {
         configureBackgroundImageView()
-        configureTitleLabelView()
+        configureTitleView()
         configureButtonsView()
     }
     
@@ -46,12 +46,12 @@ extension HomeView {
             .heightAnchor(self.heightAnchor)
     }
     
-    private func configureTitleLabelView() {
-        self.addSubview(titleLabelView)
+    private func configureTitleView() {
+        self.addSubview(titleView)
 
-        self.titleLabelView
+        self.titleView
             .topAnchor(self.topAnchor, padding: 150)
-            .widthAnchor(self.titleLabelView.titleLabel.widthAnchor)
+            .widthAnchor(self.titleView.titleLabel.widthAnchor)
             .heightAnchor(self.heightAnchor, multiplier: 0.15)
             .centerXAnchor(self.centerXAnchor)
     }

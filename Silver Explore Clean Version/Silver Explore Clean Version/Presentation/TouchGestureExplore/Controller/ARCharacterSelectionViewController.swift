@@ -15,7 +15,7 @@ class ARCharacterSelectionViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        
+
         self.view = characterSelectionView
         self.characterSelectionView.characterSelectViewDelegate = self
         self.characterSelectionView.addUserActionListener()
@@ -71,7 +71,7 @@ extension ARCharacterSelectionViewController: Observer {
 
 #if DEBUG
 import SwiftUI
-struct ViewControllerRepresentable_TGEVC: UIViewControllerRepresentable {
+struct ViewControllerRepresentable_ACSVC: UIViewControllerRepresentable {
     
 func updateUIViewController(_ uiView: UIViewController,context: Context) {
         // leave this empty
@@ -82,10 +82,10 @@ func makeUIViewController(context: Context) -> UIViewController{
     }
 }
 @available(iOS 13.0, *)
-struct ViewControllerRepresentable_TGEVC_PreviewProvider: PreviewProvider {
+struct ViewControllerRepresentable_ACSVC_PreviewProvider: PreviewProvider {
     static var previews: some View {
         Group {
-            ViewControllerRepresentable_TGEVC()
+            ViewControllerRepresentable_ACSVC()
                 .ignoresSafeArea()
                 .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
         }

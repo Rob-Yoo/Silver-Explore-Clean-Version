@@ -22,6 +22,10 @@ final class Finn: ARCharacterProtocol {
         self.actionData = ARCharacterActionData(initialEulerAngle: initialEulerAngle, initialScale: initialScale)
     }
     
+    func getContainerNode() -> SCNNode? {
+        return self.objectData.characterContainerNode
+    }
+    
     static func makeContainerNode() -> SCNNode? {
         let node: SCNNode = SCNNode()
         
@@ -33,8 +37,8 @@ final class Finn: ARCharacterProtocol {
             return nil
         }
         
-        finnNode.transform = SCNMatrix4MakeRotation(-GLKMathDegreesToRadians(20), 1, 0, 0)
-        finnNode.scale = SCNVector3(0.0007, 0.0007, 0.0007)
+        finnNode.transform = SCNMatrix4MakeRotation(-GLKMathDegreesToRadians(100), 1, 0, 0)
+        finnNode.scale = SCNVector3(0.0009, 0.0007, 0.0007)
         
         node.addChildNode(finnNode)
         

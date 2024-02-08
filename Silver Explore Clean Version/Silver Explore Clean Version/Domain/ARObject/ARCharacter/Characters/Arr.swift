@@ -22,6 +22,10 @@ final class Arr: ARCharacterProtocol {
         self.actionData = ARCharacterActionData(initialEulerAngle: initialEulerAngle, initialScale: initialScale)
     }
     
+    func getContainerNode() -> SCNNode? {
+        return self.objectData.characterContainerNode
+    }
+    
     static func makeContainerNode() -> SCNNode? {
         /*
             makeContainerNode를 타입 메서드로 지정하는 이유

@@ -16,5 +16,6 @@ protocol ARCharacterActionProtocol: JumpActionProtocol, HighJumpActionProtocol, 
 }
 
 protocol ARCharacterProtocol: ARCharacterActionProtocol {
+    func getContainerNode() -> SCNNode?
     static func makeContainerNode() -> SCNNode?
 }
