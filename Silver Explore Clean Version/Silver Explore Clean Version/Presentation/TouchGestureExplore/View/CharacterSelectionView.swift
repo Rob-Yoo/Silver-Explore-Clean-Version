@@ -17,7 +17,7 @@ import UIKit
 final class CharacterSelectionView: UIView {
     private(set) var backgroundImageView = UIImageView(image: .mainBackground)
     private(set) var prevButton = PrevButton()
-    private(set) var titleView = TitleView(title: "AR 캐릭터 선택하기", subtitle: "원하는 캐릭터를 터치해주세요")
+    private(set) var titleView = HeaderView(title: "AR 캐릭터 선택하기", subtitle: "원하는 캐릭터를 터치해주세요")
     private(set) var selectionStackView = SelectionStackView()
     private(set) var exploreStartBtn = ImageButton(image: .exploreStart)
     

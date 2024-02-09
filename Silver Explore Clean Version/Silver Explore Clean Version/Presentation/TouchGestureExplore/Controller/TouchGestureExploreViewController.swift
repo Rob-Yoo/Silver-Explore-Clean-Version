@@ -10,6 +10,7 @@ import UIKit
 
 class TouchGestureExploreViewController: UIViewController {
     private let sceneView = ARSceneView(frame: .infinite)
+//    private let sceneView = TouchGestureExploreView(blurEffect: .init(style: .systemThinMaterialDark))
     private let arCharacter: ARCharacterProtocol
     
     override func loadView() {

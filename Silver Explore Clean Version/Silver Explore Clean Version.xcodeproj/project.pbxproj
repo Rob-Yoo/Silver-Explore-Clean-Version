@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		CC0EF9122B74C37B00206431 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0EF9112B74C37B00206431 /* OnboardingView.swift */; };
-		CC0EF9142B74C49800206431 /* BlurEffectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0EF9132B74C49800206431 /* BlurEffectButton.swift */; };
+		CC0EF9142B74C49800206431 /* BlurredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0EF9132B74C49800206431 /* BlurredButton.swift */; };
 		CC0EF9162B74E15500206431 /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0EF9152B74E15500206431 /* ARSceneView.swift */; };
 		CC0EF9182B74F74D00206431 /* TouchGestureExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0EF9172B74F74D00206431 /* TouchGestureExploreView.swift */; };
 		CC325D242B5CB7FF007C93DC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D232B5CB7FF007C93DC /* UIView+Extension.swift */; };
 		CC325D282B5D2E94007C93DC /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D272B5D2E94007C93DC /* NavigationManager.swift */; };
 		CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D292B5D3201007C93DC /* Observer.swift */; };
 		CC325D2C2B5D3236007C93DC /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D2B2B5D3236007C93DC /* Publisher.swift */; };
-		CC3DE29A2B5A842E004175E4 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE2992B5A842E004175E4 /* TitleView.swift */; };
+		CC3DE29A2B5A842E004175E4 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE2992B5A842E004175E4 /* HeaderView.swift */; };
 		CC3DE29F2B5A934F004175E4 /* ExploreButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE29E2B5A934F004175E4 /* ExploreButtonsView.swift */; };
 		CC4779412B63CBC000333CD2 /* PrevButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4779402B63CBC000333CD2 /* PrevButton.swift */; };
 		CC78E3442B6397320038088C /* Finn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E3432B6397320038088C /* Finn.swift */; };
@@ -45,14 +45,14 @@
 
 /* Begin PBXFileReference section */
 		CC0EF9112B74C37B00206431 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		CC0EF9132B74C49800206431 /* BlurEffectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffectButton.swift; sourceTree = "<group>"; };
+		CC0EF9132B74C49800206431 /* BlurredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredButton.swift; sourceTree = "<group>"; };
 		CC0EF9152B74E15500206431 /* ARSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneView.swift; sourceTree = "<group>"; };
 		CC0EF9172B74F74D00206431 /* TouchGestureExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureExploreView.swift; sourceTree = "<group>"; };
 		CC325D232B5CB7FF007C93DC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CC325D272B5D2E94007C93DC /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		CC325D292B5D3201007C93DC /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		CC325D2B2B5D3236007C93DC /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
-		CC3DE2992B5A842E004175E4 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		CC3DE2992B5A842E004175E4 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		CC3DE29E2B5A934F004175E4 /* ExploreButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreButtonsView.swift; sourceTree = "<group>"; };
 		CC4779402B63CBC000333CD2 /* PrevButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevButton.swift; sourceTree = "<group>"; };
 		CC78E3432B6397320038088C /* Finn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finn.swift; sourceTree = "<group>"; };
@@ -99,9 +99,17 @@
 				CC4779402B63CBC000333CD2 /* PrevButton.swift */,
 				CCAC2CB42B6BBF0300D73E69 /* RadioButton.swift */,
 				CCC53EFD2B739C9A00B1C7E5 /* ImageButton.swift */,
-				CC0EF9132B74C49800206431 /* BlurEffectButton.swift */,
+				CC0EF9132B74C49800206431 /* BlurredButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		CC1147792B7617A7007FE5E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC3DE2992B5A842E004175E4 /* HeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CC3DE2952B5A77A0004175E4 /* Navigatior */ = {
@@ -150,8 +158,8 @@
 		CC78E3492B63BE2D0038088C /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				CC1147792B7617A7007FE5E5 /* Views */,
 				CC0EF9192B75069200206431 /* Buttons */,
-				CC3DE2992B5A842E004175E4 /* TitleView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -425,7 +433,7 @@
 				CCC53EFE2B739C9A00B1C7E5 /* ImageButton.swift in Sources */,
 				CC325D242B5CB7FF007C93DC /* UIView+Extension.swift in Sources */,
 				CC9857B32B62408C000D621A /* Arr.swift in Sources */,
-				CC3DE29A2B5A842E004175E4 /* TitleView.swift in Sources */,
+				CC3DE29A2B5A842E004175E4 /* HeaderView.swift in Sources */,
 				CC4779412B63CBC000333CD2 /* PrevButton.swift in Sources */,
 				CC0EF9122B74C37B00206431 /* OnboardingView.swift in Sources */,
 				CCAC2CB12B6B8C8100D73E69 /* CharacterSelectionView.swift in Sources */,
@@ -438,7 +446,7 @@
 				CC78E3472B63997C0038088C /* ARCharacterActionData.swift in Sources */,
 				CCB67B8B2B5FE0E6001B2A07 /* KioskViewController.swift in Sources */,
 				CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */,
-				CC0EF9142B74C49800206431 /* BlurEffectButton.swift in Sources */,
+				CC0EF9142B74C49800206431 /* BlurredButton.swift in Sources */,
 				CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */,
 				CC325D282B5D2E94007C93DC /* NavigationManager.swift in Sources */,
 				CC0EF9162B74E15500206431 /* ARSceneView.swift in Sources */,

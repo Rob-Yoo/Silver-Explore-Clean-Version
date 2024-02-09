@@ -15,7 +15,7 @@ import UIKit
 
 final class HomeView: UIView {
     private(set) var backgroundImageView = UIImageView(image: .mainBackground)
-    private(set) var titleView = TitleView(title: "은빛 탐험가", subtitle: "The Silver Explore")
+    private(set) var titleView = HeaderView(title: "은빛 탐험가", subtitle: "The Silver Explore")
     private(set) var buttonsView = ExploreButtonsView()
     
     weak var homeViewDelegate: HomeViewDelegate?

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TitleView: UIView {
+final class HeaderView: UIView {
     private var title: String
     private var subtitle: String
 
@@ -43,34 +43,35 @@ final class TitleView: UIView {
         super.init(frame: .zero)
         
         self.backgroundColor = .clear
-        self.buildViewHierachy()
-        self.configureViewConstraints()
+        self.configure()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-extension TitleView {
-    func buildViewHierachy() {
-        self.addSubview(titleLabel)
-        if !(self.subtitle.isEmpty) { self.addSubview(subtitleLabel) }
+    
+    private func configure() {
+        self.configureTitleLabel()
+        self.configureSubtitleLabel()
     }
-
-    func configureViewConstraints() {
+    
+    private func configureTitleLabel() {
         let centerYAnchorValue: CGFloat = self.subtitle.isEmpty ? 0 : -30
 
+        self.addSubview(self.titleLabel)
         self.titleLabel
             .centerXAnchor(self.centerXAnchor)
             .centerYAnchor(self.centerYAnchor, constant: centerYAnchorValue)
             .size(.init(width: 600, height: 200))
+    }
+    
+    private func configureSubtitleLabel() {
+        if (self.subtitle.isEmpty) { return }
         
-        if !(self.subtitle.isEmpty) {
-            self.subtitleLabel
-                .centerXAnchor(self.centerXAnchor)
-                .centerYAnchor(self.centerYAnchor, constant: 40)
-                .size(.init(width: 600, height: 200))
-        }
+        self.addSubview(self.subtitleLabel)
+        self.subtitleLabel
+            .centerXAnchor(self.centerXAnchor)
+            .centerYAnchor(self.centerYAnchor, constant: 40)
+            .size(.init(width: 600, height: 200))
     }
 }

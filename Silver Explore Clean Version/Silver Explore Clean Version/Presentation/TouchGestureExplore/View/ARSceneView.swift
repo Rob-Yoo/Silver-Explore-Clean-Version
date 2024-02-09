@@ -13,7 +13,8 @@ protocol ARScneneViewDelegate: AnyObject {
 }
 
 final class ARSceneView: ARSCNView {
-    private let onboardingView = OnboardingView()
+    private(set) var onboardingView = OnboardingView()
+    private(set) lazy var touchGestureExploreView = TouchGestureExploreView(blurEffect: .init(style: .systemThinMaterialDark))
     
     weak var arSceneViewDelegate: ARScneneViewDelegate?
     
@@ -32,11 +33,25 @@ final class ARSceneView: ARSCNView {
     }
     
     private func configureOnboardingView() {
-        self.addSubview(onboardingView)
+        self.addSubview(self.onboardingView)
         
         self.onboardingView
             .widthAnchor(self.widthAnchor)
             .heightAnchor(self.heightAnchor)
+    }
+    
+    private func configureTouchGestureExploreView() {
+        self.addSubview(self.touchGestureExploreView)
+
+        self.touchGestureExploreView.alpha = 0.0
+
+        self.touchGestureExploreView
+            .widthAnchor(self.widthAnchor)
+            .heightAnchor(self.heightAnchor)
+        
+        UIView.animate(withDuration: 1.0, delay: 2.0, options: .curveEaseInOut) {
+            self.touchGestureExploreView.alpha = 1.0
+        }
     }
 }
 
@@ -46,6 +61,7 @@ extension ARSceneView: ARSCNViewDelegate {
         if let _ = anchor as? ARImageAnchor, let delegate = arSceneViewDelegate {
             DispatchQueue.main.async {
                 self.onboardingView.removeFromSuperview()
+                self.configureTouchGestureExploreView()
             }
             return delegate.getContainerNode()
         }
