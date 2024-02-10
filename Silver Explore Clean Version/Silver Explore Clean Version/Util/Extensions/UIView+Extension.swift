@@ -73,6 +73,14 @@ extension UIView {
         self.widthAnchor.constraint(equalTo: width, multiplier: value).isActive = true
         return self
     }
+    
+    @discardableResult
+    func widthAnchor(equalToConstant constant: CGFloat) -> Self {
+        if (self.translatesAutoresizingMaskIntoConstraints) { self.translatesAutoresizingMaskIntoConstraints.toggle() }
+        
+        self.widthAnchor.constraint(equalToConstant: constant).isActive = true
+        return self
+    }
 
     @discardableResult
     func heightAnchor(_ height: NSLayoutAnchor<NSLayoutDimension>, constant: CGFloat = .zero) -> Self {
@@ -87,6 +95,14 @@ extension UIView {
         if (self.translatesAutoresizingMaskIntoConstraints) { self.translatesAutoresizingMaskIntoConstraints.toggle() }
         
         self.heightAnchor.constraint(equalTo: height, multiplier: value).isActive = true
+        return self
+    }
+    
+    @discardableResult
+    func heightAnchor(equalToConstant constant: CGFloat) -> Self {
+        if (self.translatesAutoresizingMaskIntoConstraints) { self.translatesAutoresizingMaskIntoConstraints.toggle() }
+        
+        self.heightAnchor.constraint(equalToConstant: constant).isActive = true
         return self
     }
 }

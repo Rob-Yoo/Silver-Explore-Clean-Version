@@ -49,7 +49,7 @@ final class ARSceneView: ARSCNView {
             .widthAnchor(self.widthAnchor)
             .heightAnchor(self.heightAnchor)
         
-        UIView.animate(withDuration: 1.0, delay: 2.0, options: .curveEaseInOut) {
+        UIView.animate(withDuration: 1.0, delay: 0.5, options: .curveEaseInOut) {
             self.touchGestureExploreView.alpha = 1.0
         }
     }
