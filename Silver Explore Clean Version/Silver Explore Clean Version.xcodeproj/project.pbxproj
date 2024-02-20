@@ -11,6 +11,10 @@
 		CC0EF9142B74C49800206431 /* BlurredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0EF9132B74C49800206431 /* BlurredButton.swift */; };
 		CC0EF9162B74E15500206431 /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0EF9152B74E15500206431 /* ARSceneView.swift */; };
 		CC0EF9182B74F74D00206431 /* TouchGestureExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0EF9172B74F74D00206431 /* TouchGestureExploreView.swift */; };
+		CC2499692B7FA1A700612502 /* BlurredExploreIndicatorStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2499682B7FA1A700612502 /* BlurredExploreIndicatorStackView.swift */; };
+		CC24996B2B7FA1F600612502 /* BlurredExploreStageDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24996A2B7FA1F600612502 /* BlurredExploreStageDescriptionView.swift */; };
+		CC24996D2B7FBF9100612502 /* TouchGestureExploreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24996C2B7FBF9100612502 /* TouchGestureExploreModel.swift */; };
+		CC2499702B8506D300612502 /* ExploreStages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24996F2B8506D300612502 /* ExploreStages.swift */; };
 		CC325D242B5CB7FF007C93DC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D232B5CB7FF007C93DC /* UIView+Extension.swift */; };
 		CC325D282B5D2E94007C93DC /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D272B5D2E94007C93DC /* NavigationManager.swift */; };
 		CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D292B5D3201007C93DC /* Observer.swift */; };
@@ -48,6 +52,10 @@
 		CC0EF9132B74C49800206431 /* BlurredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredButton.swift; sourceTree = "<group>"; };
 		CC0EF9152B74E15500206431 /* ARSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneView.swift; sourceTree = "<group>"; };
 		CC0EF9172B74F74D00206431 /* TouchGestureExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureExploreView.swift; sourceTree = "<group>"; };
+		CC2499682B7FA1A700612502 /* BlurredExploreIndicatorStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredExploreIndicatorStackView.swift; sourceTree = "<group>"; };
+		CC24996A2B7FA1F600612502 /* BlurredExploreStageDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredExploreStageDescriptionView.swift; sourceTree = "<group>"; };
+		CC24996C2B7FBF9100612502 /* TouchGestureExploreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureExploreModel.swift; sourceTree = "<group>"; };
+		CC24996F2B8506D300612502 /* ExploreStages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreStages.swift; sourceTree = "<group>"; };
 		CC325D232B5CB7FF007C93DC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CC325D272B5D2E94007C93DC /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		CC325D292B5D3201007C93DC /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
@@ -110,6 +118,15 @@
 				CC3DE2992B5A842E004175E4 /* HeaderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CC2499672B7FA18400612502 /* BlurredViews */ = {
+			isa = PBXGroup;
+			children = (
+				CC2499682B7FA1A700612502 /* BlurredExploreIndicatorStackView.swift */,
+				CC24996A2B7FA1F600612502 /* BlurredExploreStageDescriptionView.swift */,
+			);
+			path = BlurredViews;
 			sourceTree = "<group>";
 		};
 		CC3DE2952B5A77A0004175E4 /* Navigatior */ = {
@@ -179,6 +196,8 @@
 			children = (
 				CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */,
 				CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */,
+				CC24996C2B7FBF9100612502 /* TouchGestureExploreModel.swift */,
+				CC24996F2B8506D300612502 /* ExploreStages.swift */,
 			);
 			path = TouchGestureExplore;
 			sourceTree = "<group>";
@@ -293,6 +312,7 @@
 		CCADA64A2B595A70000C373E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CC2499672B7FA18400612502 /* BlurredViews */,
 				CCAC2CB02B6B8C8100D73E69 /* CharacterSelectionView.swift */,
 				CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */,
 				CC0EF9112B74C37B00206431 /* OnboardingView.swift */,
@@ -425,6 +445,7 @@
 				CC78E3442B6397320038088C /* Finn.swift in Sources */,
 				CC325D2C2B5D3236007C93DC /* Publisher.swift in Sources */,
 				CCB67B8D2B5FE159001B2A07 /* AIExploreViewController.swift in Sources */,
+				CC24996D2B7FBF9100612502 /* TouchGestureExploreModel.swift in Sources */,
 				CCC53F042B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift in Sources */,
 				CCB67B992B5FF813001B2A07 /* ARCharacterSelectionViewController.swift in Sources */,
 				CC9857B12B623F1B000D621A /* ActionProtocol.swift in Sources */,
@@ -445,6 +466,7 @@
 				CCADA62E2B5952AD000C373E /* SceneDelegate.swift in Sources */,
 				CC78E3472B63997C0038088C /* ARCharacterActionData.swift in Sources */,
 				CCB67B8B2B5FE0E6001B2A07 /* KioskViewController.swift in Sources */,
+				CC24996B2B7FA1F600612502 /* BlurredExploreStageDescriptionView.swift in Sources */,
 				CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */,
 				CC0EF9142B74C49800206431 /* BlurredButton.swift in Sources */,
 				CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */,
@@ -452,6 +474,8 @@
 				CC0EF9162B74E15500206431 /* ARSceneView.swift in Sources */,
 				CCAC2CB52B6BBF0300D73E69 /* RadioButton.swift in Sources */,
 				CCAC2CAF2B6B6D8300D73E69 /* HomeView.swift in Sources */,
+				CC2499692B7FA1A700612502 /* BlurredExploreIndicatorStackView.swift in Sources */,
+				CC2499702B8506D300612502 /* ExploreStages.swift in Sources */,
 				CC9857AE2B622F16000D621A /* ARObjectData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

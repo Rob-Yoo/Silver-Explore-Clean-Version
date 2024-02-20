@@ -9,9 +9,9 @@ import ARKit
 import UIKit
 
 class TouchGestureExploreViewController: UIViewController {
+    var id = String(describing: TouchGestureExploreViewController.self)
     private let sceneView = ARSceneView(frame: .infinite)
-//    private let sceneView = TouchGestureExploreView(blurEffect: .init(style: .systemThinMaterialDark))
-    private let arCharacter: ARCharacterProtocol
+    private let model: TouchGestureExploreModel
     
     override func loadView() {
         self.view = sceneView
@@ -26,7 +26,7 @@ class TouchGestureExploreViewController: UIViewController {
     }
     
     init(arCharacter: ARCharacterProtocol) {
-        self.arCharacter = arCharacter
+        self.model = TouchGestureExploreModel(arCharacter: arCharacter)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -45,7 +45,17 @@ class TouchGestureExploreViewController: UIViewController {
 //MARK: - Communicate with View
 extension TouchGestureExploreViewController: ARScneneViewDelegate {
     func getContainerNode() -> SCNNode? {
-        return self.arCharacter.getContainerNode()
+        return self.model.getContainerNodeOfARCharacter()
+    }
+}
+
+extension TouchGestureExploreViewController: TouchGestureExploreViewDelegate {
+    func prevButtonTapped() {
+        self.model.movePrevStage(self.model)
+    }
+    
+    func nextButtonTapped() {
+        self.model.moveNextStage(self.model)
     }
 }
 

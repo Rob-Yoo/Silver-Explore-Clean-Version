@@ -7,16 +7,24 @@
 
 import UIKit
 
+@objc protocol TouchGestureExploreViewDelegate: AnyObject {
+    @objc func prevButtonTapped()
+    @objc func nextButtonTapped()
+}
+
 final class TouchGestureExploreView: UIView {
     private(set) var exploreIndicatorStackView: BlurredExploreIndicatorStackView
-    private(set) var exploreStageDescriptionView: UIVisualEffectView
+    private(set) var exploreStageDescriptionView: BlurredExploreStageDescriptionView
+    
+    weak var touchGestureExploreViewDelegate: TouchGestureExploreViewDelegate?
     
     init(blurEffect: UIBlurEffect) {
-        self.exploreIndicatorStackView = BlurredExploreIndicatorStackView(blurEffect: blurEffect)
+        self.exploreIndicatorStackView = BlurredExploreIndicatorStackView(effect: blurEffect)
         self.exploreStageDescriptionView = BlurredExploreStageDescriptionView(effect: blurEffect)
-        
+
         super.init(frame: .zero)
         self.configureSubViews()
+//        self.addUserAction()
     }
     
     required init?(coder: NSCoder) {
@@ -48,190 +56,34 @@ final class TouchGestureExploreView: UIView {
             .heightAnchor(self.heightAnchor, multiplier: 0.5)
             .centerXAnchor(self.centerXAnchor)
             .centerYAnchor(self.centerYAnchor)
+        
+        self.exploreStageDescriptionView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(self.exploreStageDescriptionViewTapped))
+        )
     }
 }
 
-final class BlurredExploreIndicatorStackView: UIStackView {
-    private(set) var prevButton: BlurredButton
-    private(set) var nextButton: BlurredButton
-    private(set) var exploreStageTitleView: BlurredExploreStageTitleView
-    private var indicatorViews: [UIView] {
-        return [self.prevButton, self.exploreStageTitleView, self.nextButton]
+// MARK: - User Action Handling
+extension TouchGestureExploreView {
+    @objc private func exploreStageDescriptionViewTapped() {
+        self.exploreStageDescriptionView.isHidden = true
     }
-    
-    init(blurEffect: UIBlurEffect) {
-        self.prevButton = BlurredButton.makePrevButton(blurEffect: blurEffect)
-        self.nextButton = BlurredButton.makeNextButton(blurEffect: blurEffect)
-        self.exploreStageTitleView = BlurredExploreStageTitleView(effect: blurEffect)
-        super.init(frame: .zero)
-        self.configure()
-    }
-    
-    required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func configure() {
-        self.axis = .horizontal
-        self.alignment = .fill
-        self.distribution = .fill
-        self.spacing = 60
-        self.indicatorViews.forEach {
-            self.addArrangedSubview($0)
+}
+
+// MARK: - Communicate with ViewController
+extension TouchGestureExploreView {
+    private func addUserAction() {
+        guard let delegate = touchGestureExploreViewDelegate else {
+            fatalError("TouchGestureExploreViewDelegate 지정 후 사용해주세요!")
         }
         
-        self.configurePrevButton()
-        self.configureNextButton()
-        self.configureExploreStageTitleView()
-    }
-    
-    private func configurePrevButton() {
-        self.prevButton.layer.cornerRadius = 10
-        self.prevButton.clipsToBounds = true
-
-        self.prevButton
-            .size(.init(width: 100, height: self.frame.height))
-    }
-    
-    private func configureNextButton() {
-        self.nextButton.layer.cornerRadius = 10
-        self.nextButton.clipsToBounds = true
+        self.exploreIndicatorStackView.prevButton.addTarget(delegate, action: #selector(delegate.prevButtonTapped), for: .touchUpInside)
         
-        self.nextButton
-            .size(.init(width: 100, height: self.frame.height))
+        self.exploreIndicatorStackView.nextButton.addTarget(delegate, action: #selector(delegate.nextButtonTapped), for: .touchUpInside)
     }
     
-    private func configureExploreStageTitleView() {
-        self.exploreStageTitleView.layer.cornerRadius = 10
-        self.exploreStageTitleView.clipsToBounds = true
-    }
-}
-
-final class BlurredExploreStageTitleView: UIVisualEffectView {
-    private(set) var stageTitleLabel: UILabel = {
-        let label = UILabel()
-        
-        label.text = "탭하기 - 짧게"
-        label.textColor = .white
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
-        
-        return label
-    }()
-    
-    override init(effect: UIVisualEffect?) {
-        super.init(effect: effect)
-        self.configure()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func configure() {
-        self.contentView.addSubview(self.stageTitleLabel)
-        
-        self.stageTitleLabel
-            .centerXAnchor(self.centerXAnchor)
-            .centerYAnchor(self.centerYAnchor)
-    }
-}
-
-final class BlurredExploreStageDescriptionView: UIVisualEffectView {
-    private(set) var exploreStageDescriptionStackView = ExploreStageDescriptionStackView()
-    
-    override init(effect: UIVisualEffect?) {
-        super.init(effect: effect)
-        self.configure()
-    }
-    
-    private func configure() {
-        self.contentView.addSubview(self.exploreStageDescriptionStackView)
-        
-        self.exploreStageDescriptionStackView.widthAnchor(self.widthAnchor)
-            .heightAnchor(self.heightAnchor)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-final class ExploreStageDescriptionStackView: UIStackView {
-    private(set) var descriptionImageView: UIView = {
-        let view = UIView()
-        let imageView = UIImageView(image: .tap)
-        
-        view.addSubview(imageView)
-        imageView.contentMode = .scaleAspectFit
-        imageView
-            .widthAnchor(view.widthAnchor, multiplier: 0.5)
-            .heightAnchor(view.heightAnchor, multiplier: 0.8)
-            .centerXAnchor(view.centerXAnchor)
-            .centerYAnchor(view.centerYAnchor)
-        return view
-    }()
-    
-    private(set) var descriptionLabel: UILabel = {
-        let label = UILabel()
-        
-        label.text = "한 손가락을 사용해\n AR 캐릭터를 짧게 탭해보세요!"
-        label.numberOfLines = 2
-        label.font = .systemFont(ofSize: 30, weight: .semibold)
-        label.textColor = .white
-        label.textAlignment = .center
-        
-        return label
-    }()
-    
-    private let exploreStartLabel: UILabel = {
-        let label = UILabel()
-        
-        label.text = "터치하여 시작하기"
-        label.font = .systemFont(ofSize: 35)
-        label.textAlignment = .center
-        label.textColor = .white
-        
-        return label
-    }()
-    
-    private let lineView: UIView = {
-        let line = UIView()
-        line.backgroundColor = .white
-        return line
-    }()
-    
-    private var descriptionViews: [UIView] {
-        return [self.descriptionImageView, self.descriptionLabel, self.exploreStartLabel]
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.configure()
-    }
-    
-    required init(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func configure() {
-        self.axis = .vertical
-        self.alignment = .fill
-        self.distribution = .fillEqually
-        self.descriptionViews.forEach {
-            self.addArrangedSubview($0)
-        }
-        
-        self.configureLineView()
-    }
-    
-    private func configureLineView() {
-        guard let lastView = self.arrangedSubviews.last else { return }
-        
-        lastView.addSubview(self.lineView)
-        self.lineView
-            .topAnchor(lastView.topAnchor)
-            .widthAnchor(lastView.widthAnchor)
-            .heightAnchor(equalToConstant: 1)
+    func update(_ title: String, _ image: UIImage, _ description: String) {
+        self.exploreIndicatorStackView.update(title)
+        self.exploreStageDescriptionView.update(image, description)
     }
 }
