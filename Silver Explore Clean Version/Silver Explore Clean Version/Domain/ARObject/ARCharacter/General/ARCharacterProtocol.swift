@@ -9,13 +9,10 @@ import ARKit
 
 protocol RotationActionProtocol: RightAngleRotationActionProtocol, EulerAngleRotationActionProtocol, ZAxisRotationActionProtocol {}
 
-protocol ARCharacterActionProtocol: JumpActionProtocol, HighJumpActionProtocol, ScaleActionProtocol, RotationActionProtocol {
+protocol ARCharacterProtocol: JumpActionProtocol, HighJumpActionProtocol, ScaleActionProtocol, RotationActionProtocol {
+    static func makeContainerNode() -> SCNNode?
+    func getContainerNode() -> SCNNode?
     func setScneneView(sceneView: ARSCNView)
     func resetAngle()
     func resetScale()
-}
-
-protocol ARCharacterProtocol: ARCharacterActionProtocol {
-    func getContainerNode() -> SCNNode?
-    static func makeContainerNode() -> SCNNode?
 }
