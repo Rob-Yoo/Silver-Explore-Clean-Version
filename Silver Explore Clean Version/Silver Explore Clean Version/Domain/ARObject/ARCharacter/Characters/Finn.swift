@@ -14,11 +14,11 @@ final class Finn: ARCharacterProtocol {
     
     init(containerNode: SCNNode) {
         let initialEulerAngle: SCNVector3
-        let initialScale: CGFloat
+        let initialScale: SCNVector3
         
         self.objectData = ARObjectData(characterContainerNode: containerNode, characterNodeName: String(describing: Finn.self))
         initialEulerAngle = self.objectData.characterNode.eulerAngles
-        initialScale = CGFloat(self.objectData.characterNode.scale.x)
+        initialScale = self.objectData.characterNode.scale
         self.actionData = ARCharacterActionData(initialEulerAngle: initialEulerAngle, initialScale: initialScale)
     }
     
@@ -73,10 +73,10 @@ extension Finn {
         
         func readyAction() {
             let scaleAction = SCNAction.customAction(duration: 0.0) {
-                (_, _) in
-                let initialScale = self.actionData.initialScale
+                [weak self] (_, _) in
+                guard let initialScale = self?.actionData.initialScale else { return }
 
-                self.objectData.characterNode.scale = SCNVector3(initialScale, initialScale - 0.0002, initialScale)
+                self?.objectData.characterNode.scale = SCNVector3(initialScale.x, initialScale.y, initialScale.z - 0.0002)
             }
 
             self.objectData.characterNode.runAction(scaleAction)
@@ -84,11 +84,12 @@ extension Finn {
         
         func highJumpAction(longPressDuration: CFTimeInterval) {
             let scaleAction = SCNAction.customAction(duration: 0.0) {
-                (_, _) in
-                let initialScale = self.actionData.initialScale
+                [weak self] (_, _) in
+                guard let initialScale = self?.actionData.initialScale else { return }
 
-                self.objectData.characterNode.scale = SCNVector3(initialScale, initialScale, initialScale)
+                self?.objectData.characterNode.scale = initialScale
             }
+            
             let jumpHeight = CGFloat(longPressDuration) * 0.1
             let jumpAction = SCNAction.moveBy(x: 0, y: jumpHeight, z: 0, duration: 0.2)
             let fallAction = SCNAction.moveBy(x: 0, y: -jumpHeight, z: 0, duration: 0.2)
@@ -166,10 +167,10 @@ extension Finn {
     }
     
     func resetScale() {
-        let resetScaleAction = SCNAction.customAction(duration: 0.2) { (_, _) in
-            let initialScale = self.actionData.initialScale
+        let resetScaleAction = SCNAction.customAction(duration: 0.2) { [weak self] (_, _) in
+            guard let initialScale = self?.actionData.initialScale else { return }
 
-            self.objectData.characterNode.scale = SCNVector3(initialScale, initialScale, initialScale)
+            self?.objectData.characterNode.scale = initialScale
         }
         
         self.objectData.characterNode.runAction(resetScaleAction)

@@ -6,26 +6,26 @@
 //
 import UIKit
 
-protocol JumpActionProtocol {
-    func jump()
+@objc protocol JumpActionProtocol {
+    @objc func jump()
 }
 
-protocol HighJumpActionProtocol {
-    func highJump(_ gesture: UILongPressGestureRecognizer)
+@objc protocol HighJumpActionProtocol {
+    @objc func highJump(_ gesture: UILongPressGestureRecognizer)
 }
 
-protocol ScaleActionProtocol {
-    func scaleUpAndDown(_ gesture: UIPinchGestureRecognizer)
+@objc protocol ScaleActionProtocol {
+    @objc func scaleUpAndDown(_ gesture: UIPinchGestureRecognizer)
 }
 
-protocol RightAngleRotationActionProtocol {
-    func rightAngleRotate(_ gesture: UISwipeGestureRecognizer)
+@objc protocol RightAngleRotationActionProtocol {
+    @objc func rightAngleRotate(_ gesture: UISwipeGestureRecognizer)
 }
 
-protocol EulerAngleRotationActionProtocol {
-    func eulerAngleRotate(_ gesture: UIPanGestureRecognizer)
+@objc protocol EulerAngleRotationActionProtocol {
+    @objc func eulerAngleRotate(_ gesture: UIPanGestureRecognizer)
 }
 
-protocol ZAxisRotationActionProtocol {
-    func zAxisRotate(_ gesture: UIRotationGestureRecognizer)
+@objc protocol ZAxisRotationActionProtocol {
+    @objc func zAxisRotate(_ gesture: UIRotationGestureRecognizer)
 }

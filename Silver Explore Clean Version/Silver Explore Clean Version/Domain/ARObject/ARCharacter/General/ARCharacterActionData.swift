@@ -9,7 +9,7 @@ import ARKit
 
 struct ARCharacterActionData {
     let initialEulerAngle: SCNVector3
-    let initialScale: CGFloat
+    let initialScale: SCNVector3
     var updatedScale: CGFloat = 0.0
     var longPressStartTime: CFTimeInterval = 0
 }

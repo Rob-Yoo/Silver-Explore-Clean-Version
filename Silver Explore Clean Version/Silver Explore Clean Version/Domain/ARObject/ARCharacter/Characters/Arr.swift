@@ -14,11 +14,11 @@ final class Arr: ARCharacterProtocol {
     
     init(containerNode: SCNNode) {
         let initialEulerAngle: SCNVector3
-        let initialScale: CGFloat
+        let initialScale: SCNVector3
         
         self.objectData = ARObjectData(characterContainerNode: containerNode, characterNodeName: String(describing: Arr.self))
         initialEulerAngle = self.objectData.characterNode.eulerAngles
-        initialScale = CGFloat(self.objectData.characterNode.scale.x)
+        initialScale = self.objectData.characterNode.scale
         self.actionData = ARCharacterActionData(initialEulerAngle: initialEulerAngle, initialScale: initialScale)
     }
     
@@ -79,15 +79,17 @@ extension Arr {
                 (_, _) in
                 let initialScale = self.actionData.initialScale
 
-                self.objectData.characterNode.scale = SCNVector3(initialScale, initialScale - 0.000003, initialScale)
+                self.objectData.characterNode.scale = SCNVector3(initialScale.x, initialScale.y - 0.000003, initialScale.z)
             }
             self.objectData.characterNode.runAction(scaleAction)
         }
 
         func highJumpAction(longPressDuration: CFTimeInterval) {
             let scaleAction = SCNAction.customAction(duration: 0.0) {
-                (_, _) in
-                self.objectData.characterNode.scale = SCNVector3(0.00002, 0.00002, 0.00002)
+                [weak self] (_, _) in
+                guard let initialScale = self?.actionData.initialScale else { return }
+
+                self?.objectData.characterNode.scale = initialScale
             }
             let jumpHeight = CGFloat(longPressDuration) * 0.1
             let jumpAction = SCNAction.moveBy(x: 0, y: jumpHeight, z: 0, duration: 0.2)
@@ -164,10 +166,10 @@ extension Arr {
     }
     
     func resetScale() {
-        let resetScaleAction = SCNAction.customAction(duration: 0.2) { (_, _) in
-            let initialScale = self.actionData.initialScale
-
-            self.objectData.characterNode.scale = SCNVector3(initialScale, initialScale, initialScale)
+        let resetScaleAction = SCNAction.customAction(duration: 0.2) { [weak self] (_, _) in
+            guard let initialScale = self?.actionData.initialScale else { return }
+            
+            self?.objectData.characterNode.scale = initialScale
         }
         
         self.objectData.characterNode.runAction(resetScaleAction)

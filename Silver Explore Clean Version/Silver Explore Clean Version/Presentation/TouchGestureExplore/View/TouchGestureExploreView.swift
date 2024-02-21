@@ -24,7 +24,6 @@ final class TouchGestureExploreView: UIView {
 
         super.init(frame: .zero)
         self.configureSubViews()
-//        self.addUserAction()
     }
     
     required init?(coder: NSCoder) {
@@ -72,18 +71,26 @@ extension TouchGestureExploreView {
 
 // MARK: - Communicate with ViewController
 extension TouchGestureExploreView {
-    private func addUserAction() {
+    func addUserAction() {
         guard let delegate = touchGestureExploreViewDelegate else {
             fatalError("TouchGestureExploreViewDelegate 지정 후 사용해주세요!")
         }
         
         self.exploreIndicatorStackView.prevButton.addTarget(delegate, action: #selector(delegate.prevButtonTapped), for: .touchUpInside)
-        
         self.exploreIndicatorStackView.nextButton.addTarget(delegate, action: #selector(delegate.nextButtonTapped), for: .touchUpInside)
     }
     
-    func update(_ title: String, _ image: UIImage, _ description: String) {
-        self.exploreIndicatorStackView.update(title)
-        self.exploreStageDescriptionView.update(image, description)
+    func update(exploreStage: ExploreStage) {
+        self.updateGestureRecognizer(exploreStage)
+        self.exploreIndicatorStackView.update(exploreStage.title)
+        self.exploreStageDescriptionView.isHidden = false
+        self.exploreStageDescriptionView.update(exploreStage.image, exploreStage.description)
+    }
+    
+    private func updateGestureRecognizer(_ exploreStage: ExploreStage) {
+        let currentGestureRecognizers = self.gestureRecognizers ?? [UIGestureRecognizer]()
+        
+        currentGestureRecognizers.forEach { self.removeGestureRecognizer($0) }
+        exploreStage.gestureRecognizers.forEach { self.addGestureRecognizer($0) }
     }
 }

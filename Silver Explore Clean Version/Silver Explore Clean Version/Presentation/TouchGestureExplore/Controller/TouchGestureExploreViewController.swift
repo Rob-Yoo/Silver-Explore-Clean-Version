@@ -7,15 +7,18 @@
 
 import ARKit
 import UIKit
+import Combine
 
 class TouchGestureExploreViewController: UIViewController {
     var id = String(describing: TouchGestureExploreViewController.self)
     private let sceneView = ARSceneView(frame: .infinite)
     private let model: TouchGestureExploreModel
+    private var cancellables = Set<AnyCancellable>()
     
     override func loadView() {
         self.view = sceneView
         self.sceneView.arSceneViewDelegate = self
+        self.sceneView.touchGestureExploreView.touchGestureExploreViewDelegate = self
         self.sceneView.autoenablesDefaultLighting = true
     }
     
@@ -23,6 +26,7 @@ class TouchGestureExploreViewController: UIViewController {
         super.viewDidLoad()
         
         self.sceneView.beginARSession()
+        self.observeModel()
     }
     
     init(arCharacter: ARCharacterProtocol) {
@@ -56,6 +60,27 @@ extension TouchGestureExploreViewController: TouchGestureExploreViewDelegate {
     
     func nextButtonTapped() {
         self.model.moveNextStage(self.model)
+    }
+}
+
+//MARK: - Observing  Model
+extension TouchGestureExploreViewController {
+    func observeModel() {
+        self.model.$stage
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] newStage in
+                self?.sceneView.touchGestureExploreView.update(exploreStage: newStage)
+        }
+        .store(in: &cancellables)
+        
+        self.model.$isFinish
+            .receive(on: DispatchQueue.main)
+            .sink { isFinish in
+            if (isFinish) {
+                NavigationManager.shared.pop()
+            }
+        }
+        .store(in: &cancellables)
     }
 }
 

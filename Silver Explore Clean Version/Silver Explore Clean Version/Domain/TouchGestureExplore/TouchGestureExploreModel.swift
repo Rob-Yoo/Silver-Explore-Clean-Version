@@ -6,14 +6,16 @@
 //
 
 import ARKit
+import Combine
 
 class TouchGestureExploreModel {
-    private var arCharacter: ARCharacterProtocol
-    var stage: ExploreStage = TapStage()
-    var isFinish: Bool = false
+    @Published var stage: ExploreStage
+    @Published var isFinish: Bool = false
+    private(set) var arCharacter: ARCharacterProtocol
     
     init(arCharacter: ARCharacterProtocol) {
         self.arCharacter = arCharacter
+        self.stage = TapStage(arCharacter: self.arCharacter)
     }
     
     func getContainerNodeOfARCharacter() -> SCNNode? {
