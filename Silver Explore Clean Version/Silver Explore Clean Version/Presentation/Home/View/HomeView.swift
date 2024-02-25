@@ -22,7 +22,7 @@ final class HomeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureSubviews()
+        self.configureSubviews()
     }
     
     required init?(coder: NSCoder) {

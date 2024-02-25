@@ -30,4 +30,15 @@ final class PrevButton: UIButton {
         
         self.size(.init(width: 100, height: 50))
     }
+    
+    func title(_ text: String) -> Self {
+        self.setTitle(" " + text, for: .normal)
+        return self
+    }
+    
+    func tintColor(_ color: UIColor) -> Self {
+        self.setTitleColor(color, for: .normal)
+        self.tintColor = color
+        return self
+    }
 }

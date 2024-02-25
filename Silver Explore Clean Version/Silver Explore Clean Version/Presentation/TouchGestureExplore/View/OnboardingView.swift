@@ -14,14 +14,14 @@ final class OnboardingView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .clear
-        self.configureSubViews()
+        self.configureSubviews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureSubViews() {
+    private func configureSubviews() {
         self.configureBlurEffectBackgroundView()
         self.configureOnboardingGuideView()
     }
@@ -68,14 +68,14 @@ final class OnboardingGuideView: UIView {
         self.backgroundColor = .clear
         self.layer.cornerRadius = 30
         self.clipsToBounds = true
-        self.configureSubViews()
+        self.configureSubviews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureSubViews() {
+    private func configureSubviews() {
         self.configureTicketImageView()
         self.configureGuideLabel()
     }

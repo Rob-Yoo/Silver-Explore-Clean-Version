@@ -25,7 +25,7 @@ final class CharacterSelectionView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.configureSubViews()
+        self.configureSubviews()
     }
     
     required init?(coder: NSCoder) {
@@ -35,7 +35,7 @@ final class CharacterSelectionView: UIView {
 
 //MARK: - AutoLayout
 extension CharacterSelectionView {
-    private func configureSubViews() {
+    private func configureSubviews() {
         self.configureBackgroundImageView()
         self.configureTitleView()
         self.configurePrevButton()

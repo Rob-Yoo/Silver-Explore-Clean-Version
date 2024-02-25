@@ -10,7 +10,6 @@ import UIKit
 import Combine
 
 class TouchGestureExploreViewController: UIViewController {
-    var id = String(describing: TouchGestureExploreViewController.self)
     private let sceneView = ARSceneView(frame: .infinite)
     private let model: TouchGestureExploreModel
     private var cancellables = Set<AnyCancellable>()

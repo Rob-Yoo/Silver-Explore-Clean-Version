@@ -15,14 +15,14 @@ final class ExploreButtonsView: UIView {
     init() {
         super.init(frame: .zero)
         self.backgroundColor = .clear
-        configureSubViews()
+        self.configureSubviews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureSubViews() {
+    private func configureSubviews() {
         let btnWidth = UIImage.touchGestureExplorer.size.width
         let btnHeight = UIImage.touchGestureExplorer.size.height
         

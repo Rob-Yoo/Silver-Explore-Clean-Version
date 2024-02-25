@@ -21,14 +21,14 @@ final class ARSceneView: ARSCNView {
     override init(frame: CGRect, options: [String : Any]? = nil) {
         super.init(frame: frame, options: nil)
         self.delegate = self
-        self.configureSubViews()
+        self.configureSubviews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureSubViews() {
+    private func configureSubviews() {
         self.configureOnboardingView()
     }
     

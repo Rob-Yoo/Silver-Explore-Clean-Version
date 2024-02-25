@@ -23,14 +23,14 @@ final class TouchGestureExploreView: UIView {
         self.exploreStageDescriptionView = BlurredExploreStageDescriptionView(effect: blurEffect)
 
         super.init(frame: .zero)
-        self.configureSubViews()
+        self.configureSubviews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureSubViews() {
+    private func configureSubviews() {
         self.configureExploreIndicatorStackView()
         self.configureExploreStageDescriptionView()
     }
