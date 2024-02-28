@@ -252,6 +252,7 @@
 				CCADA63F2B595309000C373E /* App */,
 				CCADA6402B595316000C373E /* Presentation */,
 				CCADA6412B595327000C373E /* Domain */,
+				CCADA6422B59532F000C373E /* Util */,
 				CCADA6342B5952AE000C373E /* Assets.xcassets */,
 				CCADA6362B5952AE000C373E /* LaunchScreen.storyboard */,
 				CCADA6392B5952AE000C373E /* Info.plist */,
@@ -286,7 +287,6 @@
 			children = (
 				CC78E34A2B63BEA20038088C /* ARObject */,
 				CC9857AB2B622DE3000D621A /* TouchGestureExplore */,
-				CCADA6422B59532F000C373E /* Util */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
