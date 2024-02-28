@@ -56,13 +56,12 @@ final class HeaderView: UIView {
     }
     
     private func configureTitleLabel() {
-        let centerYAnchorValue: CGFloat = self.subtitle.isEmpty ? 0 : -30
+        let centerYAnchorValue: CGFloat = self.subtitle.isEmpty ? 0 : -25
 
         self.addSubview(self.titleLabel)
         self.titleLabel
             .centerXAnchor(self.centerXAnchor)
             .centerYAnchor(self.centerYAnchor, constant: centerYAnchorValue)
-            .size(.init(width: 600, height: 200))
     }
     
     private func configureSubtitleLabel() {
@@ -71,7 +70,33 @@ final class HeaderView: UIView {
         self.addSubview(self.subtitleLabel)
         self.subtitleLabel
             .centerXAnchor(self.centerXAnchor)
-            .centerYAnchor(self.centerYAnchor, constant: 40)
-            .size(.init(width: 600, height: 200))
+            .centerYAnchor(self.centerYAnchor, constant: 30)
+    }
+}
+
+//MARK: - View Modifiers
+
+extension HeaderView {
+    func backgroundColor(color: UIColor) -> Self {
+        self.backgroundColor = color
+        return self
+    }
+    
+    func textColor(color: UIColor) -> Self {
+        self.titleLabel.textColor = color
+        self.subtitleLabel.textColor = color
+        return self
+    }
+    
+    func titleLabelFont(font: UIFont) -> Self {
+        self.titleLabel.font = font
+        return self
+    }
+    
+    func subtitleLabelFont(font: UIFont) -> Self {
+        if (!self.subtitle.isEmpty) {
+            self.subtitleLabel.font = font
+        }
+        return self
     }
 }

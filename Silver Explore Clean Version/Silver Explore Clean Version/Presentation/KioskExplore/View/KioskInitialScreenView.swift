@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class InitialScreenView: UIView {
+final class KioskInitialScreenView: UIView {
     private(set) var prevButton = PrevButton().title("종료").tintColor(.white)
     private(set) var backgroundImageView = UIImageView(image: .kioskMain)
     private(set) var buttonStackView = ButtonStackView()
@@ -22,7 +22,7 @@ final class InitialScreenView: UIView {
     }
     
     private func configureSubviews() {
-        self.backgroundColor = UIColor(red: 0.41, green: 0.62, blue: 0.97, alpha: 1.00)
+        self.backgroundColor = UIColor.mainTheme
         self.configurePrevButton()
         self.configureBackgroundImageView()
         self.configureButtonStackView()
@@ -118,6 +118,6 @@ final class ImageButtonView: UIView {
     }
     
     @objc private func buttonTapped() {
-        //TODO: - 스택 네비게이션을 사용할지 아예 root view를 교체해줄지 고민해야함
+        NavigationManager.shared.push(KioskMainViewController())
     }
 }

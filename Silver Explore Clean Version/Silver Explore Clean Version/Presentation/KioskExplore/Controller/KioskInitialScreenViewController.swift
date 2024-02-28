@@ -7,8 +7,8 @@
 
 import UIKit
 
-class KioskViewController: UIViewController {
-    private let initialScreenView = InitialScreenView()
+final class KioskInitialScreenViewController: UIViewController {
+    private let initialScreenView = KioskInitialScreenView()
 
     override func loadView() {
         super.loadView()
@@ -22,21 +22,21 @@ class KioskViewController: UIViewController {
 
 #if DEBUG
 import SwiftUI
-struct ViewControllerRepresentable_KVC: UIViewControllerRepresentable {
+struct ViewControllerRepresentable_KIVC: UIViewControllerRepresentable {
     
 func updateUIViewController(_ uiView: UIViewController,context: Context) {
         // leave this empty
 }
 @available(iOS 13.0.0, *)
 func makeUIViewController(context: Context) -> UIViewController{
-        KioskViewController()
+        KioskInitialScreenViewController()
     }
 }
 @available(iOS 13.0, *)
-struct ViewControllerRepresentable_KVC_PreviewProvider: PreviewProvider {
+struct ViewControllerRepresentable_KIVC_PreviewProvider: PreviewProvider {
     static var previews: some View {
         Group {
-            ViewControllerRepresentable_KVC()
+            ViewControllerRepresentable_KIVC()
                 .ignoresSafeArea()
                 .previewDisplayName(/*@START_MENU_TOKEN@*/"Preview"/*@END_MENU_TOKEN@*/)
         }

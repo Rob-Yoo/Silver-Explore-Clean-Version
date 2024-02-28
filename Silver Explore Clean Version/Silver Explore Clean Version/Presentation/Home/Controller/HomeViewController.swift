@@ -30,7 +30,7 @@ extension HomeViewController: HomeViewDelegate {
     }
     
     @objc func kioskExploreBtnTapped() {
-        NavigationManager.shared.push(KioskViewController())
+        NavigationManager.shared.push(KioskInitialScreenViewController())
     }
 
     @objc func aiExploreBtnTapped() {
