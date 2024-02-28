@@ -18,8 +18,8 @@ final class PrevButton: UIButton {
     }
     
     private func configurePrevButton() {
-        let btnFont = UIFont.systemFont(ofSize: 25, weight: .semibold)
-        let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 25, weight: .semibold)
+        let btnFont = UIFont.systemFont(ofSize: 30, weight: .semibold)
+        let imageConfiguration = UIImage.SymbolConfiguration(pointSize: 30, weight: .semibold)
         let btnImage = UIImage(systemName: "chevron.left", withConfiguration: imageConfiguration)
         
         self.setImage(btnImage, for: .normal)
