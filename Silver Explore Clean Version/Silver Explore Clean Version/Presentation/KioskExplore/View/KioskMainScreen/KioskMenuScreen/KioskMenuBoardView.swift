@@ -24,18 +24,6 @@ final class KioskMenuBoardView: UIView {
     
     private(set) lazy var menuCollectionView = MenuCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     
-//    private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
-//        let layout = UICollectionViewFlowLayout()
-//        let width = self.frame.width / 4 - 10
-//
-//        layout.itemSize = CGSize(width: width, height: width)
-//        layout.scrollDirection = .vertical
-//        layout.sectionInset = .init(top: 20, left: 0, bottom: 20, right: 0)
-//        layout.minimumInteritemSpacing = 10
-//        
-//        return layout
-//    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .clear

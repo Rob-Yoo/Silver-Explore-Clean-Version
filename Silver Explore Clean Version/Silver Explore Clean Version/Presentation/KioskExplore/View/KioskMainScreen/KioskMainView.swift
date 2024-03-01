@@ -10,6 +10,7 @@ import UIKit
 final class KioskMainView: UIView {
     private(set) var headerView = HeaderView(title: "은빛 탐험 카페", subtitle: "Silver Light Exploration Cafe")
     private(set) var menuBoardView = KioskMenuBoardView()
+    private(set) var footerView = KioskFooterStackView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +25,7 @@ final class KioskMainView: UIView {
     private func configureSubviews() {
         self.configureHeaderView()
         self.configureMenuBoardView()
+        self.configureFooterView()
     }
     
     private func configureHeaderView() {
@@ -45,5 +47,15 @@ final class KioskMainView: UIView {
             .topAnchor(self.headerView.bottomAnchor)
             .widthAnchor(self.widthAnchor)
             .heightAnchor(self.heightAnchor, multiplier: 0.6)
+    }
+    
+    private func configureFooterView() {
+        self.addSubview(self.footerView)
+        
+        self.footerView
+            .topAnchor(self.menuBoardView.bottomAnchor, padding: 10)
+            .leadingAnchor(self.leadingAnchor, padding: 10)
+            .trailingAnchor(self.trailingAnchor, padding: -10)
+            .bottomAnchor(self.safeAreaLayoutGuide.bottomAnchor)
     }
 }
