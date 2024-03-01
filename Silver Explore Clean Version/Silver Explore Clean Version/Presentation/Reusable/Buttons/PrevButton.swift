@@ -27,8 +27,6 @@ final class PrevButton: UIButton {
         self.titleLabel?.font = btnFont
         self.setTitleColor(.black, for: .normal)
         self.tintColor = .black
-        
-        self.size(.init(width: 100, height: 50))
     }
     
     func title(_ text: String) -> Self {

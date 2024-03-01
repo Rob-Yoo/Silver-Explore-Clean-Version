@@ -67,6 +67,7 @@ extension CharacterSelectionView {
         self.prevButton
             .topAnchor(self.safeAreaLayoutGuide.topAnchor, padding: 20)
             .leadingAnchor(self.leadingAnchor, padding: 20)
+            .size(.init(width: 120, height: 40))
     }
     
     private func configureSelectionView() {

@@ -15,6 +15,7 @@ final class KioskInitialScreenView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configureSubviews()
+        self.addUserActionListener()
     }
     
     required init?(coder: NSCoder) {
@@ -56,6 +57,14 @@ final class KioskInitialScreenView: UIView {
             .widthAnchor(self.widthAnchor)
             .heightAnchor(self.heightAnchor, multiplier: 0.2)
             .centerXAnchor(self.centerXAnchor)
+    }
+    
+    private func addUserActionListener() {
+        self.prevButton.addTarget(self, action: #selector(self.prevButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func prevButtonTapped() {
+        NavigationManager.shared.pop()
     }
 }
 
