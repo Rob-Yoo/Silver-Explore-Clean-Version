@@ -20,6 +20,8 @@
 		CC24996D2B7FBF9100612502 /* TouchGestureExploreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24996C2B7FBF9100612502 /* TouchGestureExploreModel.swift */; };
 		CC2499702B8506D300612502 /* ExploreStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24996F2B8506D300612502 /* ExploreStage.swift */; };
 		CC2A9A392B93011400B99D33 /* OrderStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A382B93011400B99D33 /* OrderStatusTableViewCell.swift */; };
+		CC2A9A3C2B9304F600B99D33 /* PaymentButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A3B2B9304F600B99D33 /* PaymentButtonView.swift */; };
+		CC2A9A402B9309AB00B99D33 /* KioskRightFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A3F2B9309AB00B99D33 /* KioskRightFooterView.swift */; };
 		CC325D242B5CB7FF007C93DC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D232B5CB7FF007C93DC /* UIView+Extension.swift */; };
 		CC325D282B5D2E94007C93DC /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D272B5D2E94007C93DC /* NavigationManager.swift */; };
 		CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D292B5D3201007C93DC /* Observer.swift */; };
@@ -75,6 +77,8 @@
 		CC24996C2B7FBF9100612502 /* TouchGestureExploreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureExploreModel.swift; sourceTree = "<group>"; };
 		CC24996F2B8506D300612502 /* ExploreStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreStage.swift; sourceTree = "<group>"; };
 		CC2A9A382B93011400B99D33 /* OrderStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusTableViewCell.swift; sourceTree = "<group>"; };
+		CC2A9A3B2B9304F600B99D33 /* PaymentButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButtonView.swift; sourceTree = "<group>"; };
+		CC2A9A3F2B9309AB00B99D33 /* KioskRightFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskRightFooterView.swift; sourceTree = "<group>"; };
 		CC325D232B5CB7FF007C93DC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CC325D272B5D2E94007C93DC /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		CC325D292B5D3201007C93DC /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
@@ -179,9 +183,19 @@
 			isa = PBXGroup;
 			children = (
 				CC68B2862B91FE2900E4E767 /* KioskFooterStackView.swift */,
-				CC68B2882B92011F00E4E767 /* KioskCartScreen */,
+				CC68B2882B92011F00E4E767 /* KioskFooterLeftScreen */,
+				CC2A9A412B9311DB00B99D33 /* KioskFooterRightScreen */,
 			);
 			path = KioskFooterScreen;
+			sourceTree = "<group>";
+		};
+		CC2A9A412B9311DB00B99D33 /* KioskFooterRightScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CC2A9A3F2B9309AB00B99D33 /* KioskRightFooterView.swift */,
+				CC2A9A3B2B9304F600B99D33 /* PaymentButtonView.swift */,
+			);
+			path = KioskFooterRightScreen;
 			sourceTree = "<group>";
 		};
 		CC3DE2952B5A77A0004175E4 /* Navigatior */ = {
@@ -219,7 +233,7 @@
 			path = KioskMainScreen;
 			sourceTree = "<group>";
 		};
-		CC68B2882B92011F00E4E767 /* KioskCartScreen */ = {
+		CC68B2882B92011F00E4E767 /* KioskFooterLeftScreen */ = {
 			isa = PBXGroup;
 			children = (
 				CC68B2892B92013D00E4E767 /* KioskCartView.swift */,
@@ -228,7 +242,7 @@
 				CC2A9A382B93011400B99D33 /* OrderStatusTableViewCell.swift */,
 				CC68B28F2B92134200E4E767 /* OrderCountControlStackView.swift */,
 			);
-			path = KioskCartScreen;
+			path = KioskFooterLeftScreen;
 			sourceTree = "<group>";
 		};
 		CC68B2912B92144D00E4E767 /* KioskMenuScreen */ = {
@@ -566,6 +580,7 @@
 				CC2A9A392B93011400B99D33 /* OrderStatusTableViewCell.swift in Sources */,
 				CC68B28E2B9201AE00E4E767 /* OrderStatusTableView.swift in Sources */,
 				CCADA62E2B5952AD000C373E /* SceneDelegate.swift in Sources */,
+				CC2A9A402B9309AB00B99D33 /* KioskRightFooterView.swift in Sources */,
 				CC78E3472B63997C0038088C /* ARCharacterActionData.swift in Sources */,
 				CCB67B8B2B5FE0E6001B2A07 /* KioskInitialScreenViewController.swift in Sources */,
 				CC68B28A2B92013D00E4E767 /* KioskCartView.swift in Sources */,
@@ -589,6 +604,7 @@
 				CC2499702B8506D300612502 /* ExploreStage.swift in Sources */,
 				CC9857AE2B622F16000D621A /* ARObjectData.swift in Sources */,
 				CC07A37E2B905D6F00F0FD5B /* Product.swift in Sources */,
+				CC2A9A3C2B9304F600B99D33 /* PaymentButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

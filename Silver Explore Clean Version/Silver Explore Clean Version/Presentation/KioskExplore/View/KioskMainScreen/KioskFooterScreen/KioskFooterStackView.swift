@@ -9,7 +9,7 @@ import UIKit
 
 final class KioskFooterStackView: UIStackView {
     private(set) var kioskCartView = KioskCartView()
-    private(set) var view = UIView()
+    private(set) var view = KioskRightFooterView()
     private var arrangedViews: [UIView] {
         return [kioskCartView, view]
     }
@@ -17,7 +17,6 @@ final class KioskFooterStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configure()
-        self.view.backgroundColor = .white
     }
     
     required init(coder: NSCoder) {
