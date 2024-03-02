@@ -175,6 +175,15 @@
 			path = BlurredViews;
 			sourceTree = "<group>";
 		};
+		CC2A9A3A2B9303C600B99D33 /* KioskFooterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CC68B2862B91FE2900E4E767 /* KioskFooterStackView.swift */,
+				CC68B2882B92011F00E4E767 /* KioskCartScreen */,
+			);
+			path = KioskFooterScreen;
+			sourceTree = "<group>";
+		};
 		CC3DE2952B5A77A0004175E4 /* Navigatior */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,8 +212,8 @@
 		CC68B2812B91F70F00E4E767 /* KioskMainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CC2A9A3A2B9303C600B99D33 /* KioskFooterScreen */,
 				CC68B2912B92144D00E4E767 /* KioskMenuScreen */,
-				CC68B2882B92011F00E4E767 /* KioskCartScreen */,
 				CC1E2BB92B8F9D8A00653CBF /* KioskMainView.swift */,
 			);
 			path = KioskMainScreen;
@@ -213,7 +222,6 @@
 		CC68B2882B92011F00E4E767 /* KioskCartScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CC68B2862B91FE2900E4E767 /* KioskFooterStackView.swift */,
 				CC68B2892B92013D00E4E767 /* KioskCartView.swift */,
 				CC68B28B2B92016700E4E767 /* OrderCountView.swift */,
 				CC68B28D2B9201AE00E4E767 /* OrderStatusTableView.swift */,
