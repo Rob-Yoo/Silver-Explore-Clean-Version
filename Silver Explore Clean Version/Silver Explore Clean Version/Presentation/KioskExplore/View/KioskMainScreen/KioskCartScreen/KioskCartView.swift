@@ -14,8 +14,7 @@ final class KioskCartView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        self.orderStatusTableView.delegate = self
-        self.orderStatusTableView.dataSource = self
+        self.configureSubviews()
     }
     
     required init?(coder: NSCoder) {
@@ -33,32 +32,17 @@ final class KioskCartView: UIView {
         self.orderCountView
             .topAnchor(self.topAnchor)
             .widthAnchor(self.widthAnchor)
-            .heightAnchor(self.heightAnchor, multiplier: 0.1)
+            .heightAnchor(self.heightAnchor, multiplier: 0.2)
     }
     
     private func configureOrderStatusTableView() {
         self.addSubview(self.orderStatusTableView)
         
+        self.orderStatusTableView.separatorStyle = .none
         self.orderStatusTableView
             .topAnchor(self.orderCountView.bottomAnchor)
             .bottomAnchor(self.bottomAnchor)
             .widthAnchor(self.widthAnchor)
             .register(OrderStatusTableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
-    }
-}
-
-extension KioskCartView: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.orderStatusTableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! OrderStatusTableViewCell
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
     }
 }

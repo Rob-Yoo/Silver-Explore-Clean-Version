@@ -13,7 +13,6 @@ final class OrderCountView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
         self.configure()
     }
     
@@ -26,6 +25,7 @@ final class OrderCountView: UIView {
         
         label.text = text
         label.textColor = .black
+        label.font = .systemFont(ofSize: 25, weight: .regular)
         label.textAlignment = .center
         return label
     }
@@ -39,7 +39,7 @@ final class OrderCountView: UIView {
         self.addSubview(self.titleLabel)
         
         self.titleLabel
-            .leadingAnchor(self.leadingAnchor, padding: 2)
+            .leadingAnchor(self.leadingAnchor, padding: 10)
             .centerYAnchor(self.centerYAnchor)
     }
     
@@ -47,7 +47,7 @@ final class OrderCountView: UIView {
         self.addSubview(self.countLabel)
         
         self.countLabel
-            .trailingAnchor(self.trailingAnchor, padding: 2)
+            .trailingAnchor(self.trailingAnchor, padding: -5)
             .centerYAnchor(self.centerYAnchor)
     }
 }

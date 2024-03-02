@@ -10,6 +10,9 @@ import UIKit
 final class OrderStatusTableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
+        self.backgroundColor = .white
+        self.delegate = self
+        self.dataSource = self
     }
     
     required init?(coder: NSCoder) {
@@ -17,43 +20,28 @@ final class OrderStatusTableView: UITableView {
     }
 }
 
-final class OrderStatusTableViewCell: UITableViewCell {
-    private(set) var orderedItemNameLabel: UILabel = {
-        let label = UILabel()
+extension OrderStatusTableView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! OrderStatusTableViewCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // 테이블 뷰 셀의 커스텀 구분선
+        let separatorLineView = UIView()
         
-        label.text = "아메리카노"
-        label.textColor = .black
-        label.textAlignment = .center
-        return label
-    }()
-    private(set) var orderCountControlStackView = OrderCountControlStackView()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func configureSubviews() {
-        self.configureOrderedItemNameLabel()
-        self.configureOrderCountControlStackView()
-    }
-    
-    private func configureOrderedItemNameLabel() {
-        self.addSubview(self.orderedItemNameLabel)
-        
-        self.orderedItemNameLabel
-            .leadingAnchor(self.leadingAnchor, padding: 2)
-            .centerYAnchor(self.centerYAnchor)
-    }
-    
-    private func configureOrderCountControlStackView() {
-        self.addSubview(self.orderCountControlStackView)
-        
-        self.orderCountControlStackView
-            .trailingAnchor(self.trailingAnchor, padding: -2)
-            .centerYAnchor(self.centerYAnchor)
+        cell.contentView.addSubview(separatorLineView)
+        separatorLineView
+            .widthAnchor(cell.contentView.widthAnchor)
+            .heightAnchor(equalToConstant: 1)
+            .backgroundColor = tableView.separatorColor
     }
 }

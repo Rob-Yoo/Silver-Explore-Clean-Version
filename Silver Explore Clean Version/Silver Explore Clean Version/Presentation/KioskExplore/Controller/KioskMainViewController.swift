@@ -19,7 +19,6 @@ class KioskMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }
 
 #if DEBUG
