@@ -212,8 +212,8 @@
 		CC68B2812B91F70F00E4E767 /* KioskMainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CC2A9A3A2B9303C600B99D33 /* KioskFooterScreen */,
 				CC68B2912B92144D00E4E767 /* KioskMenuScreen */,
+				CC2A9A3A2B9303C600B99D33 /* KioskFooterScreen */,
 				CC1E2BB92B8F9D8A00653CBF /* KioskMainView.swift */,
 			);
 			path = KioskMainScreen;
