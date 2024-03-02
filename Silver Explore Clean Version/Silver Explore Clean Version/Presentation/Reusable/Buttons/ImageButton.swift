@@ -18,5 +18,15 @@ final class ImageButton: UIButton {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    static func createSFSymbolButton(systemName: String, font: UIFont, tintColor: UIColor) -> UIButton {
+        let imageConfiguration = UIImage.SymbolConfiguration(font: font)
+        let image = UIImage(systemName: systemName, withConfiguration: imageConfiguration)!
+            .withTintColor(tintColor, renderingMode: .alwaysOriginal)
+        let imageButton = ImageButton(image: image)
+        
+        imageButton.setTitleColor(.black, for: .normal)
+        return imageButton
+    }
 
 }

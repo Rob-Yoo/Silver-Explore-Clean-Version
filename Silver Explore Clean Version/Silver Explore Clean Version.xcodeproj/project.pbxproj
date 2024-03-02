@@ -22,6 +22,17 @@
 		CC2A9A392B93011400B99D33 /* OrderStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A382B93011400B99D33 /* OrderStatusTableViewCell.swift */; };
 		CC2A9A3C2B9304F600B99D33 /* PaymentButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A3B2B9304F600B99D33 /* PaymentButtonView.swift */; };
 		CC2A9A402B9309AB00B99D33 /* KioskRightFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A3F2B9309AB00B99D33 /* KioskRightFooterView.swift */; };
+		CC2A9A442B93130000B99D33 /* ProductOptionSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A432B93130000B99D33 /* ProductOptionSelectionViewController.swift */; };
+		CC2A9A472B93134E00B99D33 /* ProductOptionSelectionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A462B93134E00B99D33 /* ProductOptionSelectionModalView.swift */; };
+		CC2A9A4A2B93158C00B99D33 /* OptionSelectionBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A492B93158C00B99D33 /* OptionSelectionBodyView.swift */; };
+		CC2A9A4C2B93174E00B99D33 /* ProductCountControlStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A4B2B93174E00B99D33 /* ProductCountControlStackView.swift */; };
+		CC2A9A4E2B9338AA00B99D33 /* CountControlStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A4D2B9338AA00B99D33 /* CountControlStackView.swift */; };
+		CC2A9A502B933E9400B99D33 /* SeparatorLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A4F2B933E9400B99D33 /* SeparatorLineView.swift */; };
+		CC2A9A532B93472200B99D33 /* ProductOptionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A522B93472200B99D33 /* ProductOptionStackView.swift */; };
+		CC2A9A562B9353A800B99D33 /* TemparatureOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A552B9353A800B99D33 /* TemparatureOptionView.swift */; };
+		CC2A9A582B9353D200B99D33 /* SizeOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A572B9353D200B99D33 /* SizeOptionView.swift */; };
+		CC2A9A5A2B9353EB00B99D33 /* IceQuantityOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A592B9353EB00B99D33 /* IceQuantityOptionView.swift */; };
+		CC2A9A5C2B935C9E00B99D33 /* OptionSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A5B2B935C9E00B99D33 /* OptionSelectionButton.swift */; };
 		CC325D242B5CB7FF007C93DC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D232B5CB7FF007C93DC /* UIView+Extension.swift */; };
 		CC325D282B5D2E94007C93DC /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D272B5D2E94007C93DC /* NavigationManager.swift */; };
 		CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D292B5D3201007C93DC /* Observer.swift */; };
@@ -79,6 +90,17 @@
 		CC2A9A382B93011400B99D33 /* OrderStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusTableViewCell.swift; sourceTree = "<group>"; };
 		CC2A9A3B2B9304F600B99D33 /* PaymentButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButtonView.swift; sourceTree = "<group>"; };
 		CC2A9A3F2B9309AB00B99D33 /* KioskRightFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskRightFooterView.swift; sourceTree = "<group>"; };
+		CC2A9A432B93130000B99D33 /* ProductOptionSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOptionSelectionViewController.swift; sourceTree = "<group>"; };
+		CC2A9A462B93134E00B99D33 /* ProductOptionSelectionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOptionSelectionModalView.swift; sourceTree = "<group>"; };
+		CC2A9A492B93158C00B99D33 /* OptionSelectionBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionBodyView.swift; sourceTree = "<group>"; };
+		CC2A9A4B2B93174E00B99D33 /* ProductCountControlStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCountControlStackView.swift; sourceTree = "<group>"; };
+		CC2A9A4D2B9338AA00B99D33 /* CountControlStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountControlStackView.swift; sourceTree = "<group>"; };
+		CC2A9A4F2B933E9400B99D33 /* SeparatorLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorLineView.swift; sourceTree = "<group>"; };
+		CC2A9A522B93472200B99D33 /* ProductOptionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOptionStackView.swift; sourceTree = "<group>"; };
+		CC2A9A552B9353A800B99D33 /* TemparatureOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemparatureOptionView.swift; sourceTree = "<group>"; };
+		CC2A9A572B9353D200B99D33 /* SizeOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeOptionView.swift; sourceTree = "<group>"; };
+		CC2A9A592B9353EB00B99D33 /* IceQuantityOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceQuantityOptionView.swift; sourceTree = "<group>"; };
+		CC2A9A5B2B935C9E00B99D33 /* OptionSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionButton.swift; sourceTree = "<group>"; };
 		CC325D232B5CB7FF007C93DC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CC325D272B5D2E94007C93DC /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		CC325D292B5D3201007C93DC /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
@@ -149,6 +171,7 @@
 				CCAC2CB42B6BBF0300D73E69 /* RadioButton.swift */,
 				CCC53EFD2B739C9A00B1C7E5 /* ImageButton.swift */,
 				CC0EF9132B74C49800206431 /* BlurredButton.swift */,
+				CC2A9A5B2B935C9E00B99D33 /* OptionSelectionButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -158,6 +181,7 @@
 			children = (
 				CC3DE2992B5A842E004175E4 /* HeaderView.swift */,
 				CC68B27F2B91C18A00E4E767 /* LabelView.swift */,
+				CC2A9A4F2B933E9400B99D33 /* SeparatorLineView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +220,53 @@
 				CC2A9A3B2B9304F600B99D33 /* PaymentButtonView.swift */,
 			);
 			path = KioskFooterRightScreen;
+			sourceTree = "<group>";
+		};
+		CC2A9A422B9312DD00B99D33 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				CC2A9A432B93130000B99D33 /* ProductOptionSelectionViewController.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		CC2A9A452B93131E00B99D33 /* ModalScreens */ = {
+			isa = PBXGroup;
+			children = (
+				CC2A9A482B93154600B99D33 /* OptionSelectionModal */,
+			);
+			path = ModalScreens;
+			sourceTree = "<group>";
+		};
+		CC2A9A482B93154600B99D33 /* OptionSelectionModal */ = {
+			isa = PBXGroup;
+			children = (
+				CC2A9A462B93134E00B99D33 /* ProductOptionSelectionModalView.swift */,
+				CC2A9A512B93463000B99D33 /* ProductOptionSelectionBodyView */,
+			);
+			path = OptionSelectionModal;
+			sourceTree = "<group>";
+		};
+		CC2A9A512B93463000B99D33 /* ProductOptionSelectionBodyView */ = {
+			isa = PBXGroup;
+			children = (
+				CC2A9A492B93158C00B99D33 /* OptionSelectionBodyView.swift */,
+				CC2A9A4B2B93174E00B99D33 /* ProductCountControlStackView.swift */,
+				CC2A9A4D2B9338AA00B99D33 /* CountControlStackView.swift */,
+				CC2A9A542B93536800B99D33 /* ProductOptionViews */,
+			);
+			path = ProductOptionSelectionBodyView;
+			sourceTree = "<group>";
+		};
+		CC2A9A542B93536800B99D33 /* ProductOptionViews */ = {
+			isa = PBXGroup;
+			children = (
+				CC2A9A522B93472200B99D33 /* ProductOptionStackView.swift */,
+				CC2A9A552B9353A800B99D33 /* TemparatureOptionView.swift */,
+				CC2A9A572B9353D200B99D33 /* SizeOptionView.swift */,
+				CC2A9A592B9353EB00B99D33 /* IceQuantityOptionView.swift */,
+			);
+			path = ProductOptionViews;
 			sourceTree = "<group>";
 		};
 		CC3DE2952B5A77A0004175E4 /* Navigatior */ = {
@@ -314,6 +385,7 @@
 		CC9B01AE2B8B57A4000B58B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CC2A9A452B93131E00B99D33 /* ModalScreens */,
 				CC68B2812B91F70F00E4E767 /* KioskMainScreen */,
 				CC9B01AF2B8B5857000B58B0 /* KioskInitialScreenView.swift */,
 			);
@@ -477,6 +549,7 @@
 		CCB67B892B5FE0BC001B2A07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CC2A9A422B9312DD00B99D33 /* Modals */,
 				CCB67B8A2B5FE0E6001B2A07 /* KioskInitialScreenViewController.swift */,
 				CC1E2BB62B8F9C9300653CBF /* KioskMainViewController.swift */,
 			);
@@ -568,16 +641,21 @@
 				CC325D242B5CB7FF007C93DC /* UIView+Extension.swift in Sources */,
 				CC9857B32B62408C000D621A /* Arr.swift in Sources */,
 				CC3DE29A2B5A842E004175E4 /* HeaderView.swift in Sources */,
+				CC2A9A4C2B93174E00B99D33 /* ProductCountControlStackView.swift in Sources */,
 				CC4779412B63CBC000333CD2 /* PrevButton.swift in Sources */,
+				CC2A9A532B93472200B99D33 /* ProductOptionStackView.swift in Sources */,
 				CC0EF9122B74C37B00206431 /* OnboardingView.swift in Sources */,
+				CC2A9A5A2B9353EB00B99D33 /* IceQuantityOptionView.swift in Sources */,
 				CCAC2CB12B6B8C8100D73E69 /* CharacterSelectionView.swift in Sources */,
 				CC0EF9182B74F74D00206431 /* TouchGestureExploreView.swift in Sources */,
 				CCADA6302B5952AD000C373E /* HomeViewController.swift in Sources */,
 				CCADA62C2B5952AD000C373E /* AppDelegate.swift in Sources */,
+				CC2A9A4A2B93158C00B99D33 /* OptionSelectionBodyView.swift in Sources */,
 				CC68B28C2B92016700E4E767 /* OrderCountView.swift in Sources */,
 				CCC53F022B73C3F600B1C7E5 /* ARCharacterFactory.swift in Sources */,
 				CC3DE29F2B5A934F004175E4 /* ExploreButtonsView.swift in Sources */,
 				CC2A9A392B93011400B99D33 /* OrderStatusTableViewCell.swift in Sources */,
+				CC2A9A502B933E9400B99D33 /* SeparatorLineView.swift in Sources */,
 				CC68B28E2B9201AE00E4E767 /* OrderStatusTableView.swift in Sources */,
 				CCADA62E2B5952AD000C373E /* SceneDelegate.swift in Sources */,
 				CC2A9A402B9309AB00B99D33 /* KioskRightFooterView.swift in Sources */,
@@ -585,12 +663,18 @@
 				CCB67B8B2B5FE0E6001B2A07 /* KioskInitialScreenViewController.swift in Sources */,
 				CC68B28A2B92013D00E4E767 /* KioskCartView.swift in Sources */,
 				CC24996B2B7FA1F600612502 /* BlurredExploreStageDescriptionView.swift in Sources */,
+				CC2A9A4E2B9338AA00B99D33 /* CountControlStackView.swift in Sources */,
 				CC68B2852B91FC9A00E4E767 /* MenuCollectionView.swift in Sources */,
+				CC2A9A442B93130000B99D33 /* ProductOptionSelectionViewController.swift in Sources */,
 				CC68B2832B91F73000E4E767 /* KioskMenuBoardView.swift in Sources */,
 				CC1E2BB72B8F9C9300653CBF /* KioskMainViewController.swift in Sources */,
 				CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */,
+				CC2A9A472B93134E00B99D33 /* ProductOptionSelectionModalView.swift in Sources */,
+				CC2A9A582B9353D200B99D33 /* SizeOptionView.swift in Sources */,
 				CC0EF9142B74C49800206431 /* BlurredButton.swift in Sources */,
+				CC2A9A562B9353A800B99D33 /* TemparatureOptionView.swift in Sources */,
 				CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */,
+				CC2A9A5C2B935C9E00B99D33 /* OptionSelectionButton.swift in Sources */,
 				CC325D282B5D2E94007C93DC /* NavigationManager.swift in Sources */,
 				CC68B2902B92134200E4E767 /* OrderCountControlStackView.swift in Sources */,
 				CC0EF9162B74E15500206431 /* ARSceneView.swift in Sources */,

@@ -8,9 +8,12 @@
 import UIKit
 
 final class OrderCountControlStackView: UIStackView {
-    private(set) lazy var minusButton = makeImageButton(imageName: "minus.circle.fill", tintColor: .lightGray)
-    private(set) lazy var plusButton = makeImageButton(imageName: "plus.circle.fill", tintColor: .lightGray)
-    private(set) lazy var deleteButton = makeImageButton(imageName: "xmark.app.fill", tintColor: .red)
+    private let buttonSymbolFont = UIFont.systemFont(ofSize: 25, weight: .bold)
+
+    private(set) lazy var minusButton = ImageButton.createSFSymbolButton(systemName: "minus.circle.fill", font: self.buttonSymbolFont, tintColor: .silverLight)
+    private(set) lazy var plusButton = ImageButton.createSFSymbolButton(systemName: "plus.circle.fill", font: self.buttonSymbolFont, tintColor: .silverLight)
+    private(set) lazy var deleteButton = ImageButton.createSFSymbolButton(systemName: "xmark.app.fill", font: self.buttonSymbolFont, tintColor: .red)
+
     private(set) var orderCountLabel: UILabel = {
         let label = UILabel()
         
@@ -32,16 +35,6 @@ final class OrderCountControlStackView: UIStackView {
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func makeImageButton(imageName: String, tintColor: UIColor) -> UIButton {
-        let imageConfiguration = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 25, weight: .bold))
-        let image = UIImage(systemName: imageName, withConfiguration: imageConfiguration)!
-            .withTintColor(tintColor, renderingMode: .alwaysOriginal)
-        let imageButton = ImageButton(image: image)
-        
-        imageButton.setTitleColor(.black, for: .normal)
-        return imageButton
     }
     
     private func configure() {
