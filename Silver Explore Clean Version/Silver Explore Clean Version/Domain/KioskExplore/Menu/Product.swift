@@ -7,42 +7,21 @@
 
 import UIKit
 
-struct Product: Hashable {
+struct Product {
     let name: String
     let image: UIImage
-    var price: Int
-    var option: ProductOption
+    let detail: ProductDetail
     
-    static func == (lhs: Product, rhs: Product) -> Bool {
-        return lhs.name == rhs.name
-    }
+    static func createProduct(itemInfo: ItemInfo) -> Product {
+        let name = itemInfo.name
+        let image = itemInfo.image
+        let price = itemInfo.price
     
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(self.name)
-    }
-}
-
-struct ProductOption {
-    enum Temperature {
-        case hot, ice, iceOnly
-    }
-
-    enum Size {
-        case regular, grande, venti
-    }
-
-    enum IceQuantity {
-        case less, regular, extra, none
-    }
-    
-    var temperature: Temperature
-    var size: Size
-    var iceQuantity: IceQuantity
-    
-    init(temperature: Temperature = .hot, size: Size = .regular, iceQuantity: IceQuantity = .none) {
-        self.temperature = temperature
-        self.size = size
-        self.iceQuantity = iceQuantity
+        if itemInfo.isIceOnly {
+            return Product(name: name, image: image, detail: .init(price: price, temperature: .iceOnly, iceQuantity: .regular))
+        }
+        
+        return Product(name: name, image: image, detail: .init(price: price))
     }
 }
 
