@@ -8,14 +8,16 @@
 import UIKit
 
 final class ProductCountControlStackView: UIStackView {
-    private(set) var leftView = UIImageView(image: .americano)
-    private(set) var rightView = ProductCountControlRightStackView()
+    private(set) var leftView: UIImageView
+    private(set) var rightView: ProductCountControlRightStackView
     private var arrangedViews: [UIView] {
         return [leftView, rightView]
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(product: Product) {
+        self.leftView = UIImageView(image: product.image)
+        self.rightView = ProductCountControlRightStackView(product: product)
+        super.init(frame: .zero)
         self.configure()
     }
     
@@ -37,15 +39,15 @@ final class ProductCountControlStackView: UIStackView {
 final class ProductCountControlRightStackView: UIStackView {
     private(set) var emptyView = {
         let view = UIView()
-        
         view.backgroundColor = .clear
         return view
     }()
+    
     private(set) var countControlStackView = CountControlStackView()
-    private(set) var priceLabel = {
+    
+    private(set) lazy var priceLabel = {
         let label = UILabel()
-        
-        label.text = "₩ 4,800"
+
         label.font = .systemFont(ofSize: 40, weight: .bold)
         label.textColor = .black
         label.textAlignment = .center
@@ -56,13 +58,24 @@ final class ProductCountControlRightStackView: UIStackView {
         return [emptyView, countControlStackView, priceLabel]
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(product: Product) {
+        super.init(frame: .zero)
+        self.setUpPriceLabel(totalPrice: product.detail.totalPrice)
         self.configure()
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setUpPriceLabel(totalPrice: Int) {
+        let formattedPrice: String
+        let numberFormatter = NumberFormatter()
+        
+        numberFormatter.numberStyle = .decimal
+        formattedPrice = numberFormatter.string(from: NSNumber(value: totalPrice))!
+        
+        self.priceLabel.text = "₩ \(formattedPrice)"
     }
     
     private func configure() {

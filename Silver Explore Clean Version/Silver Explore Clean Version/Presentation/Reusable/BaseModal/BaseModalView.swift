@@ -1,20 +1,18 @@
 //
-//  ProductOptionSelectionModalView.swift
+//  ModalView.swift
 //  Silver Explore Clean Version
 //
-//  Created by Jinyoung Yoo on 3/2/24.
+//  Created by Jinyoung Yoo on 4/13/24.
 //
 
 import UIKit
 
-//MARK: - ProductOptionSelectionModalView
-final class ProductOptionSelectionModalView: UIView {
-    private(set) var optionSelectionView: OptionSelectionView
+final class BaseModalView<ContentView: UIView>: UIView {
+    private(set) var contentView: ModalContentView<ContentView>
     
-    init(product: Product) {
-        self.optionSelectionView = OptionSelectionView(product: product)
+    init(title: String) {
+        self.contentView = ModalContentView<ContentView>(title: title)
         super.init(frame: .zero)
-        self.configure()
     }
     
     required init?(coder: NSCoder) {
@@ -23,9 +21,9 @@ final class ProductOptionSelectionModalView: UIView {
     
     private func configure() {
         self.backgroundColor = .init(white: 0, alpha: 0.5)
-        self.addSubview(self.optionSelectionView)
+        self.addSubview(self.contentView)
         
-        self.optionSelectionView
+        self.contentView
             .widthAnchor(self.widthAnchor, multiplier: 0.8)
             .heightAnchor(self.heightAnchor, multiplier: 0.8)
             .centerXAnchor(self.centerXAnchor)
@@ -33,15 +31,18 @@ final class ProductOptionSelectionModalView: UIView {
     }
 }
 
-// MARK: - OptionSelectionView
-final class OptionSelectionView: UIView {
-    private(set) var headerView = HeaderView(title: "옵션 선택").backgroundColor(color: .mainTheme).textColor(color: .white).titleLabelFont(font: .systemFont(ofSize: 30, weight: .regular))
-    private(set) var bodyView: OptionSelectionBodyView
-    private(set) var separatorLineView = SeparatorLineView()
-    private(set) var footerButtonsView = UIView()
-    
-    init(product: Product) {
-        self.bodyView = OptionSelectionBodyView(product: product)
+final class ModalContentView<ContentView: UIView>: UIView {
+    private(set) var headerView: HeaderView
+    private(set) var bodyView = ContentView()
+    private(set) lazy var separatorLineView = SeparatorLineView()
+    private(set) lazy var footerButtonsView = UIView()
+
+    init(title: String) {
+        self.headerView = HeaderView(title: title)
+                            .backgroundColor(color: .mainTheme)
+                            .textColor(color: .white)
+                            .titleLabelFont(font: .systemFont(ofSize: 30, weight: .regular))
+
         super.init(frame: .zero)
         self.backgroundColor = .white
         self.configureSubviews()
@@ -94,3 +95,5 @@ final class OptionSelectionView: UIView {
             .widthAnchor(self.widthAnchor)
     }
 }
+
+

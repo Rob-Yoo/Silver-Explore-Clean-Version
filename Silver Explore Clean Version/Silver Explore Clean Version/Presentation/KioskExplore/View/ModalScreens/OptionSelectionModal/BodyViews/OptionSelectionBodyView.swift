@@ -8,21 +8,24 @@
 import UIKit
 
 final class OptionSelectionBodyView: UIView {
-    private let product = Product(name: "아메리카노", image: .americano, price: 4500, option: .init(temperature: .iceOnly))
-
-    private(set) lazy var productNameLabel = {
+    private(set) var productNameLabel = {
         let label = UILabel()
         
-        label.text = self.product.name
         label.font = .systemFont(ofSize: 40, weight: .bold)
         label.textColor = .black
         label.textAlignment = .center
         return label
     }()
-    private(set) var productCountControlStackView = ProductCountControlStackView()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private(set) var productCountControlStackView: ProductCountControlStackView
+    private(set) var productOptionStackView: ProductOptionStackView
+    
+    init(product: Product) {
+        self.productCountControlStackView = ProductCountControlStackView(product: product)
+        self.productOptionStackView = ProductOptionStackView(product: product)
+        super.init(frame: .zero)
+
+        self.productNameLabel.text = product.name
         self.configureSubviews()
     }
     
@@ -33,6 +36,7 @@ final class OptionSelectionBodyView: UIView {
     private func configureSubviews() {
         self.configureProductNameLabel()
         self.configureProductCountControlStackView()
+        self.configureProductOptionStackView()
     }
     
     private func configureProductNameLabel() {
@@ -50,6 +54,16 @@ final class OptionSelectionBodyView: UIView {
             .topAnchor(self.productNameLabel.bottomAnchor, padding: 50)
             .widthAnchor(self.widthAnchor, multiplier: 0.6)
             .heightAnchor(self.heightAnchor, multiplier: 0.3)
+            .centerXAnchor(self.centerXAnchor)
+    }
+    
+    private func configureProductOptionStackView() {
+        self.addSubview(self.productOptionStackView)
+        
+        self.productOptionStackView
+            .topAnchor(self.productCountControlStackView.bottomAnchor, padding: 50)
+            .bottomAnchor(self.bottomAnchor, padding: -30)
+            .widthAnchor(self.productCountControlStackView.widthAnchor)
             .centerXAnchor(self.centerXAnchor)
     }
 }
