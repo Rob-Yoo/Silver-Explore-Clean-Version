@@ -12,22 +12,15 @@ final class CountControlStackView: UIStackView {
     
     private(set) lazy var minusButton = ImageButton.createSFSymbolButton(systemName: "minus.circle.fill", font: self.buttonSymbolFont, tintColor: .mainTheme)
     private(set) lazy var plusButton = ImageButton.createSFSymbolButton(systemName: "plus.circle.fill", font: self.buttonSymbolFont, tintColor: .mainTheme)
-    private(set) var productCountLabel: UILabel = {
-        let label = UILabel()
-        
-        label.text = "1"
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 45, weight: .bold)
-        label.textAlignment = .center
-        return label
-    }()
+    private(set) var orderCountLabel: TextLabel
     
     private var arrangedViews: [UIView] {
-        return [minusButton, productCountLabel, plusButton]
+        return [minusButton, orderCountLabel, plusButton]
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(product: Product) {
+        self.orderCountLabel = TextLabel(text: "\(product.orderDetail.count)").font(.systemFont(ofSize: 45, weight: .semibold))
+        super.init(frame: .zero)
         self.configure()
     }
     
@@ -43,5 +36,9 @@ final class CountControlStackView: UIStackView {
         self.arrangedViews.forEach {
             self.addArrangedSubview($0)
         }
+    }
+    
+    func update(orderCount: Int) {
+        self.orderCountLabel.text = String(orderCount)
     }
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - ProductCountControlStackView
 final class ProductCountControlStackView: UIStackView {
     private(set) var leftView: UIImageView
     private(set) var rightView: ProductCountControlRightStackView
@@ -36,6 +37,7 @@ final class ProductCountControlStackView: UIStackView {
     }
 }
 
+//MARK: - ProductCountControlRightStackView
 final class ProductCountControlRightStackView: UIStackView {
     private(set) var emptyView = {
         let view = UIView()
@@ -43,39 +45,23 @@ final class ProductCountControlRightStackView: UIStackView {
         return view
     }()
     
-    private(set) var countControlStackView = CountControlStackView()
+    private(set) var countControlStackView: CountControlStackView
     
-    private(set) lazy var priceLabel = {
-        let label = UILabel()
-
-        label.font = .systemFont(ofSize: 40, weight: .bold)
-        label.textColor = .black
-        label.textAlignment = .center
-        return label
-    }()
+    private(set) var priceLabel: TextLabel
     
     private var arrangedViews: [UIView] {
         return [emptyView, countControlStackView, priceLabel]
     }
     
     init(product: Product) {
+        self.priceLabel = TextLabel(text: "W " + product.orderDetail.totalPrice.decimalFormattedString).font(.systemFont(ofSize: 40, weight: .bold))
+        self.countControlStackView = CountControlStackView(product: product)
         super.init(frame: .zero)
-        self.setUpPriceLabel(totalPrice: product.detail.totalPrice)
         self.configure()
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setUpPriceLabel(totalPrice: Int) {
-        let formattedPrice: String
-        let numberFormatter = NumberFormatter()
-        
-        numberFormatter.numberStyle = .decimal
-        formattedPrice = numberFormatter.string(from: NSNumber(value: totalPrice))!
-        
-        self.priceLabel.text = "₩ \(formattedPrice)"
     }
     
     private func configure() {

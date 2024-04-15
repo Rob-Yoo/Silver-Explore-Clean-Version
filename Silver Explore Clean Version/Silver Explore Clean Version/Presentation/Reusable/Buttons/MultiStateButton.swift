@@ -59,6 +59,12 @@ final class MultiStateButton: UIButton {
     
     private func renderBlockStateButton() {
         self.setTitleColor(.silverLight, for: .normal)
+        self.isEnabled = false
         self.backgroundColor = .clear
+    }
+    
+    func changeButtonState() {
+        self.buttonState = (self.buttonState == .selected) ? .unselected : .selected
+        self.configure()
     }
 }

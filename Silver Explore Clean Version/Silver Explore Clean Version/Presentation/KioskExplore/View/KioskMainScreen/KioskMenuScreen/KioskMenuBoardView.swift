@@ -7,22 +7,17 @@
 
 import UIKit
 
+protocol KioskMenuBoardViewDelegate: AnyObject {
+    func displayProductOptionSelectionModal(itemInfo: ItemInfo)
+}
+
 final class KioskMenuBoardView: UIView {
     private let menu = Menu()
     
-    private(set) var menuSegmentedControl: UISegmentedControl = {
-        let productType = ["신메뉴", "커피", "음료"]
-        let sc = UISegmentedControl(items: productType)
-
-        sc.selectedSegmentIndex = 0
-        sc.selectedSegmentTintColor = .white
-        
-        sc.setTitleTextAttributes([.foregroundColor: UIColor.black], for: .selected)
-        sc.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 20, weight: .semibold)], for: .normal)
-        return sc
-    }()
+    weak var kioskMainViewDelegate: KioskMenuBoardViewDelegate?
     
-    private(set) lazy var menuCollectionView = MenuCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+    private(set) var menuSegmentedControl = SegmentedControl(items: ["신메뉴", "커피", "음료"])
+    private(set) var menuCollectionView = MenuCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -71,6 +66,7 @@ final class KioskMenuBoardView: UIView {
     }
 }
 
+//MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension KioskMenuBoardView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let segmentIdx = self.menuSegmentedControl.selectedSegmentIndex
@@ -87,8 +83,20 @@ extension KioskMenuBoardView: UICollectionViewDelegate, UICollectionViewDataSour
         
         return self.menu.itemList[segmentIdx].count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let delegate = self.kioskMainViewDelegate else {
+            fatalError("KioskMainViewDelegate 지정 후 호출해주세요!")
+        }
+
+        let segmentIdx = self.menuSegmentedControl.selectedSegmentIndex
+        let selectedItemInfo = self.menu.itemList[segmentIdx][indexPath.row]
+        
+        delegate.displayProductOptionSelectionModal(itemInfo: selectedItemInfo)
+    }
 }
 
+//MARK: - UICollectionViewDelegateFlowLayout
 extension KioskMenuBoardView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.frame.width / 4 - 10
