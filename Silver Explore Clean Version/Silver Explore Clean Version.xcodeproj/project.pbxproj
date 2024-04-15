@@ -24,21 +24,22 @@
 		CC2A9A402B9309AB00B99D33 /* KioskRightFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A3F2B9309AB00B99D33 /* KioskRightFooterView.swift */; };
 		CC2A9A442B93130000B99D33 /* ProductOptionSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A432B93130000B99D33 /* ProductOptionSelectionViewController.swift */; };
 		CC2A9A472B93134E00B99D33 /* ProductOptionSelectionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A462B93134E00B99D33 /* ProductOptionSelectionModalView.swift */; };
-		CC2A9A4A2B93158C00B99D33 /* OptionSelectionBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A492B93158C00B99D33 /* OptionSelectionBodyView.swift */; };
+		CC2A9A4A2B93158C00B99D33 /* OptionSelectionModalBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A492B93158C00B99D33 /* OptionSelectionModalBodyView.swift */; };
 		CC2A9A4C2B93174E00B99D33 /* ProductCountControlStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A4B2B93174E00B99D33 /* ProductCountControlStackView.swift */; };
 		CC2A9A4E2B9338AA00B99D33 /* CountControlStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A4D2B9338AA00B99D33 /* CountControlStackView.swift */; };
 		CC2A9A502B933E9400B99D33 /* SeparatorLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A4F2B933E9400B99D33 /* SeparatorLineView.swift */; };
-		CC2A9A532B93472200B99D33 /* ProductOptionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A522B93472200B99D33 /* ProductOptionStackView.swift */; };
-		CC2A9A562B9353A800B99D33 /* TemparatureOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A552B9353A800B99D33 /* TemparatureOptionView.swift */; };
-		CC2A9A582B9353D200B99D33 /* SizeOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A572B9353D200B99D33 /* SizeOptionView.swift */; };
-		CC2A9A5A2B9353EB00B99D33 /* IceQuantityOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A592B9353EB00B99D33 /* IceQuantityOptionView.swift */; };
-		CC2A9A5C2B935C9E00B99D33 /* OptionSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A5B2B935C9E00B99D33 /* OptionSelectionButton.swift */; };
+		CC2A9A532B93472200B99D33 /* OptionSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A522B93472200B99D33 /* OptionSelectionView.swift */; };
+		CC2A9A562B9353A800B99D33 /* TemperatureOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A552B9353A800B99D33 /* TemperatureOptionView.swift */; };
+		CC2A9A5C2B935C9E00B99D33 /* MultiStateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A5B2B935C9E00B99D33 /* MultiStateButton.swift */; };
 		CC325D242B5CB7FF007C93DC /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D232B5CB7FF007C93DC /* UIView+Extension.swift */; };
 		CC325D282B5D2E94007C93DC /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D272B5D2E94007C93DC /* NavigationManager.swift */; };
 		CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D292B5D3201007C93DC /* Observer.swift */; };
 		CC325D2C2B5D3236007C93DC /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC325D2B2B5D3236007C93DC /* Publisher.swift */; };
 		CC3DE29A2B5A842E004175E4 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE2992B5A842E004175E4 /* HeaderView.swift */; };
 		CC3DE29F2B5A934F004175E4 /* ExploreButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3DE29E2B5A934F004175E4 /* ExploreButtonsView.swift */; };
+		CC45189C2BC952B200E4D5BA /* OrderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC45189B2BC952B200E4D5BA /* OrderDetail.swift */; };
+		CC45189E2BC9873700E4D5BA /* OptionEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC45189D2BC9873700E4D5BA /* OptionEnums.swift */; };
+		CC4518A12BC99B2A00E4D5BA /* BaseModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4518A02BC99B2A00E4D5BA /* BaseModalView.swift */; };
 		CC4779412B63CBC000333CD2 /* PrevButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4779402B63CBC000333CD2 /* PrevButton.swift */; };
 		CC68B2802B91C18A00E4E767 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68B27F2B91C18A00E4E767 /* LabelView.swift */; };
 		CC68B2832B91F73000E4E767 /* KioskMenuBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68B2822B91F73000E4E767 /* KioskMenuBoardView.swift */; };
@@ -50,11 +51,14 @@
 		CC68B2902B92134200E4E767 /* OrderCountControlStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68B28F2B92134200E4E767 /* OrderCountControlStackView.swift */; };
 		CC78E3442B6397320038088C /* Finn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E3432B6397320038088C /* Finn.swift */; };
 		CC78E3472B63997C0038088C /* ARCharacterActionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E3462B63997C0038088C /* ARCharacterActionData.swift */; };
+		CC7FF0102BCC42B9005D3D9A /* OptionSelectionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FF00F2BCC42B9005D3D9A /* OptionSelectionModalView.swift */; };
 		CC9857AE2B622F16000D621A /* ARObjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857AD2B622F16000D621A /* ARObjectData.swift */; };
 		CC9857B12B623F1B000D621A /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B02B623F1B000D621A /* ActionProtocol.swift */; };
 		CC9857B32B62408C000D621A /* Arr.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B22B62408C000D621A /* Arr.swift */; };
 		CC9857B72B624D2D000D621A /* ARCharacterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B62B624D2D000D621A /* ARCharacterProtocol.swift */; };
 		CC9B01B02B8B5857000B58B0 /* KioskInitialScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B01AF2B8B5857000B58B0 /* KioskInitialScreenView.swift */; };
+		CCA19A9A2BCD0B5800C76662 /* FooterButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA19A992BCD0B5800C76662 /* FooterButtonsView.swift */; };
+		CCA19A9C2BCD3A6A00C76662 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA19A9B2BCD3A6A00C76662 /* Int+Extension.swift */; };
 		CCAC2CAF2B6B6D8300D73E69 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CAE2B6B6D8300D73E69 /* HomeView.swift */; };
 		CCAC2CB12B6B8C8100D73E69 /* CharacterSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB02B6B8C8100D73E69 /* CharacterSelectionView.swift */; };
 		CCAC2CB32B6BA96800D73E69 /* SelectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */; };
@@ -72,6 +76,8 @@
 		CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */; };
 		CCC53F022B73C3F600B1C7E5 /* ARCharacterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */; };
 		CCC53F042B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53F032B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift */; };
+		CCDFCFC02BCD030D00C3F7F2 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFCFBF2BCD030D00C3F7F2 /* SegmentedControl.swift */; };
+		CCDFCFC22BCD068000C3F7F2 /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFCFC12BCD068000C3F7F2 /* TextLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,21 +98,22 @@
 		CC2A9A3F2B9309AB00B99D33 /* KioskRightFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskRightFooterView.swift; sourceTree = "<group>"; };
 		CC2A9A432B93130000B99D33 /* ProductOptionSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOptionSelectionViewController.swift; sourceTree = "<group>"; };
 		CC2A9A462B93134E00B99D33 /* ProductOptionSelectionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOptionSelectionModalView.swift; sourceTree = "<group>"; };
-		CC2A9A492B93158C00B99D33 /* OptionSelectionBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionBodyView.swift; sourceTree = "<group>"; };
+		CC2A9A492B93158C00B99D33 /* OptionSelectionModalBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionModalBodyView.swift; sourceTree = "<group>"; };
 		CC2A9A4B2B93174E00B99D33 /* ProductCountControlStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCountControlStackView.swift; sourceTree = "<group>"; };
 		CC2A9A4D2B9338AA00B99D33 /* CountControlStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountControlStackView.swift; sourceTree = "<group>"; };
 		CC2A9A4F2B933E9400B99D33 /* SeparatorLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorLineView.swift; sourceTree = "<group>"; };
-		CC2A9A522B93472200B99D33 /* ProductOptionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOptionStackView.swift; sourceTree = "<group>"; };
-		CC2A9A552B9353A800B99D33 /* TemparatureOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemparatureOptionView.swift; sourceTree = "<group>"; };
-		CC2A9A572B9353D200B99D33 /* SizeOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeOptionView.swift; sourceTree = "<group>"; };
-		CC2A9A592B9353EB00B99D33 /* IceQuantityOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceQuantityOptionView.swift; sourceTree = "<group>"; };
-		CC2A9A5B2B935C9E00B99D33 /* OptionSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionButton.swift; sourceTree = "<group>"; };
+		CC2A9A522B93472200B99D33 /* OptionSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionView.swift; sourceTree = "<group>"; };
+		CC2A9A552B9353A800B99D33 /* TemperatureOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureOptionView.swift; sourceTree = "<group>"; };
+		CC2A9A5B2B935C9E00B99D33 /* MultiStateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiStateButton.swift; sourceTree = "<group>"; };
 		CC325D232B5CB7FF007C93DC /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CC325D272B5D2E94007C93DC /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		CC325D292B5D3201007C93DC /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		CC325D2B2B5D3236007C93DC /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		CC3DE2992B5A842E004175E4 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		CC3DE29E2B5A934F004175E4 /* ExploreButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreButtonsView.swift; sourceTree = "<group>"; };
+		CC45189B2BC952B200E4D5BA /* OrderDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetail.swift; sourceTree = "<group>"; };
+		CC45189D2BC9873700E4D5BA /* OptionEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionEnums.swift; sourceTree = "<group>"; };
+		CC4518A02BC99B2A00E4D5BA /* BaseModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModalView.swift; sourceTree = "<group>"; };
 		CC4779402B63CBC000333CD2 /* PrevButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevButton.swift; sourceTree = "<group>"; };
 		CC68B27F2B91C18A00E4E767 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		CC68B2822B91F73000E4E767 /* KioskMenuBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskMenuBoardView.swift; sourceTree = "<group>"; };
@@ -118,11 +125,14 @@
 		CC68B28F2B92134200E4E767 /* OrderCountControlStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountControlStackView.swift; sourceTree = "<group>"; };
 		CC78E3432B6397320038088C /* Finn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finn.swift; sourceTree = "<group>"; };
 		CC78E3462B63997C0038088C /* ARCharacterActionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterActionData.swift; sourceTree = "<group>"; };
+		CC7FF00F2BCC42B9005D3D9A /* OptionSelectionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionModalView.swift; sourceTree = "<group>"; };
 		CC9857AD2B622F16000D621A /* ARObjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARObjectData.swift; sourceTree = "<group>"; };
 		CC9857B02B623F1B000D621A /* ActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 		CC9857B22B62408C000D621A /* Arr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arr.swift; sourceTree = "<group>"; };
 		CC9857B62B624D2D000D621A /* ARCharacterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterProtocol.swift; sourceTree = "<group>"; };
 		CC9B01AF2B8B5857000B58B0 /* KioskInitialScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskInitialScreenView.swift; sourceTree = "<group>"; };
+		CCA19A992BCD0B5800C76662 /* FooterButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterButtonsView.swift; sourceTree = "<group>"; };
+		CCA19A9B2BCD3A6A00C76662 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		CCAC2CAE2B6B6D8300D73E69 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CCAC2CB02B6B8C8100D73E69 /* CharacterSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectionView.swift; sourceTree = "<group>"; };
 		CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionStackView.swift; sourceTree = "<group>"; };
@@ -142,6 +152,8 @@
 		CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectionModel.swift; sourceTree = "<group>"; };
 		CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterFactory.swift; sourceTree = "<group>"; };
 		CCC53F032B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureExploreViewController.swift; sourceTree = "<group>"; };
+		CCDFCFBF2BCD030D00C3F7F2 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
+		CCDFCFC12BCD068000C3F7F2 /* TextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				CC07A37D2B905D6F00F0FD5B /* Product.swift */,
+				CC45189B2BC952B200E4D5BA /* OrderDetail.swift */,
 				CC07A37F2B9060CA00F0FD5B /* Menu.swift */,
+				CC45189D2BC9873700E4D5BA /* OptionEnums.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -171,7 +185,7 @@
 				CCAC2CB42B6BBF0300D73E69 /* RadioButton.swift */,
 				CCC53EFD2B739C9A00B1C7E5 /* ImageButton.swift */,
 				CC0EF9132B74C49800206431 /* BlurredButton.swift */,
-				CC2A9A5B2B935C9E00B99D33 /* OptionSelectionButton.swift */,
+				CC2A9A5B2B935C9E00B99D33 /* MultiStateButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -242,31 +256,31 @@
 			isa = PBXGroup;
 			children = (
 				CC2A9A462B93134E00B99D33 /* ProductOptionSelectionModalView.swift */,
-				CC2A9A512B93463000B99D33 /* ProductOptionSelectionBodyView */,
+				CC7FF00F2BCC42B9005D3D9A /* OptionSelectionModalView.swift */,
+				CC2A9A512B93463000B99D33 /* BodyViews */,
+				CCA19A992BCD0B5800C76662 /* FooterButtonsView.swift */,
 			);
 			path = OptionSelectionModal;
 			sourceTree = "<group>";
 		};
-		CC2A9A512B93463000B99D33 /* ProductOptionSelectionBodyView */ = {
+		CC2A9A512B93463000B99D33 /* BodyViews */ = {
 			isa = PBXGroup;
 			children = (
-				CC2A9A492B93158C00B99D33 /* OptionSelectionBodyView.swift */,
+				CC2A9A492B93158C00B99D33 /* OptionSelectionModalBodyView.swift */,
 				CC2A9A4B2B93174E00B99D33 /* ProductCountControlStackView.swift */,
 				CC2A9A4D2B9338AA00B99D33 /* CountControlStackView.swift */,
-				CC2A9A542B93536800B99D33 /* ProductOptionViews */,
+				CC2A9A542B93536800B99D33 /* OptionViews */,
 			);
-			path = ProductOptionSelectionBodyView;
+			path = BodyViews;
 			sourceTree = "<group>";
 		};
-		CC2A9A542B93536800B99D33 /* ProductOptionViews */ = {
+		CC2A9A542B93536800B99D33 /* OptionViews */ = {
 			isa = PBXGroup;
 			children = (
-				CC2A9A522B93472200B99D33 /* ProductOptionStackView.swift */,
-				CC2A9A552B9353A800B99D33 /* TemparatureOptionView.swift */,
-				CC2A9A572B9353D200B99D33 /* SizeOptionView.swift */,
-				CC2A9A592B9353EB00B99D33 /* IceQuantityOptionView.swift */,
+				CC2A9A522B93472200B99D33 /* OptionSelectionView.swift */,
+				CC2A9A552B9353A800B99D33 /* TemperatureOptionView.swift */,
 			);
-			path = ProductOptionViews;
+			path = OptionViews;
 			sourceTree = "<group>";
 		};
 		CC3DE2952B5A77A0004175E4 /* Navigatior */ = {
@@ -281,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				CC325D232B5CB7FF007C93DC /* UIView+Extension.swift */,
+				CCA19A9B2BCD3A6A00C76662 /* Int+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -292,6 +307,14 @@
 				CC325D2B2B5D3236007C93DC /* Publisher.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CC45189F2BC99ADE00E4D5BA /* BaseModal */ = {
+			isa = PBXGroup;
+			children = (
+				CC4518A02BC99B2A00E4D5BA /* BaseModalView.swift */,
+			);
+			path = BaseModal;
 			sourceTree = "<group>";
 		};
 		CC68B2812B91F70F00E4E767 /* KioskMainScreen */ = {
@@ -346,8 +369,11 @@
 		CC78E3492B63BE2D0038088C /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				CC45189F2BC99ADE00E4D5BA /* BaseModal */,
 				CC1147792B7617A7007FE5E5 /* Views */,
 				CC0EF9192B75069200206431 /* Buttons */,
+				CCDFCFBF2BCD030D00C3F7F2 /* SegmentedControl.swift */,
+				CCDFCFC12BCD068000C3F7F2 /* TextLabel.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -627,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7FF0102BCC42B9005D3D9A /* OptionSelectionModalView.swift in Sources */,
 				CC78E3442B6397320038088C /* Finn.swift in Sources */,
 				CC325D2C2B5D3236007C93DC /* Publisher.swift in Sources */,
 				CCB67B8D2B5FE159001B2A07 /* AIExploreViewController.swift in Sources */,
@@ -637,22 +664,24 @@
 				CC9857B12B623F1B000D621A /* ActionProtocol.swift in Sources */,
 				CC9857B72B624D2D000D621A /* ARCharacterProtocol.swift in Sources */,
 				CCAC2CB32B6BA96800D73E69 /* SelectionStackView.swift in Sources */,
+				CC45189E2BC9873700E4D5BA /* OptionEnums.swift in Sources */,
 				CCC53EFE2B739C9A00B1C7E5 /* ImageButton.swift in Sources */,
 				CC325D242B5CB7FF007C93DC /* UIView+Extension.swift in Sources */,
 				CC9857B32B62408C000D621A /* Arr.swift in Sources */,
 				CC3DE29A2B5A842E004175E4 /* HeaderView.swift in Sources */,
 				CC2A9A4C2B93174E00B99D33 /* ProductCountControlStackView.swift in Sources */,
 				CC4779412B63CBC000333CD2 /* PrevButton.swift in Sources */,
-				CC2A9A532B93472200B99D33 /* ProductOptionStackView.swift in Sources */,
+				CC2A9A532B93472200B99D33 /* OptionSelectionView.swift in Sources */,
 				CC0EF9122B74C37B00206431 /* OnboardingView.swift in Sources */,
-				CC2A9A5A2B9353EB00B99D33 /* IceQuantityOptionView.swift in Sources */,
 				CCAC2CB12B6B8C8100D73E69 /* CharacterSelectionView.swift in Sources */,
 				CC0EF9182B74F74D00206431 /* TouchGestureExploreView.swift in Sources */,
+				CCDFCFC22BCD068000C3F7F2 /* TextLabel.swift in Sources */,
 				CCADA6302B5952AD000C373E /* HomeViewController.swift in Sources */,
 				CCADA62C2B5952AD000C373E /* AppDelegate.swift in Sources */,
-				CC2A9A4A2B93158C00B99D33 /* OptionSelectionBodyView.swift in Sources */,
+				CC2A9A4A2B93158C00B99D33 /* OptionSelectionModalBodyView.swift in Sources */,
 				CC68B28C2B92016700E4E767 /* OrderCountView.swift in Sources */,
 				CCC53F022B73C3F600B1C7E5 /* ARCharacterFactory.swift in Sources */,
+				CCA19A9A2BCD0B5800C76662 /* FooterButtonsView.swift in Sources */,
 				CC3DE29F2B5A934F004175E4 /* ExploreButtonsView.swift in Sources */,
 				CC2A9A392B93011400B99D33 /* OrderStatusTableViewCell.swift in Sources */,
 				CC2A9A502B933E9400B99D33 /* SeparatorLineView.swift in Sources */,
@@ -660,6 +689,10 @@
 				CCADA62E2B5952AD000C373E /* SceneDelegate.swift in Sources */,
 				CC2A9A402B9309AB00B99D33 /* KioskRightFooterView.swift in Sources */,
 				CC78E3472B63997C0038088C /* ARCharacterActionData.swift in Sources */,
+				CCDFCFC02BCD030D00C3F7F2 /* SegmentedControl.swift in Sources */,
+				CCA19A9C2BCD3A6A00C76662 /* Int+Extension.swift in Sources */,
+				CC4518A12BC99B2A00E4D5BA /* BaseModalView.swift in Sources */,
+				CC45189C2BC952B200E4D5BA /* OrderDetail.swift in Sources */,
 				CCB67B8B2B5FE0E6001B2A07 /* KioskInitialScreenViewController.swift in Sources */,
 				CC68B28A2B92013D00E4E767 /* KioskCartView.swift in Sources */,
 				CC24996B2B7FA1F600612502 /* BlurredExploreStageDescriptionView.swift in Sources */,
@@ -670,11 +703,10 @@
 				CC1E2BB72B8F9C9300653CBF /* KioskMainViewController.swift in Sources */,
 				CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */,
 				CC2A9A472B93134E00B99D33 /* ProductOptionSelectionModalView.swift in Sources */,
-				CC2A9A582B9353D200B99D33 /* SizeOptionView.swift in Sources */,
 				CC0EF9142B74C49800206431 /* BlurredButton.swift in Sources */,
-				CC2A9A562B9353A800B99D33 /* TemparatureOptionView.swift in Sources */,
+				CC2A9A562B9353A800B99D33 /* TemperatureOptionView.swift in Sources */,
 				CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */,
-				CC2A9A5C2B935C9E00B99D33 /* OptionSelectionButton.swift in Sources */,
+				CC2A9A5C2B935C9E00B99D33 /* MultiStateButton.swift in Sources */,
 				CC325D282B5D2E94007C93DC /* NavigationManager.swift in Sources */,
 				CC68B2902B92134200E4E767 /* OrderCountControlStackView.swift in Sources */,
 				CC0EF9162B74E15500206431 /* ARSceneView.swift in Sources */,
