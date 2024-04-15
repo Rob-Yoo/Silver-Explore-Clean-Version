@@ -7,12 +7,12 @@
 
 import Combine
 
-class ProductDetail: ObservableObject {
+class OrderDetail {
     private let price: Int
     @Published private(set) var count: Int = 1
     @Published private(set) var temperature: Temperature
-    @Published private(set) var size: Size
-    @Published private(set) var iceQuantity: IceQuantity
+    private(set) var size: Size
+    private(set) var iceQuantity: IceQuantity
     
     var totalPrice: Int {
         let iceCost = (self.temperature == .ice) ? 500 : 0
@@ -39,7 +39,7 @@ class ProductDetail: ObservableObject {
 }
 
 //MARK: - ProductDetail Updating Methods
-extension ProductDetail {
+extension OrderDetail {
     func removeCount() {
         if (self.count > 1) {
             self.count -= 1
@@ -52,15 +52,16 @@ extension ProductDetail {
         }
     }
     
-    func updateTemperature(_ temp: Temperature) {
+    func changeTemperature(_ temp: Temperature) {
         self.temperature = temp
+        print(self, self.temperature)
     }
     
-    func updateSize(_ size: Size) {
+    func changeSize(_ size: Size) {
         self.size = size
     }
     
-    func updateIceQuantity(_ quantity: IceQuantity) {
+    func changeIceQuantity(_ quantity: IceQuantity) {
         self.iceQuantity = quantity
     }
 }

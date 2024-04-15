@@ -9,10 +9,10 @@ enum Temperature {
     case hot, ice, iceOnly
 }
 
-enum Size {
-    case regular, grande, venti
+enum Size: Int {
+    case regular = 0, grande, venti
 }
 
-enum IceQuantity {
-    case less, regular, extra, none
+enum IceQuantity: Int {
+    case less = 0, regular, extra, none
 }

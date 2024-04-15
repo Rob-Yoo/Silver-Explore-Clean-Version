@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 struct Product {
     let name: String
     let image: UIImage
-    let detail: ProductDetail
+    var orderDetail: OrderDetail
     
     static func createProduct(itemInfo: ItemInfo) -> Product {
         let name = itemInfo.name
@@ -18,10 +19,10 @@ struct Product {
         let price = itemInfo.price
     
         if itemInfo.isIceOnly {
-            return Product(name: name, image: image, detail: .init(price: price, temperature: .iceOnly, iceQuantity: .regular))
+            return Product(name: name, image: image, orderDetail: .init(price: price, temperature: .iceOnly, iceQuantity: .regular))
         }
         
-        return Product(name: name, image: image, detail: .init(price: price))
+        return Product(name: name, image: image, orderDetail: .init(price: price))
     }
 }
 
