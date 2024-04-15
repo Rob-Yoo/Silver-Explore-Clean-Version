@@ -7,6 +7,9 @@
 
 import UIKit
 
+protocol KioskModalDelegate: ProductOptionSelectionModalDelegate {
+}
+
 class KioskMainViewController: UIViewController {
     private let kioskMainView = KioskMainView()
 
@@ -14,10 +17,30 @@ class KioskMainViewController: UIViewController {
         super.loadView()
         
         self.view = kioskMainView
+        self.kioskMainView.menuBoardView.kioskMainViewDelegate = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
+
+//MARK: - User Action Handling
+extension KioskMainViewController: KioskMenuBoardViewDelegate {
+    func displayProductOptionSelectionModal(itemInfo: ItemInfo) {
+        let product = Product.createProduct(itemInfo: itemInfo)
+        let modalVC = ProductOptionSelectionViewController(selectedProduct: product)
+
+        modalVC.delegate = self
+        NavigationManager.shared.presentModal(modalVC)
+    }
+    
+}
+
+//MARK: - KioskModalDelegate Implementation
+extension KioskMainViewController: KioskModalDelegate {
+    func addCart(product: Product) {
+        print(product)
     }
 }
 
