@@ -23,6 +23,11 @@ class NavigationManager {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+    func presentModal(_ viewController: UIViewController) {
+        viewController.modalPresentationStyle = .overFullScreen
+        self.navigationController?.topViewController?.present(viewController, animated: false)
+    }
+    
     func pop() {
         self.navigationController?.popViewController(animated: true)
     }
