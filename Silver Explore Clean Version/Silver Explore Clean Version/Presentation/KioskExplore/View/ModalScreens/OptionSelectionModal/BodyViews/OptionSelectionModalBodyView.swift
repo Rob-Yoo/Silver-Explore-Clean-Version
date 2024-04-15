@@ -7,25 +7,17 @@
 
 import UIKit
 
-final class OptionSelectionBodyView: UIView {
-    private(set) var productNameLabel = {
-        let label = UILabel()
-        
-        label.font = .systemFont(ofSize: 40, weight: .bold)
-        label.textColor = .black
-        label.textAlignment = .center
-        return label
-    }()
-    
+final class OptionSelectionModalBodyView: UIView {
+    private(set) var productNameLabel: TextLabel
     private(set) var productCountControlStackView: ProductCountControlStackView
-    private(set) var productOptionStackView: ProductOptionStackView
+    private(set) var optionSelectionView: OptionSelectionView
     
     init(product: Product) {
+        self.productNameLabel = TextLabel(text: product.name).font(.systemFont(ofSize: 40, weight: .bold))
         self.productCountControlStackView = ProductCountControlStackView(product: product)
-        self.productOptionStackView = ProductOptionStackView(product: product)
+        self.optionSelectionView = OptionSelectionView(product: product)
         super.init(frame: .zero)
 
-        self.productNameLabel.text = product.name
         self.configureSubviews()
     }
     
@@ -36,7 +28,7 @@ final class OptionSelectionBodyView: UIView {
     private func configureSubviews() {
         self.configureProductNameLabel()
         self.configureProductCountControlStackView()
-        self.configureProductOptionStackView()
+        self.configureOptionSelectionView()
     }
     
     private func configureProductNameLabel() {
@@ -52,17 +44,17 @@ final class OptionSelectionBodyView: UIView {
         
         self.productCountControlStackView
             .topAnchor(self.productNameLabel.bottomAnchor, padding: 50)
-            .widthAnchor(self.widthAnchor, multiplier: 0.6)
+            .widthAnchor(self.widthAnchor, multiplier: 0.7)
             .heightAnchor(self.heightAnchor, multiplier: 0.3)
             .centerXAnchor(self.centerXAnchor)
     }
     
-    private func configureProductOptionStackView() {
-        self.addSubview(self.productOptionStackView)
+    private func configureOptionSelectionView() {
+        self.addSubview(self.optionSelectionView)
         
-        self.productOptionStackView
+        self.optionSelectionView
             .topAnchor(self.productCountControlStackView.bottomAnchor, padding: 50)
-            .bottomAnchor(self.bottomAnchor, padding: -30)
+            .bottomAnchor(self.bottomAnchor, padding: -20)
             .widthAnchor(self.productCountControlStackView.widthAnchor)
             .centerXAnchor(self.centerXAnchor)
     }

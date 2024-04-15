@@ -7,12 +7,24 @@
 
 import UIKit
 
-//MARK: - ProductOptionSelectionModalView
+@objc protocol ProductOptionSelectionModalViewDelegate: AnyObject {
+    @objc func minusButtonTapped()
+    @objc func plusButtonTapped()
+    @objc func hotButtonTapped()
+    @objc func iceButtonTapped()
+    @objc func sizeOptionControlled(_ sender: UISegmentedControl)
+    @objc func iceQuantityOptionControlled(_ sender: UISegmentedControl)
+    @objc func cancelButtonTapped()
+    @objc func addCartButtonTapped()
+}
+
 final class ProductOptionSelectionModalView: UIView {
-    private(set) var optionSelectionView: OptionSelectionView
+    private(set) var optionSelectionModalView: OptionSelectionModalView
+    
+    weak var delegate: ProductOptionSelectionModalViewDelegate?
     
     init(product: Product) {
-        self.optionSelectionView = OptionSelectionView(product: product)
+        self.optionSelectionModalView = OptionSelectionModalView(product: product)
         super.init(frame: .zero)
         self.configure()
     }
@@ -23,9 +35,9 @@ final class ProductOptionSelectionModalView: UIView {
     
     private func configure() {
         self.backgroundColor = .init(white: 0, alpha: 0.5)
-        self.addSubview(self.optionSelectionView)
+        self.addSubview(self.optionSelectionModalView)
         
-        self.optionSelectionView
+        self.optionSelectionModalView
             .widthAnchor(self.widthAnchor, multiplier: 0.8)
             .heightAnchor(self.heightAnchor, multiplier: 0.8)
             .centerXAnchor(self.centerXAnchor)
@@ -33,64 +45,42 @@ final class ProductOptionSelectionModalView: UIView {
     }
 }
 
-// MARK: - OptionSelectionView
-final class OptionSelectionView: UIView {
-    private(set) var headerView = HeaderView(title: "옵션 선택").backgroundColor(color: .mainTheme).textColor(color: .white).titleLabelFont(font: .systemFont(ofSize: 30, weight: .regular))
-    private(set) var bodyView: OptionSelectionBodyView
-    private(set) var separatorLineView = SeparatorLineView()
-    private(set) var footerButtonsView = UIView()
-    
-    init(product: Product) {
-        self.bodyView = OptionSelectionBodyView(product: product)
-        super.init(frame: .zero)
-        self.backgroundColor = .white
-        self.configureSubviews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func configureSubviews() {
-        self.configureHeaderView()
-        self.configureBodyView()
-        self.configureSeparatorLineView()
-        self.configureFooterButtonsView()
-    }
-    
-    private func configureHeaderView() {
-        self.addSubview(self.headerView)
+// MARK: - Communicate With Controller
+extension ProductOptionSelectionModalView {
+    func addUserAction() {
+        guard let delegate = self.delegate else {
+            fatalError("ProductOptionSelectionModalViewDelegate 지정 후 사용해주세요!")
+        }
         
-        self.headerView
-            .topAnchor(self.topAnchor)
-            .widthAnchor(self.widthAnchor)
-            .heightAnchor(self.heightAnchor, multiplier: 0.1)
+        let bodyView = self.optionSelectionModalView.bodyView
+        let countControlView = bodyView.productCountControlStackView.rightView.countControlStackView
+        let temperatureOptionView = bodyView.optionSelectionView.temperatureOptionView
+        let sizeOptionSegmentedControl = bodyView.optionSelectionView.sizeOptionSegmentedControl
+        let iceQuantityOptionSegmentedControl = bodyView.optionSelectionView.iceQuantityOptionSegmentedControl
+        let footerButtonsView = self.optionSelectionModalView.footerButtonsView
+        
+        countControlView.minusButton.addTarget(delegate, action: #selector(delegate.minusButtonTapped), for: .touchUpInside)
+        
+        countControlView.plusButton.addTarget(delegate, action: #selector(delegate.plusButtonTapped), for: .touchUpInside)
+        
+        temperatureOptionView.hotButton.addTarget(delegate, action: #selector(delegate.hotButtonTapped), for: .touchUpInside)
+        
+        temperatureOptionView.iceButton.addTarget(delegate, action: #selector(delegate.iceButtonTapped), for: .touchUpInside)
+        
+        sizeOptionSegmentedControl.addTarget(delegate, action: #selector(delegate.sizeOptionControlled(_:)), for: .valueChanged)
+        
+        iceQuantityOptionSegmentedControl.addTarget(delegate, action: #selector(delegate.iceQuantityOptionControlled(_:)), for: .valueChanged)
+        
+        footerButtonsView.cancelButton.addTarget(delegate, action: #selector(delegate.cancelButtonTapped), for: .touchUpInside)
+        
+        footerButtonsView.addCartButton.addTarget(delegate, action: #selector(delegate.addCartButtonTapped), for: .touchUpInside)
+        
     }
     
-    private func configureBodyView() {
-        self.addSubview(self.bodyView)
-        
-        self.bodyView
-            .topAnchor(self.headerView.bottomAnchor)
-            .widthAnchor(self.widthAnchor)
-            .heightAnchor(self.heightAnchor, multiplier: 0.75)
-    }
-    
-    private func configureSeparatorLineView() {
-        self.addSubview(self.separatorLineView)
-        
-        self.separatorLineView
-            .topAnchor(self.bodyView.bottomAnchor)
-            .widthAnchor(self.widthAnchor)
-            .heightAnchor(equalToConstant: 3)
-    }
-    
-    private func configureFooterButtonsView() {
-        self.addSubview(self.footerButtonsView)
-        
-        self.footerButtonsView
-            .topAnchor(self.separatorLineView.bottomAnchor)
-            .bottomAnchor(self.bottomAnchor)
-            .widthAnchor(self.widthAnchor)
-    }
+//    func update(product: Product) {
+////        self.optionSelectionModalView.bodyView.productCountControlStackView.rightView.countControlStackView.update(product: product)
+//        
+//        self.optionSelectionModalView.bodyView.optionSelectionView.temperatureOptionView.update()
+//    }
 }
+
