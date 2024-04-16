@@ -11,25 +11,31 @@ final class OptionSelectionView: UIView {
     private(set) var temperatureOptionView: TemperatureOptionView
 
     private(set) var sizeOptionLabel = TextLabel(text: "사이즈").font(.systemFont(ofSize: 20, weight: .regular))
-    private(set) var sizeOptionSegmentedControl = SegmentedControl(items: ["레귤러", "그란데", "벤티"])
+    private(set) var sizeOptionSegmentedControl: SegmentedControl
 
     private(set) var iceQunatityOptionLabel = TextLabel(text: "얼음").font(.systemFont(ofSize: 20, weight: .regular))
-    private(set) lazy var iceQuantityOptionSegmentedControl = SegmentedControl(items: ["적게", "보통", "많게"], defaultIndex: 1)
+    private(set) var iceQuantityOptionSegmentedControl: SegmentedControl
 
-    init(product: Product) {
-        self.temperatureOptionView = TemperatureOptionView(product: product)
+    init(temperature: Temperature, size: Size = .regular, iceQuantity: IceQuantity = .regular) {
+        self.temperatureOptionView = TemperatureOptionView(temperature: temperature)
+        self.sizeOptionSegmentedControl = SegmentedControl(items: ["레귤러", "그란데", "벤티"], defaultIndex: size.rawValue)
+        self.iceQuantityOptionSegmentedControl = SegmentedControl(items: ["적게", "보통", "많게"], defaultIndex: iceQuantity.rawValue)
+
         super.init(frame: .zero)
-        self.configure()
+        self.configure(temperature: temperature)
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configure() {
+    private func configure(temperature: Temperature) {
         self.configureTemperatureOptionView()
-        self.configureIceQuantityOptionSegmentedControl()
         self.configureSizeOptionSegmentedControl()
+        
+        if (temperature != .iceOnly) {
+            self.configureIceQuantityOptionSegmentedControl()
+        }
     }
     
     private func configureTemperatureOptionView() {
@@ -41,32 +47,44 @@ final class OptionSelectionView: UIView {
             .heightAnchor(self.heightAnchor, multiplier: 0.2)
     }
     
-    private func configureIceQuantityOptionSegmentedControl() {
-        self.addSubview(self.iceQuantityOptionSegmentedControl)
-        self.addSubview(self.iceQunatityOptionLabel)
-        
-        self.iceQuantityOptionSegmentedControl
-            .bottomAnchor(self.bottomAnchor, padding: -30)
-            .widthAnchor(self.widthAnchor)
-            .size(.init(width: 0, height: 70))
-        
-        self.iceQunatityOptionLabel
-            .trailingAnchor(self.iceQuantityOptionSegmentedControl.leadingAnchor, padding: -25)
-            .centerYAnchor(self.iceQuantityOptionSegmentedControl.centerYAnchor)
-    }
-
     private func configureSizeOptionSegmentedControl() {
         self.addSubview(self.sizeOptionSegmentedControl)
         self.addSubview(self.sizeOptionLabel)
         
         self.sizeOptionSegmentedControl
-            .bottomAnchor(self.iceQuantityOptionSegmentedControl.topAnchor, padding: -30)
+            .topAnchor(self.temperatureOptionView.bottomAnchor, padding: 50)
             .widthAnchor(self.widthAnchor)
-            .size(.init(width: 0, height: 70))
+            .heightAnchor(equalToConstant: 70)
         
         self.sizeOptionLabel
             .trailingAnchor(self.sizeOptionSegmentedControl.leadingAnchor, padding: -25)
             .centerYAnchor(self.sizeOptionSegmentedControl.centerYAnchor)
     }
     
+    
+    private func configureIceQuantityOptionSegmentedControl() {
+        self.addSubview(self.iceQuantityOptionSegmentedControl)
+        self.addSubview(self.iceQunatityOptionLabel)
+        
+        self.iceQuantityOptionSegmentedControl
+            .topAnchor(self.sizeOptionSegmentedControl.bottomAnchor, padding: 40)
+            .widthAnchor(self.widthAnchor)
+            .heightAnchor(equalToConstant: 70)
+        
+        self.iceQunatityOptionLabel
+            .trailingAnchor(self.iceQuantityOptionSegmentedControl.leadingAnchor, padding: -25)
+            .centerYAnchor(self.iceQuantityOptionSegmentedControl.centerYAnchor)
+    }
+    
+    func update(temperature: Temperature) {
+        self.temperatureOptionView.update()
+
+        if (temperature == .hot) {
+            self.iceQunatityOptionLabel.isHidden = true
+            self.iceQuantityOptionSegmentedControl.isHidden = true
+        } else if (temperature == .ice) {
+            self.iceQunatityOptionLabel.isHidden = false
+            self.iceQuantityOptionSegmentedControl.isHidden = false
+        }
+    }
 }

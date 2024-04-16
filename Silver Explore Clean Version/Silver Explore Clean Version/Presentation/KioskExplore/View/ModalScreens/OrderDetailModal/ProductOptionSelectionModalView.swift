@@ -7,16 +7,16 @@
 
 import UIKit
 
-@objc protocol ProductOptionSelectionModalViewDelegate: AnyObject {
-    @objc func minusButtonTapped()
-    @objc func plusButtonTapped()
-    @objc func hotButtonTapped()
-    @objc func iceButtonTapped()
-    @objc func sizeOptionControlled(_ sender: UISegmentedControl)
-    @objc func iceQuantityOptionControlled(_ sender: UISegmentedControl)
-    @objc func cancelButtonTapped()
-    @objc func addCartButtonTapped()
-}
+//@objc protocol ProductOptionSelectionModalViewDelegate: AnyObject {
+//    @objc func minusButtonTapped()
+//    @objc func plusButtonTapped()
+//    @objc func hotButtonTapped()
+//    @objc func iceButtonTapped()
+//    @objc func sizeOptionControlled(_ sender: UISegmentedControl)
+//    @objc func iceQuantityOptionControlled(_ sender: UISegmentedControl)
+//    @objc func cancelButtonTapped()
+//    @objc func addCartButtonTapped()
+//}
 
 //final class ProductOptionSelectionModalView: UIView {
 //    private(set) var optionSelectionModalView: OptionSelectionModalView

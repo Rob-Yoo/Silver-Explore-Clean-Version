@@ -54,7 +54,6 @@ extension OrderDetail {
     
     func changeTemperature(_ temp: Temperature) {
         self.temperature = temp
-        print(self, self.temperature)
     }
     
     func changeSize(_ size: Size) {

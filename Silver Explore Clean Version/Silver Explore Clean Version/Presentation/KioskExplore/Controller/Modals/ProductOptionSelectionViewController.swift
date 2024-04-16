@@ -14,7 +14,8 @@ protocol ProductOptionSelectionModalDelegate: AnyObject {
 
 class ProductOptionSelectionViewController: UIViewController {
     private var model: Product
-    private let modalView: ProductOptionSelectionModalView
+    private let modalView: BaseModalView
+    private let contentView: OrderDetailModalView
     private var cancellables = Set<AnyCancellable>()
 
     weak var delegate: ProductOptionSelectionModalDelegate?
@@ -23,18 +24,19 @@ class ProductOptionSelectionViewController: UIViewController {
         super.loadView()
         self.view = self.modalView
         
-        self.modalView.delegate = self
-        self.modalView.addUserAction()
+//        self.modalView.delegate = self
+//        self.modalView.addUserAction()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.observeModel()
+//        self.observeModel()
     }
     
     init(selectedProduct: Product) {
         self.model = selectedProduct
-        self.modalView = ProductOptionSelectionModalView(product: selectedProduct)
+        self.contentView = OrderDetailModalView(product: selectedProduct)
+        self.modalView = BaseModalView(title: "옵션 선택", contentView: self.contentView)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -44,7 +46,7 @@ class ProductOptionSelectionViewController: UIViewController {
 }
 
 //MARK: - User Action Handling
-extension ProductOptionSelectionViewController: ProductOptionSelectionModalViewDelegate {
+extension ProductOptionSelectionViewController: OrderDetailModalViewDelegate {
     @objc func minusButtonTapped() {
         self.model.orderDetail.removeCount()
     }
@@ -85,28 +87,27 @@ extension ProductOptionSelectionViewController: ProductOptionSelectionModalViewD
         }
         
         delegate.addCart(product: self.model)
-        print(self.model.orderDetail.totalPrice)
+        print(self.model.orderDetail.totalPrice, self.model.orderDetail.temperature)
         self.dismiss(animated: false)
     }
 }
 
 //MARK: - Observing Model
 extension ProductOptionSelectionViewController {
-    func observeModel() {
-        self.model.orderDetail.$count
-            .sink { [weak self] newValue in
-                self?.modalView.optionSelectionModalView.bodyView
-                    .productCountControlStackView.rightView.countControlStackView.update(orderCount: newValue)
-            }
-            .store(in: &cancellables)
-        
-        self.model.orderDetail.$temperature
-            .sink { [weak self] newValue in
-                print("H")
-                self?.modalView.optionSelectionModalView.bodyView.optionSelectionView.temperatureOptionView.update()
-            }
-            .store(in: &cancellables)
-    }
+//    private func observeModel() {
+//        self.model.orderDetail.$count
+//            .sink { [weak self] newValue in
+//                self?.modalView.optionSelectionModalView.bodyView
+//                    .productCountControlStackView.rightView.countControlStackView.update(orderCount: newValue)
+//            }
+//            .store(in: &cancellables)
+//        
+//        self.model.orderDetail.$temperature
+//            .sink { [weak self] newValue in
+//                self?.modalView.optionSelectionModalView.bodyView.optionSelectionView.temperatureOptionView.update()
+//            }
+//            .store(in: &cancellables)
+//    }
 }
 
 #if DEBUG

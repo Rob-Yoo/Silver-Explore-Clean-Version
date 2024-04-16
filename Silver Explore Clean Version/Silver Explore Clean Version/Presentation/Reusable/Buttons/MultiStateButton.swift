@@ -64,6 +64,8 @@ final class MultiStateButton: UIButton {
     }
     
     func changeButtonState() {
+        guard self.buttonState != .block else { return }
+
         self.buttonState = (self.buttonState == .selected) ? .unselected : .selected
         self.configure()
     }

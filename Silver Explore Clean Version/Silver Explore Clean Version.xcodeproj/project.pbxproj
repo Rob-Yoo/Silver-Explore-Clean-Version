@@ -24,8 +24,8 @@
 		CC2A9A402B9309AB00B99D33 /* KioskRightFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A3F2B9309AB00B99D33 /* KioskRightFooterView.swift */; };
 		CC2A9A442B93130000B99D33 /* ProductOptionSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A432B93130000B99D33 /* ProductOptionSelectionViewController.swift */; };
 		CC2A9A472B93134E00B99D33 /* ProductOptionSelectionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A462B93134E00B99D33 /* ProductOptionSelectionModalView.swift */; };
-		CC2A9A4A2B93158C00B99D33 /* OptionSelectionModalBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A492B93158C00B99D33 /* OptionSelectionModalBodyView.swift */; };
-		CC2A9A4C2B93174E00B99D33 /* ProductCountControlStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A4B2B93174E00B99D33 /* ProductCountControlStackView.swift */; };
+		CC2A9A4A2B93158C00B99D33 /* OrderDetailModalBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A492B93158C00B99D33 /* OrderDetailModalBodyView.swift */; };
+		CC2A9A4C2B93174E00B99D33 /* OrderCountAndPriceStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A4B2B93174E00B99D33 /* OrderCountAndPriceStackView.swift */; };
 		CC2A9A4E2B9338AA00B99D33 /* CountControlStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A4D2B9338AA00B99D33 /* CountControlStackView.swift */; };
 		CC2A9A502B933E9400B99D33 /* SeparatorLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A4F2B933E9400B99D33 /* SeparatorLineView.swift */; };
 		CC2A9A532B93472200B99D33 /* OptionSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A522B93472200B99D33 /* OptionSelectionView.swift */; };
@@ -51,7 +51,7 @@
 		CC68B2902B92134200E4E767 /* OrderCountControlStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68B28F2B92134200E4E767 /* OrderCountControlStackView.swift */; };
 		CC78E3442B6397320038088C /* Finn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E3432B6397320038088C /* Finn.swift */; };
 		CC78E3472B63997C0038088C /* ARCharacterActionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC78E3462B63997C0038088C /* ARCharacterActionData.swift */; };
-		CC7FF0102BCC42B9005D3D9A /* OptionSelectionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FF00F2BCC42B9005D3D9A /* OptionSelectionModalView.swift */; };
+		CC7FF0102BCC42B9005D3D9A /* OrderDetailModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FF00F2BCC42B9005D3D9A /* OrderDetailModalView.swift */; };
 		CC9857AE2B622F16000D621A /* ARObjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857AD2B622F16000D621A /* ARObjectData.swift */; };
 		CC9857B12B623F1B000D621A /* ActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B02B623F1B000D621A /* ActionProtocol.swift */; };
 		CC9857B32B62408C000D621A /* Arr.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9857B22B62408C000D621A /* Arr.swift */; };
@@ -59,6 +59,7 @@
 		CC9B01B02B8B5857000B58B0 /* KioskInitialScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B01AF2B8B5857000B58B0 /* KioskInitialScreenView.swift */; };
 		CCA19A9A2BCD0B5800C76662 /* FooterButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA19A992BCD0B5800C76662 /* FooterButtonsView.swift */; };
 		CCA19A9C2BCD3A6A00C76662 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA19A9B2BCD3A6A00C76662 /* Int+Extension.swift */; };
+		CCA19AA02BCE621200C76662 /* ProuctDetailStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA19A9F2BCE621200C76662 /* ProuctDetailStackView.swift */; };
 		CCAC2CAF2B6B6D8300D73E69 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CAE2B6B6D8300D73E69 /* HomeView.swift */; };
 		CCAC2CB12B6B8C8100D73E69 /* CharacterSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB02B6B8C8100D73E69 /* CharacterSelectionView.swift */; };
 		CCAC2CB32B6BA96800D73E69 /* SelectionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */; };
@@ -98,8 +99,8 @@
 		CC2A9A3F2B9309AB00B99D33 /* KioskRightFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskRightFooterView.swift; sourceTree = "<group>"; };
 		CC2A9A432B93130000B99D33 /* ProductOptionSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOptionSelectionViewController.swift; sourceTree = "<group>"; };
 		CC2A9A462B93134E00B99D33 /* ProductOptionSelectionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOptionSelectionModalView.swift; sourceTree = "<group>"; };
-		CC2A9A492B93158C00B99D33 /* OptionSelectionModalBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionModalBodyView.swift; sourceTree = "<group>"; };
-		CC2A9A4B2B93174E00B99D33 /* ProductCountControlStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCountControlStackView.swift; sourceTree = "<group>"; };
+		CC2A9A492B93158C00B99D33 /* OrderDetailModalBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailModalBodyView.swift; sourceTree = "<group>"; };
+		CC2A9A4B2B93174E00B99D33 /* OrderCountAndPriceStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountAndPriceStackView.swift; sourceTree = "<group>"; };
 		CC2A9A4D2B9338AA00B99D33 /* CountControlStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountControlStackView.swift; sourceTree = "<group>"; };
 		CC2A9A4F2B933E9400B99D33 /* SeparatorLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorLineView.swift; sourceTree = "<group>"; };
 		CC2A9A522B93472200B99D33 /* OptionSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionView.swift; sourceTree = "<group>"; };
@@ -113,7 +114,7 @@
 		CC3DE29E2B5A934F004175E4 /* ExploreButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreButtonsView.swift; sourceTree = "<group>"; };
 		CC45189B2BC952B200E4D5BA /* OrderDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetail.swift; sourceTree = "<group>"; };
 		CC45189D2BC9873700E4D5BA /* OptionEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionEnums.swift; sourceTree = "<group>"; };
-		CC4518A02BC99B2A00E4D5BA /* BaseModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModalView.swift; sourceTree = "<group>"; };
+		CC4518A02BC99B2A00E4D5BA /* BaseModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseModalView.swift; path = ../../../Reusable/BaseModal/BaseModalView.swift; sourceTree = "<group>"; };
 		CC4779402B63CBC000333CD2 /* PrevButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevButton.swift; sourceTree = "<group>"; };
 		CC68B27F2B91C18A00E4E767 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		CC68B2822B91F73000E4E767 /* KioskMenuBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskMenuBoardView.swift; sourceTree = "<group>"; };
@@ -125,7 +126,7 @@
 		CC68B28F2B92134200E4E767 /* OrderCountControlStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountControlStackView.swift; sourceTree = "<group>"; };
 		CC78E3432B6397320038088C /* Finn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finn.swift; sourceTree = "<group>"; };
 		CC78E3462B63997C0038088C /* ARCharacterActionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterActionData.swift; sourceTree = "<group>"; };
-		CC7FF00F2BCC42B9005D3D9A /* OptionSelectionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionSelectionModalView.swift; sourceTree = "<group>"; };
+		CC7FF00F2BCC42B9005D3D9A /* OrderDetailModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailModalView.swift; sourceTree = "<group>"; };
 		CC9857AD2B622F16000D621A /* ARObjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARObjectData.swift; sourceTree = "<group>"; };
 		CC9857B02B623F1B000D621A /* ActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionProtocol.swift; sourceTree = "<group>"; };
 		CC9857B22B62408C000D621A /* Arr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arr.swift; sourceTree = "<group>"; };
@@ -133,6 +134,7 @@
 		CC9B01AF2B8B5857000B58B0 /* KioskInitialScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskInitialScreenView.swift; sourceTree = "<group>"; };
 		CCA19A992BCD0B5800C76662 /* FooterButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterButtonsView.swift; sourceTree = "<group>"; };
 		CCA19A9B2BCD3A6A00C76662 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		CCA19A9F2BCE621200C76662 /* ProuctDetailStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProuctDetailStackView.swift; sourceTree = "<group>"; };
 		CCAC2CAE2B6B6D8300D73E69 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CCAC2CB02B6B8C8100D73E69 /* CharacterSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectionView.swift; sourceTree = "<group>"; };
 		CCAC2CB22B6BA96800D73E69 /* SelectionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionStackView.swift; sourceTree = "<group>"; };
@@ -247,27 +249,29 @@
 		CC2A9A452B93131E00B99D33 /* ModalScreens */ = {
 			isa = PBXGroup;
 			children = (
-				CC2A9A482B93154600B99D33 /* OptionSelectionModal */,
+				CC4518A02BC99B2A00E4D5BA /* BaseModalView.swift */,
+				CC2A9A482B93154600B99D33 /* OrderDetailModal */,
 			);
 			path = ModalScreens;
 			sourceTree = "<group>";
 		};
-		CC2A9A482B93154600B99D33 /* OptionSelectionModal */ = {
+		CC2A9A482B93154600B99D33 /* OrderDetailModal */ = {
 			isa = PBXGroup;
 			children = (
 				CC2A9A462B93134E00B99D33 /* ProductOptionSelectionModalView.swift */,
-				CC7FF00F2BCC42B9005D3D9A /* OptionSelectionModalView.swift */,
+				CC7FF00F2BCC42B9005D3D9A /* OrderDetailModalView.swift */,
 				CC2A9A512B93463000B99D33 /* BodyViews */,
 				CCA19A992BCD0B5800C76662 /* FooterButtonsView.swift */,
 			);
-			path = OptionSelectionModal;
+			path = OrderDetailModal;
 			sourceTree = "<group>";
 		};
 		CC2A9A512B93463000B99D33 /* BodyViews */ = {
 			isa = PBXGroup;
 			children = (
-				CC2A9A492B93158C00B99D33 /* OptionSelectionModalBodyView.swift */,
-				CC2A9A4B2B93174E00B99D33 /* ProductCountControlStackView.swift */,
+				CC2A9A492B93158C00B99D33 /* OrderDetailModalBodyView.swift */,
+				CCA19A9F2BCE621200C76662 /* ProuctDetailStackView.swift */,
+				CC2A9A4B2B93174E00B99D33 /* OrderCountAndPriceStackView.swift */,
 				CC2A9A4D2B9338AA00B99D33 /* CountControlStackView.swift */,
 				CC2A9A542B93536800B99D33 /* OptionViews */,
 			);
@@ -307,14 +311,6 @@
 				CC325D2B2B5D3236007C93DC /* Publisher.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		CC45189F2BC99ADE00E4D5BA /* BaseModal */ = {
-			isa = PBXGroup;
-			children = (
-				CC4518A02BC99B2A00E4D5BA /* BaseModalView.swift */,
-			);
-			path = BaseModal;
 			sourceTree = "<group>";
 		};
 		CC68B2812B91F70F00E4E767 /* KioskMainScreen */ = {
@@ -369,7 +365,6 @@
 		CC78E3492B63BE2D0038088C /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
-				CC45189F2BC99ADE00E4D5BA /* BaseModal */,
 				CC1147792B7617A7007FE5E5 /* Views */,
 				CC0EF9192B75069200206431 /* Buttons */,
 				CCDFCFBF2BCD030D00C3F7F2 /* SegmentedControl.swift */,
@@ -653,7 +648,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC7FF0102BCC42B9005D3D9A /* OptionSelectionModalView.swift in Sources */,
+				CC7FF0102BCC42B9005D3D9A /* OrderDetailModalView.swift in Sources */,
 				CC78E3442B6397320038088C /* Finn.swift in Sources */,
 				CC325D2C2B5D3236007C93DC /* Publisher.swift in Sources */,
 				CCB67B8D2B5FE159001B2A07 /* AIExploreViewController.swift in Sources */,
@@ -669,7 +664,7 @@
 				CC325D242B5CB7FF007C93DC /* UIView+Extension.swift in Sources */,
 				CC9857B32B62408C000D621A /* Arr.swift in Sources */,
 				CC3DE29A2B5A842E004175E4 /* HeaderView.swift in Sources */,
-				CC2A9A4C2B93174E00B99D33 /* ProductCountControlStackView.swift in Sources */,
+				CC2A9A4C2B93174E00B99D33 /* OrderCountAndPriceStackView.swift in Sources */,
 				CC4779412B63CBC000333CD2 /* PrevButton.swift in Sources */,
 				CC2A9A532B93472200B99D33 /* OptionSelectionView.swift in Sources */,
 				CC0EF9122B74C37B00206431 /* OnboardingView.swift in Sources */,
@@ -678,7 +673,7 @@
 				CCDFCFC22BCD068000C3F7F2 /* TextLabel.swift in Sources */,
 				CCADA6302B5952AD000C373E /* HomeViewController.swift in Sources */,
 				CCADA62C2B5952AD000C373E /* AppDelegate.swift in Sources */,
-				CC2A9A4A2B93158C00B99D33 /* OptionSelectionModalBodyView.swift in Sources */,
+				CC2A9A4A2B93158C00B99D33 /* OrderDetailModalBodyView.swift in Sources */,
 				CC68B28C2B92016700E4E767 /* OrderCountView.swift in Sources */,
 				CCC53F022B73C3F600B1C7E5 /* ARCharacterFactory.swift in Sources */,
 				CCA19A9A2BCD0B5800C76662 /* FooterButtonsView.swift in Sources */,
@@ -703,6 +698,7 @@
 				CC1E2BB72B8F9C9300653CBF /* KioskMainViewController.swift in Sources */,
 				CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */,
 				CC2A9A472B93134E00B99D33 /* ProductOptionSelectionModalView.swift in Sources */,
+				CCA19AA02BCE621200C76662 /* ProuctDetailStackView.swift in Sources */,
 				CC0EF9142B74C49800206431 /* BlurredButton.swift in Sources */,
 				CC2A9A562B9353A800B99D33 /* TemperatureOptionView.swift in Sources */,
 				CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */,

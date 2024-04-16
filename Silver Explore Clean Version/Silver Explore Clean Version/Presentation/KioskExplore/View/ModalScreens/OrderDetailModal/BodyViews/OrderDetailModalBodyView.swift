@@ -1,5 +1,5 @@
 //
-//  OptionSelectionBodyView.swift
+//  OrderDetailModalBodyView.swift
 //  Silver Explore Clean Version
 //
 //  Created by Jinyoung Yoo on 3/2/24.
@@ -15,7 +15,7 @@ final class OrderDetailModalBodyView: UIView {
     init(product: Product) {
         self.productNameLabel = TextLabel(text: product.name).font(.systemFont(ofSize: 40, weight: .bold))
         self.productDetailStackView = ProductDetailStackView(image: product.image, price: product.orderDetail.totalPrice)
-        self.optionSelectionView = OptionSelectionView(product: product)
+        self.optionSelectionView = OptionSelectionView(temperature: product.orderDetail.temperature)
         super.init(frame: .zero)
 
         self.configureSubviews()
@@ -57,6 +57,11 @@ final class OrderDetailModalBodyView: UIView {
             .bottomAnchor(self.bottomAnchor, padding: -20)
             .widthAnchor(self.productDetailStackView.widthAnchor)
             .centerXAnchor(self.centerXAnchor)
+    }
+    
+    func update(data: Product) {
+        self.productDetailStackView.update(count: data.orderDetail.count, price: data.orderDetail.totalPrice)
+        self.optionSelectionView.update(temperature: data.orderDetail.temperature)
     }
 }
 

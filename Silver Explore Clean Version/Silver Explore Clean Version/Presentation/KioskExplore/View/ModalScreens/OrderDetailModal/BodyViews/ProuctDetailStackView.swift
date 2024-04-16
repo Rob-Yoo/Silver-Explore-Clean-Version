@@ -34,4 +34,8 @@ final class ProductDetailStackView: UIStackView {
             self.addArrangedSubview($0)
         }
     }
+    
+    func update(count: Int, price: Int) {
+        self.rightView.update(count: count, price: price)
+    }
 }

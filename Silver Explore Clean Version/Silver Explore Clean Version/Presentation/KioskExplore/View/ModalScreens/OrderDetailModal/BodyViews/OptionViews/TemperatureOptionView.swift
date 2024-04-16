@@ -14,8 +14,8 @@ final class TemperatureOptionView: UIStackView {
         return [hotButton, iceButton]
     }
     
-    init(product: Product) {
-        if (product.orderDetail.temperature == .iceOnly) {
+    init(temperature: Temperature) {
+        if (temperature == .iceOnly) {
             self.hotButton = MultiStateButton(state: .block, title: "HOT", color: .hot)
             self.iceButton = MultiStateButton(state: .selected, title: "ICE", color: .ice)
         } else {
