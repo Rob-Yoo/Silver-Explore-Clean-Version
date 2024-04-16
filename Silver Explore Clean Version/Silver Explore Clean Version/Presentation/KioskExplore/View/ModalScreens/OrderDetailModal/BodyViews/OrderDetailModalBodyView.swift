@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class OptionSelectionModalBodyView: UIView {
+final class OrderDetailModalBodyView: UIView {
     private(set) var productNameLabel: TextLabel
-    private(set) var productCountControlStackView: ProductCountControlStackView
+    private(set) var productDetailStackView: ProductDetailStackView
     private(set) var optionSelectionView: OptionSelectionView
     
     init(product: Product) {
         self.productNameLabel = TextLabel(text: product.name).font(.systemFont(ofSize: 40, weight: .bold))
-        self.productCountControlStackView = ProductCountControlStackView(product: product)
+        self.productDetailStackView = ProductDetailStackView(image: product.image, price: product.orderDetail.totalPrice)
         self.optionSelectionView = OptionSelectionView(product: product)
         super.init(frame: .zero)
 
@@ -27,7 +27,7 @@ final class OptionSelectionModalBodyView: UIView {
     
     private func configureSubviews() {
         self.configureProductNameLabel()
-        self.configureProductCountControlStackView()
+        self.configureProductDetailStackView()
         self.configureOptionSelectionView()
     }
     
@@ -39,10 +39,10 @@ final class OptionSelectionModalBodyView: UIView {
             .centerXAnchor(self.centerXAnchor)
     }
     
-    private func configureProductCountControlStackView() {
-        self.addSubview(self.productCountControlStackView)
+    private func configureProductDetailStackView() {
+        self.addSubview(self.productDetailStackView)
         
-        self.productCountControlStackView
+        self.productDetailStackView
             .topAnchor(self.productNameLabel.bottomAnchor, padding: 50)
             .widthAnchor(self.widthAnchor, multiplier: 0.7)
             .heightAnchor(self.heightAnchor, multiplier: 0.3)
@@ -53,9 +53,9 @@ final class OptionSelectionModalBodyView: UIView {
         self.addSubview(self.optionSelectionView)
         
         self.optionSelectionView
-            .topAnchor(self.productCountControlStackView.bottomAnchor, padding: 50)
+            .topAnchor(self.productDetailStackView.bottomAnchor, padding: 50)
             .bottomAnchor(self.bottomAnchor, padding: -20)
-            .widthAnchor(self.productCountControlStackView.widthAnchor)
+            .widthAnchor(self.productDetailStackView.widthAnchor)
             .centerXAnchor(self.centerXAnchor)
     }
 }
