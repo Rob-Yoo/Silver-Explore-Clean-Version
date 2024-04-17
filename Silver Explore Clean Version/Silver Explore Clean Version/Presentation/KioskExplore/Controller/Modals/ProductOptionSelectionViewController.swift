@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Combine
 
 protocol ProductOptionSelectionModalDelegate: AnyObject {
     func addCart(product: Product)
@@ -14,67 +13,69 @@ protocol ProductOptionSelectionModalDelegate: AnyObject {
 
 class ProductOptionSelectionViewController: UIViewController {
     private var model: Product
-    private let modalView: BaseModalView
     private let contentView: OrderDetailModalView
-    private var cancellables = Set<AnyCancellable>()
 
     weak var delegate: ProductOptionSelectionModalDelegate?
     
     override func loadView() {
         super.loadView()
-        self.view = self.modalView
+        self.view = BaseModalView(title: "옵션 선택", contentView: self.contentView)
         
-//        self.modalView.delegate = self
-//        self.modalView.addUserAction()
+        self.contentView.orderDetailModalViewDelegate = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.contentView.addUserAction()
 //        self.observeModel()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: .OrderDetailChanged, object: nil)
     }
     
     init(selectedProduct: Product) {
         self.model = selectedProduct
         self.contentView = OrderDetailModalView(product: selectedProduct)
-        self.modalView = BaseModalView(title: "옵션 선택", contentView: self.contentView)
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    @objc private func updateView() {
+        self.contentView.update(data: self.model)
+    }
 }
 
 //MARK: - User Action Handling
 extension ProductOptionSelectionViewController: OrderDetailModalViewDelegate {
     @objc func minusButtonTapped() {
-        self.model.orderDetail.removeCount()
+        self.model.removeCount()
     }
     
     @objc func plusButtonTapped() {
-        self.model.orderDetail.addCount()
+        self.model.addCount()
     }
     
     @objc func hotButtonTapped() {
-        self.model.orderDetail.changeTemperature(.hot)
+        self.model.changeTemperature(.hot)
     }
     
     @objc func iceButtonTapped() {
-        self.model.orderDetail.changeTemperature(.ice)
+        self.model.changeTemperature(.ice)
     }
     
     @objc func sizeOptionControlled(_ sender: UISegmentedControl) {
         let segmentedIndex = sender.selectedSegmentIndex
         let size = Size(rawValue: segmentedIndex)!
 
-        self.model.orderDetail.changeSize(size)
+        self.model.changeSize(size)
     }
     
     @objc func iceQuantityOptionControlled(_ sender: UISegmentedControl) {
         let segmentedIndex = sender.selectedSegmentIndex
         let iceQuantity = IceQuantity(rawValue: segmentedIndex)!
 
-        self.model.orderDetail.changeIceQuantity(iceQuantity)
+        self.model.changeIceQuantity(iceQuantity)
     }
     
     @objc func cancelButtonTapped() {
@@ -87,27 +88,12 @@ extension ProductOptionSelectionViewController: OrderDetailModalViewDelegate {
         }
         
         delegate.addCart(product: self.model)
-        print(self.model.orderDetail.totalPrice, self.model.orderDetail.temperature)
         self.dismiss(animated: false)
     }
 }
 
 //MARK: - Observing Model
 extension ProductOptionSelectionViewController {
-//    private func observeModel() {
-//        self.model.orderDetail.$count
-//            .sink { [weak self] newValue in
-//                self?.modalView.optionSelectionModalView.bodyView
-//                    .productCountControlStackView.rightView.countControlStackView.update(orderCount: newValue)
-//            }
-//            .store(in: &cancellables)
-//        
-//        self.model.orderDetail.$temperature
-//            .sink { [weak self] newValue in
-//                self?.modalView.optionSelectionModalView.bodyView.optionSelectionView.temperatureOptionView.update()
-//            }
-//            .store(in: &cancellables)
-//    }
 }
 
 #if DEBUG

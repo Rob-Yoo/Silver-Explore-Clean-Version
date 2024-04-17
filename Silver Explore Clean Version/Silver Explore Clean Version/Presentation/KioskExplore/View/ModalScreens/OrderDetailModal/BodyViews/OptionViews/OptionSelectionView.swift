@@ -77,7 +77,7 @@ final class OptionSelectionView: UIView {
     }
     
     func update(temperature: Temperature) {
-        self.temperatureOptionView.update()
+        self.temperatureOptionView.update(temperature: temperature)
 
         if (temperature == .hot) {
             self.iceQunatityOptionLabel.isHidden = true

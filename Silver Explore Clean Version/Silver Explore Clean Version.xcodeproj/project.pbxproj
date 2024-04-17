@@ -23,7 +23,6 @@
 		CC2A9A3C2B9304F600B99D33 /* PaymentButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A3B2B9304F600B99D33 /* PaymentButtonView.swift */; };
 		CC2A9A402B9309AB00B99D33 /* KioskRightFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A3F2B9309AB00B99D33 /* KioskRightFooterView.swift */; };
 		CC2A9A442B93130000B99D33 /* ProductOptionSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A432B93130000B99D33 /* ProductOptionSelectionViewController.swift */; };
-		CC2A9A472B93134E00B99D33 /* ProductOptionSelectionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A462B93134E00B99D33 /* ProductOptionSelectionModalView.swift */; };
 		CC2A9A4A2B93158C00B99D33 /* OrderDetailModalBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A492B93158C00B99D33 /* OrderDetailModalBodyView.swift */; };
 		CC2A9A4C2B93174E00B99D33 /* OrderCountAndPriceStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A4B2B93174E00B99D33 /* OrderCountAndPriceStackView.swift */; };
 		CC2A9A4E2B9338AA00B99D33 /* CountControlStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2A9A4D2B9338AA00B99D33 /* CountControlStackView.swift */; };
@@ -79,6 +78,7 @@
 		CCC53F042B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53F032B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift */; };
 		CCDFCFC02BCD030D00C3F7F2 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFCFBF2BCD030D00C3F7F2 /* SegmentedControl.swift */; };
 		CCDFCFC22BCD068000C3F7F2 /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFCFC12BCD068000C3F7F2 /* TextLabel.swift */; };
+		CCF043302BCFA5C1009BCC4A /* Notification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0432F2BCFA5C1009BCC4A /* Notification.Name+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,7 +98,6 @@
 		CC2A9A3B2B9304F600B99D33 /* PaymentButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentButtonView.swift; sourceTree = "<group>"; };
 		CC2A9A3F2B9309AB00B99D33 /* KioskRightFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskRightFooterView.swift; sourceTree = "<group>"; };
 		CC2A9A432B93130000B99D33 /* ProductOptionSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOptionSelectionViewController.swift; sourceTree = "<group>"; };
-		CC2A9A462B93134E00B99D33 /* ProductOptionSelectionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOptionSelectionModalView.swift; sourceTree = "<group>"; };
 		CC2A9A492B93158C00B99D33 /* OrderDetailModalBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailModalBodyView.swift; sourceTree = "<group>"; };
 		CC2A9A4B2B93174E00B99D33 /* OrderCountAndPriceStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCountAndPriceStackView.swift; sourceTree = "<group>"; };
 		CC2A9A4D2B9338AA00B99D33 /* CountControlStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountControlStackView.swift; sourceTree = "<group>"; };
@@ -156,6 +155,7 @@
 		CCC53F032B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureExploreViewController.swift; sourceTree = "<group>"; };
 		CCDFCFBF2BCD030D00C3F7F2 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		CCDFCFC12BCD068000C3F7F2 /* TextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabel.swift; sourceTree = "<group>"; };
+		CCF0432F2BCFA5C1009BCC4A /* Notification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,7 +258,6 @@
 		CC2A9A482B93154600B99D33 /* OrderDetailModal */ = {
 			isa = PBXGroup;
 			children = (
-				CC2A9A462B93134E00B99D33 /* ProductOptionSelectionModalView.swift */,
 				CC7FF00F2BCC42B9005D3D9A /* OrderDetailModalView.swift */,
 				CC2A9A512B93463000B99D33 /* BodyViews */,
 				CCA19A992BCD0B5800C76662 /* FooterButtonsView.swift */,
@@ -300,6 +299,7 @@
 			children = (
 				CC325D232B5CB7FF007C93DC /* UIView+Extension.swift */,
 				CCA19A9B2BCD3A6A00C76662 /* Int+Extension.swift */,
+				CCF0432F2BCFA5C1009BCC4A /* Notification.Name+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -670,6 +670,7 @@
 				CC0EF9122B74C37B00206431 /* OnboardingView.swift in Sources */,
 				CCAC2CB12B6B8C8100D73E69 /* CharacterSelectionView.swift in Sources */,
 				CC0EF9182B74F74D00206431 /* TouchGestureExploreView.swift in Sources */,
+				CCF043302BCFA5C1009BCC4A /* Notification.Name+Extension.swift in Sources */,
 				CCDFCFC22BCD068000C3F7F2 /* TextLabel.swift in Sources */,
 				CCADA6302B5952AD000C373E /* HomeViewController.swift in Sources */,
 				CCADA62C2B5952AD000C373E /* AppDelegate.swift in Sources */,
@@ -697,7 +698,6 @@
 				CC68B2832B91F73000E4E767 /* KioskMenuBoardView.swift in Sources */,
 				CC1E2BB72B8F9C9300653CBF /* KioskMainViewController.swift in Sources */,
 				CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */,
-				CC2A9A472B93134E00B99D33 /* ProductOptionSelectionModalView.swift in Sources */,
 				CCA19AA02BCE621200C76662 /* ProuctDetailStackView.swift in Sources */,
 				CC0EF9142B74C49800206431 /* BlurredButton.swift in Sources */,
 				CC2A9A562B9353A800B99D33 /* TemperatureOptionView.swift in Sources */,

@@ -8,6 +8,8 @@
 import UIKit
 
 final class TemperatureOptionView: UIStackView {
+    private var temperature: Temperature
+
     private(set) var hotButton: MultiStateButton
     private(set) var iceButton: MultiStateButton
     private var arrangedViews: [UIView] {
@@ -16,9 +18,11 @@ final class TemperatureOptionView: UIStackView {
     
     init(temperature: Temperature) {
         if (temperature == .iceOnly) {
+            self.temperature = .ice
             self.hotButton = MultiStateButton(state: .block, title: "HOT", color: .hot)
             self.iceButton = MultiStateButton(state: .selected, title: "ICE", color: .ice)
         } else {
+            self.temperature = .hot
             self.hotButton = MultiStateButton(state: .selected, title: "HOT", color: .hot)
             self.iceButton = MultiStateButton(state: .unselected, title: "ICE", color: .ice)
         }
@@ -41,8 +45,19 @@ final class TemperatureOptionView: UIStackView {
         }
     }
     
-    func update() {
-        self.hotButton.changeButtonState()
-        self.iceButton.changeButtonState()
+    func update(temperature: Temperature) {
+        var inputTemperature: Temperature
+        
+        if (temperature == .iceOnly) {
+            inputTemperature = .ice
+        } else {
+            inputTemperature = temperature
+        }
+        
+        if (inputTemperature != self.temperature) {
+            self.temperature = inputTemperature
+            self.hotButton.changeButtonState()
+            self.iceButton.changeButtonState()            
+        }
     }
 }

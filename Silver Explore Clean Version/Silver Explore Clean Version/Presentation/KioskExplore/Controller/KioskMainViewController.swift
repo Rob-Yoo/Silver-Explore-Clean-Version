@@ -40,7 +40,7 @@ extension KioskMainViewController: KioskMenuBoardViewDelegate {
 //MARK: - KioskModalDelegate Implementation
 extension KioskMainViewController: KioskModalDelegate {
     func addCart(product: Product) {
-        print(product)
+        print(product.name, product.totalPrice, product.count)
     }
 }
 
