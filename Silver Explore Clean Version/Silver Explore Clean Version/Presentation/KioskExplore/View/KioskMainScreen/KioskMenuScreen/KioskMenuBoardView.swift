@@ -8,7 +8,7 @@
 import UIKit
 
 protocol KioskMenuBoardViewDelegate: AnyObject {
-    func displayProductOptionSelectionModal(itemInfo: ItemInfo)
+    func displayOrderDetailModal(itemInfo: ItemInfo)
 }
 
 final class KioskMenuBoardView: UIView {
@@ -92,7 +92,7 @@ extension KioskMenuBoardView: UICollectionViewDelegate, UICollectionViewDataSour
         let segmentIdx = self.menuSegmentedControl.selectedSegmentIndex
         let selectedItemInfo = self.menu.itemList[segmentIdx][indexPath.row]
         
-        delegate.displayProductOptionSelectionModal(itemInfo: selectedItemInfo)
+        delegate.displayOrderDetailModal(itemInfo: selectedItemInfo)
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  ProductOptionSelectionViewController.swift
+//  OrderDetailModalViewController.swift
 //  Silver Explore Clean Version
 //
 //  Created by Jinyoung Yoo on 3/2/24.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol ProductOptionSelectionModalDelegate: AnyObject {
+protocol OrderDetailModalDelegate: AnyObject {
     func addCart(product: Product)
 }
 
-class ProductOptionSelectionViewController: UIViewController {
+class OrderDetailModalViewController: UIViewController {
     private var model: Product
     private let contentView: OrderDetailModalView
 
-    weak var delegate: ProductOptionSelectionModalDelegate?
+    weak var delegate: OrderDetailModalDelegate?
     
     override func loadView() {
         super.loadView()
@@ -46,7 +46,7 @@ class ProductOptionSelectionViewController: UIViewController {
 }
 
 //MARK: - User Action Handling
-extension ProductOptionSelectionViewController: OrderDetailModalViewDelegate {
+extension OrderDetailModalViewController: OrderDetailModalViewDelegate {
     @objc func minusButtonTapped() {
         self.model.removeCount()
     }
@@ -83,7 +83,7 @@ extension ProductOptionSelectionViewController: OrderDetailModalViewDelegate {
     
     @objc func addCartButtonTapped() {
         guard let delegate = self.delegate else {
-            fatalError("ProductOptionSelectionModalDelegate 지정 후 사용해주세요!")
+            fatalError("OrderDetailModalDelegate 지정 후 사용해주세요!")
         }
         
         delegate.addCart(product: self.model)
@@ -92,7 +92,7 @@ extension ProductOptionSelectionViewController: OrderDetailModalViewDelegate {
 }
 
 //MARK: - Observing Model
-extension ProductOptionSelectionViewController {
+extension OrderDetailModalViewController {
     private func observeModel() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: .OrderDetailChanged, object: nil)
     }
@@ -110,7 +110,7 @@ func updateUIViewController(_ uiView: UIViewController,context: Context) {
         let itemInfo: ItemInfo = (name: "아메리카노", image: .americano, price: 4500, isIceOnly: false)
         let product = Product.createProduct(itemInfo: itemInfo)
 
-        return ProductOptionSelectionViewController(selectedProduct: product)
+        return OrderDetailModalViewController(selectedProduct: product)
     }
 }
 @available(iOS 13.0, *)

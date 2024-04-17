@@ -69,7 +69,7 @@ extension TouchGestureExploreView {
     }
 }
 
-// MARK: - Communicate with ViewController
+// MARK: - Communicate with Controller
 extension TouchGestureExploreView {
     func addUserAction() {
         guard let delegate = touchGestureExploreViewDelegate else {
@@ -82,7 +82,9 @@ extension TouchGestureExploreView {
     
     func update(exploreStage: ExploreStage) {
         self.updateGestureRecognizer(exploreStage)
+        
         self.exploreIndicatorStackView.update(exploreStage.title)
+        
         self.exploreStageDescriptionView.isHidden = false
         self.exploreStageDescriptionView.update(exploreStage.image, exploreStage.description)
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol KioskModalDelegate: ProductOptionSelectionModalDelegate {
+protocol KioskModalDelegate: OrderDetailModalDelegate {
 }
 
 class KioskMainViewController: UIViewController {
@@ -27,9 +27,9 @@ class KioskMainViewController: UIViewController {
 
 //MARK: - User Action Handling
 extension KioskMainViewController: KioskMenuBoardViewDelegate {
-    func displayProductOptionSelectionModal(itemInfo: ItemInfo) {
+    func displayOrderDetailModal(itemInfo: ItemInfo) {
         let product = Product.createProduct(itemInfo: itemInfo)
-        let modalVC = ProductOptionSelectionViewController(selectedProduct: product)
+        let modalVC = OrderDetailModalViewController(selectedProduct: product)
 
         modalVC.delegate = self
         NavigationManager.shared.presentModal(modalVC)
