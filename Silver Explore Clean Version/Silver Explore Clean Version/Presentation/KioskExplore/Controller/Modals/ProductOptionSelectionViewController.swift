@@ -27,8 +27,7 @@ class ProductOptionSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.contentView.addUserAction()
-//        self.observeModel()
-        NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: .OrderDetailChanged, object: nil)
+        self.observeModel()
     }
     
     init(selectedProduct: Product) {
@@ -94,6 +93,9 @@ extension ProductOptionSelectionViewController: OrderDetailModalViewDelegate {
 
 //MARK: - Observing Model
 extension ProductOptionSelectionViewController {
+    private func observeModel() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: .OrderDetailChanged, object: nil)
+    }
 }
 
 #if DEBUG
