@@ -7,6 +7,7 @@
 
 import UIKit
 
+//TODO: - 각 모달들의 Delegate 프로토콜을 합성
 protocol KioskModalDelegate: OrderDetailModalDelegate {
 }
 
