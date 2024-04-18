@@ -327,6 +327,24 @@
 			path = Kiosks;
 			sourceTree = "<group>";
 		};
+		CC55BA312BD141A300AF19BA /* CharacterSelection */ = {
+			isa = PBXGroup;
+			children = (
+				CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */,
+				CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */,
+			);
+			path = CharacterSelection;
+			sourceTree = "<group>";
+		};
+		CC55BA322BD141B500AF19BA /* TouchGestureExplore */ = {
+			isa = PBXGroup;
+			children = (
+				CC24996F2B8506D300612502 /* ExploreStage.swift */,
+				CC24996C2B7FBF9100612502 /* TouchGestureExploreModel.swift */,
+			);
+			path = TouchGestureExplore;
+			sourceTree = "<group>";
+		};
 		CC68B2812B91F70F00E4E767 /* KioskMainScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,10 +420,8 @@
 		CC9857AB2B622DE3000D621A /* TouchGestureExplore */ = {
 			isa = PBXGroup;
 			children = (
-				CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */,
-				CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */,
-				CC24996C2B7FBF9100612502 /* TouchGestureExploreModel.swift */,
-				CC24996F2B8506D300612502 /* ExploreStage.swift */,
+				CC55BA312BD141A300AF19BA /* CharacterSelection */,
+				CC55BA322BD141B500AF19BA /* TouchGestureExplore */,
 			);
 			path = TouchGestureExplore;
 			sourceTree = "<group>";
