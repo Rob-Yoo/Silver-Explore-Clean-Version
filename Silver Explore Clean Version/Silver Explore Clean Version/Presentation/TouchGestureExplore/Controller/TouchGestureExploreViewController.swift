@@ -46,7 +46,7 @@ class TouchGestureExploreViewController: UIViewController {
 }
 
 //MARK: - Communicate with View
-extension TouchGestureExploreViewController: ARScneneViewDelegate {
+extension TouchGestureExploreViewController: ARSceneViewDelegate {
     func getContainerNode() -> SCNNode? {
         return self.model.getContainerNodeOfARCharacter()
     }

@@ -48,7 +48,7 @@ final class Arr: ARCharacterProtocol {
         return node
     }
     
-    func setScneneView(sceneView: ARSCNView) {
+    func setSceneView(sceneView: ARSCNView) {
         self.objectData.setSceneView(sceneView: sceneView)
     }
 

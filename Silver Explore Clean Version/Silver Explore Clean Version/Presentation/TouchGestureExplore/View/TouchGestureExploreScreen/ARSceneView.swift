@@ -8,7 +8,7 @@
 import ARKit
 import UIKit
 
-protocol ARScneneViewDelegate: AnyObject {
+protocol ARSceneViewDelegate: AnyObject {
     func getContainerNode() -> SCNNode?
 }
 
@@ -16,7 +16,7 @@ final class ARSceneView: ARSCNView {
     private(set) var onboardingView = OnboardingView()
     private(set) lazy var touchGestureExploreView = TouchGestureExploreView(blurEffect: .init(style: .systemThinMaterialDark))
     
-    weak var arSceneViewDelegate: ARScneneViewDelegate?
+    weak var arSceneViewDelegate: ARSceneViewDelegate?
     
     override init(frame: CGRect, options: [String : Any]? = nil) {
         super.init(frame: frame, options: nil)
