@@ -5,4 +5,10 @@
 //  Created by Jinyoung Yoo on 4/18/24.
 //
 
-import Foundation
+import ARKit
+
+protocol ARObjectProtocol {
+    static func makeContainerNode() -> SCNNode?
+    func getContainerNode() -> SCNNode?
+    func setSceneView(sceneView: ARSCNView)
+}

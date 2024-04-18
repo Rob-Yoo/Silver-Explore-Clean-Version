@@ -39,6 +39,10 @@
 		CC45189E2BC9873700E4D5BA /* OptionEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC45189D2BC9873700E4D5BA /* OptionEnums.swift */; };
 		CC4518A12BC99B2A00E4D5BA /* BaseModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4518A02BC99B2A00E4D5BA /* BaseModalView.swift */; };
 		CC4779412B63CBC000333CD2 /* PrevButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4779402B63CBC000333CD2 /* PrevButton.swift */; };
+		CC55BA2A2BD12D6900AF19BA /* ARKioskProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC55BA292BD12D6900AF19BA /* ARKioskProtocol.swift */; };
+		CC55BA2C2BD12E1300AF19BA /* ARObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC55BA2B2BD12E1300AF19BA /* ARObjectProtocol.swift */; };
+		CC55BA2E2BD12EB600AF19BA /* ARKioskForBarcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC55BA2D2BD12EB600AF19BA /* ARKioskForBarcode.swift */; };
+		CC55BA302BD131B000AF19BA /* ARKioskForCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC55BA2F2BD131B000AF19BA /* ARKioskForCreditCard.swift */; };
 		CC68B2802B91C18A00E4E767 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68B27F2B91C18A00E4E767 /* LabelView.swift */; };
 		CC68B2832B91F73000E4E767 /* KioskMenuBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68B2822B91F73000E4E767 /* KioskMenuBoardView.swift */; };
 		CC68B2852B91FC9A00E4E767 /* MenuCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68B2842B91FC9A00E4E767 /* MenuCollectionView.swift */; };
@@ -114,6 +118,10 @@
 		CC45189D2BC9873700E4D5BA /* OptionEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionEnums.swift; sourceTree = "<group>"; };
 		CC4518A02BC99B2A00E4D5BA /* BaseModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseModalView.swift; path = ../../../Reusable/BaseModal/BaseModalView.swift; sourceTree = "<group>"; };
 		CC4779402B63CBC000333CD2 /* PrevButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevButton.swift; sourceTree = "<group>"; };
+		CC55BA292BD12D6900AF19BA /* ARKioskProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKioskProtocol.swift; sourceTree = "<group>"; };
+		CC55BA2B2BD12E1300AF19BA /* ARObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARObjectProtocol.swift; sourceTree = "<group>"; };
+		CC55BA2D2BD12EB600AF19BA /* ARKioskForBarcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKioskForBarcode.swift; sourceTree = "<group>"; };
+		CC55BA2F2BD131B000AF19BA /* ARKioskForCreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKioskForCreditCard.swift; sourceTree = "<group>"; };
 		CC68B27F2B91C18A00E4E767 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		CC68B2822B91F73000E4E767 /* KioskMenuBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KioskMenuBoardView.swift; sourceTree = "<group>"; };
 		CC68B2842B91FC9A00E4E767 /* MenuCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionView.swift; sourceTree = "<group>"; };
@@ -293,6 +301,32 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		CC55BA262BD12D2D00AF19BA /* ARKiosk */ = {
+			isa = PBXGroup;
+			children = (
+				CC55BA272BD12D4600AF19BA /* General */,
+				CC55BA282BD12D5200AF19BA /* Kiosks */,
+			);
+			path = ARKiosk;
+			sourceTree = "<group>";
+		};
+		CC55BA272BD12D4600AF19BA /* General */ = {
+			isa = PBXGroup;
+			children = (
+				CC55BA292BD12D6900AF19BA /* ARKioskProtocol.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		CC55BA282BD12D5200AF19BA /* Kiosks */ = {
+			isa = PBXGroup;
+			children = (
+				CC55BA2D2BD12EB600AF19BA /* ARKioskForBarcode.swift */,
+				CC55BA2F2BD131B000AF19BA /* ARKioskForCreditCard.swift */,
+			);
+			path = Kiosks;
+			sourceTree = "<group>";
+		};
 		CC68B2812B91F70F00E4E767 /* KioskMainScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,7 +392,9 @@
 			children = (
 				CC9857AD2B622F16000D621A /* ARObjectData.swift */,
 				CC9857B02B623F1B000D621A /* ActionProtocol.swift */,
+				CC55BA2B2BD12E1300AF19BA /* ARObjectProtocol.swift */,
 				CC9857AC2B622DED000D621A /* ARCharacter */,
+				CC55BA262BD12D2D00AF19BA /* ARKiosk */,
 			);
 			path = ARObject;
 			sourceTree = "<group>";
@@ -366,8 +402,8 @@
 		CC9857AB2B622DE3000D621A /* TouchGestureExplore */ = {
 			isa = PBXGroup;
 			children = (
-				CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */,
 				CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */,
+				CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */,
 				CC24996C2B7FBF9100612502 /* TouchGestureExploreModel.swift */,
 				CC24996F2B8506D300612502 /* ExploreStage.swift */,
 			);
@@ -566,8 +602,8 @@
 		CCF043342BCFB7A1009BCC4A /* TouchGestureExploreScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CC0EF9112B74C37B00206431 /* OnboardingView.swift */,
 				CC0EF9152B74E15500206431 /* ARSceneView.swift */,
+				CC0EF9112B74C37B00206431 /* OnboardingView.swift */,
 				CC0EF9172B74F74D00206431 /* TouchGestureExploreView.swift */,
 				CC24996A2B7FA1F600612502 /* BlurredExploreStageDescriptionView.swift */,
 				CC2499682B7FA1A700612502 /* BlurredExploreIndicatorStackView.swift */,
@@ -656,6 +692,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC55BA2C2BD12E1300AF19BA /* ARObjectProtocol.swift in Sources */,
 				CC7FF0102BCC42B9005D3D9A /* OrderDetailModalView.swift in Sources */,
 				CC78E3442B6397320038088C /* Finn.swift in Sources */,
 				CC325D2C2B5D3236007C93DC /* Publisher.swift in Sources */,
@@ -679,6 +716,7 @@
 				CC0EF9122B74C37B00206431 /* OnboardingView.swift in Sources */,
 				CCAC2CB12B6B8C8100D73E69 /* CharacterSelectionView.swift in Sources */,
 				CC0EF9182B74F74D00206431 /* TouchGestureExploreView.swift in Sources */,
+				CC55BA302BD131B000AF19BA /* ARKioskForCreditCard.swift in Sources */,
 				CCF043302BCFA5C1009BCC4A /* Notification.Name+Extension.swift in Sources */,
 				CCDFCFC22BCD068000C3F7F2 /* TextLabel.swift in Sources */,
 				CCADA6302B5952AD000C373E /* HomeViewController.swift in Sources */,
@@ -690,6 +728,7 @@
 				CC3DE29F2B5A934F004175E4 /* ExploreButtonsView.swift in Sources */,
 				CC2A9A392B93011400B99D33 /* OrderStatusTableViewCell.swift in Sources */,
 				CC2A9A502B933E9400B99D33 /* SeparatorLineView.swift in Sources */,
+				CC55BA2A2BD12D6900AF19BA /* ARKioskProtocol.swift in Sources */,
 				CC68B28E2B9201AE00E4E767 /* OrderStatusTableView.swift in Sources */,
 				CCADA62E2B5952AD000C373E /* SceneDelegate.swift in Sources */,
 				CC2A9A402B9309AB00B99D33 /* KioskRightFooterView.swift in Sources */,
@@ -699,6 +738,7 @@
 				CC4518A12BC99B2A00E4D5BA /* BaseModalView.swift in Sources */,
 				CCB67B8B2B5FE0E6001B2A07 /* KioskInitialScreenViewController.swift in Sources */,
 				CC68B28A2B92013D00E4E767 /* KioskCartView.swift in Sources */,
+				CC55BA2E2BD12EB600AF19BA /* ARKioskForBarcode.swift in Sources */,
 				CC24996B2B7FA1F600612502 /* BlurredExploreStageDescriptionView.swift in Sources */,
 				CC2A9A4E2B9338AA00B99D33 /* CountControlStackView.swift in Sources */,
 				CC68B2852B91FC9A00E4E767 /* MenuCollectionView.swift in Sources */,
