@@ -15,10 +15,10 @@ final class BlurredExploreIndicatorStackView: UIStackView {
         return [self.prevButton, self.exploreStageTitleView, self.nextButton]
     }
     
-    init(effect: UIBlurEffect) {
+    init(effect: UIBlurEffect, stageTitle: String) {
         self.prevButton = BlurredButton.makePrevButton(blurEffect: effect)
         self.nextButton = BlurredButton.makeNextButton(blurEffect: effect)
-        self.exploreStageTitleView = BlurredExploreStageTitleView(effect: effect)
+        self.exploreStageTitleView = BlurredExploreStageTitleView(effect: effect, title: stageTitle)
         super.init(frame: .zero)
         self.configure()
     }
@@ -64,39 +64,5 @@ final class BlurredExploreIndicatorStackView: UIStackView {
     
     func update(_ title: String) {
         self.exploreStageTitleView.update(title)
-    }
-}
-
-final class BlurredExploreStageTitleView: UIVisualEffectView {
-    private(set) var stageTitleLabel: UILabel = {
-        let label = UILabel()
-        
-        label.text = "탭(터치하기)"
-        label.textColor = .white
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
-        
-        return label
-    }()
-    
-    override init(effect: UIVisualEffect?) {
-        super.init(effect: effect)
-        self.configure()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func configure() {
-        self.contentView.addSubview(self.stageTitleLabel)
-        
-        self.stageTitleLabel
-            .centerXAnchor(self.centerXAnchor)
-            .centerYAnchor(self.centerYAnchor)
-    }
-    
-    func update(_ title: String) {
-        self.stageTitleLabel.text = title
     }
 }

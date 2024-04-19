@@ -15,13 +15,17 @@ import UIKit
 }
 
 final class ARSceneView: ARSCNView {
+    private var exploreStage: StageData
     private(set) var onboardingView = OnboardingView()
-    private(set) lazy var touchGestureExploreView = TouchGestureExploreView(blurEffect: .init(style: .systemThinMaterialDark))
+    private(set) lazy var touchGestureExploreView: TouchGestureExploreView = {
+        TouchGestureExploreView(blurEffect: .init(style: .systemThinMaterialDark), firstStage: self.exploreStage)
+    }()
     
     weak var arSceneViewDelegate: ARSceneViewDelegate?
     
-    override init(frame: CGRect, options: [String : Any]? = nil) {
-        super.init(frame: frame, options: nil)
+    init(firstStage: StageData) {
+        self.exploreStage = firstStage
+        super.init(frame: .zero, options: nil)
         self.delegate = self
         self.configureSubviews()
     }

@@ -11,9 +11,9 @@ final class TouchGestureExploreView: UIView {
     private(set) var exploreIndicatorStackView: BlurredExploreIndicatorStackView
     private(set) var exploreStageDescriptionView: BlurredExploreStageDescriptionView
     
-    init(blurEffect: UIBlurEffect) {
-        self.exploreIndicatorStackView = BlurredExploreIndicatorStackView(effect: blurEffect)
-        self.exploreStageDescriptionView = BlurredExploreStageDescriptionView(effect: blurEffect)
+    init(blurEffect: UIBlurEffect, firstStage: StageData) {
+        self.exploreIndicatorStackView = BlurredExploreIndicatorStackView(effect: blurEffect, stageTitle: firstStage.title)
+        self.exploreStageDescriptionView = BlurredExploreStageDescriptionView(effect: blurEffect, gestureImage: firstStage.image, stageDescription: firstStage.description)
 
         super.init(frame: .zero)
         self.configureSubviews()
@@ -58,7 +58,6 @@ final class TouchGestureExploreView: UIView {
         self.updateGestureRecognizer(exploreStage)
         
         self.exploreIndicatorStackView.update(exploreStage.title)
-
         self.exploreStageDescriptionView.isHidden = false
         self.exploreStageDescriptionView.update(exploreStage.image, exploreStage.description)
     }

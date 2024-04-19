@@ -79,6 +79,9 @@
 		CCC53F002B73C18100B1C7E5 /* CharacterSelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */; };
 		CCC53F022B73C3F600B1C7E5 /* ARCharacterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */; };
 		CCC53F042B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53F032B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift */; };
+		CCDA51692BD2CA0800B078AE /* BlurredExploreStageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDA51682BD2CA0800B078AE /* BlurredExploreStageTitleView.swift */; };
+		CCDA516C2BD2CA5F00B078AE /* ExploreStageDescriptionStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDA516B2BD2CA5F00B078AE /* ExploreStageDescriptionStackView.swift */; };
+		CCDA516E2BD2CA7A00B078AE /* DescriptionImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDA516D2BD2CA7A00B078AE /* DescriptionImageView.swift */; };
 		CCDFCFC02BCD030D00C3F7F2 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFCFBF2BCD030D00C3F7F2 /* SegmentedControl.swift */; };
 		CCDFCFC22BCD068000C3F7F2 /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDFCFC12BCD068000C3F7F2 /* TextLabel.swift */; };
 		CCF043302BCFA5C1009BCC4A /* Notification.Name+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF0432F2BCFA5C1009BCC4A /* Notification.Name+Extension.swift */; };
@@ -160,6 +163,9 @@
 		CCC53EFF2B73C18100B1C7E5 /* CharacterSelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSelectionModel.swift; sourceTree = "<group>"; };
 		CCC53F012B73C3F600B1C7E5 /* ARCharacterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCharacterFactory.swift; sourceTree = "<group>"; };
 		CCC53F032B73CBA100B1C7E5 /* TouchGestureExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureExploreViewController.swift; sourceTree = "<group>"; };
+		CCDA51682BD2CA0800B078AE /* BlurredExploreStageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredExploreStageTitleView.swift; sourceTree = "<group>"; };
+		CCDA516B2BD2CA5F00B078AE /* ExploreStageDescriptionStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreStageDescriptionStackView.swift; sourceTree = "<group>"; };
+		CCDA516D2BD2CA7A00B078AE /* DescriptionImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionImageView.swift; sourceTree = "<group>"; };
 		CCDFCFBF2BCD030D00C3F7F2 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		CCDFCFC12BCD068000C3F7F2 /* TextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabel.swift; sourceTree = "<group>"; };
 		CCF0432F2BCFA5C1009BCC4A /* Notification.Name+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+Extension.swift"; sourceTree = "<group>"; };
@@ -605,6 +611,34 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		CCDA51662BD2C99A00B078AE /* BlurredSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				CCDA51672BD2C9C500B078AE /* BlurredIndicatorView */,
+				CCDA516A2BD2CA2400B078AE /* BlurredDescriptionView */,
+			);
+			path = BlurredSubviews;
+			sourceTree = "<group>";
+		};
+		CCDA51672BD2C9C500B078AE /* BlurredIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				CC2499682B7FA1A700612502 /* BlurredExploreIndicatorStackView.swift */,
+				CCDA51682BD2CA0800B078AE /* BlurredExploreStageTitleView.swift */,
+			);
+			path = BlurredIndicatorView;
+			sourceTree = "<group>";
+		};
+		CCDA516A2BD2CA2400B078AE /* BlurredDescriptionView */ = {
+			isa = PBXGroup;
+			children = (
+				CC24996A2B7FA1F600612502 /* BlurredExploreStageDescriptionView.swift */,
+				CCDA516B2BD2CA5F00B078AE /* ExploreStageDescriptionStackView.swift */,
+				CCDA516D2BD2CA7A00B078AE /* DescriptionImageView.swift */,
+			);
+			path = BlurredDescriptionView;
+			sourceTree = "<group>";
+		};
 		CCF043312BCFB729009BCC4A /* ARCharacterSelectionScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,8 +655,7 @@
 				CC0EF9152B74E15500206431 /* ARSceneView.swift */,
 				CC0EF9112B74C37B00206431 /* OnboardingView.swift */,
 				CC0EF9172B74F74D00206431 /* TouchGestureExploreView.swift */,
-				CC24996A2B7FA1F600612502 /* BlurredExploreStageDescriptionView.swift */,
-				CC2499682B7FA1A700612502 /* BlurredExploreIndicatorStackView.swift */,
+				CCDA51662BD2C99A00B078AE /* BlurredSubviews */,
 			);
 			path = TouchGestureExploreScreen;
 			sourceTree = "<group>";
@@ -740,6 +773,7 @@
 				CC2A9A4A2B93158C00B99D33 /* OrderDetailModalBodyView.swift in Sources */,
 				CC68B28C2B92016700E4E767 /* OrderCountView.swift in Sources */,
 				CCC53F022B73C3F600B1C7E5 /* ARCharacterFactory.swift in Sources */,
+				CCDA516C2BD2CA5F00B078AE /* ExploreStageDescriptionStackView.swift in Sources */,
 				CCA19A9A2BCD0B5800C76662 /* FooterButtonsView.swift in Sources */,
 				CC3DE29F2B5A934F004175E4 /* ExploreButtonsView.swift in Sources */,
 				CC2A9A392B93011400B99D33 /* OrderStatusTableViewCell.swift in Sources */,
@@ -765,6 +799,7 @@
 				CCA19AA02BCE621200C76662 /* ProuctDetailStackView.swift in Sources */,
 				CC0EF9142B74C49800206431 /* BlurredButton.swift in Sources */,
 				CC2A9A562B9353A800B99D33 /* TemperatureOptionView.swift in Sources */,
+				CCDA51692BD2CA0800B078AE /* BlurredExploreStageTitleView.swift in Sources */,
 				CC325D2A2B5D3201007C93DC /* Observer.swift in Sources */,
 				CC2A9A5C2B935C9E00B99D33 /* MultiStateButton.swift in Sources */,
 				CC325D282B5D2E94007C93DC /* NavigationManager.swift in Sources */,
@@ -773,6 +808,7 @@
 				CCAC2CB52B6BBF0300D73E69 /* RadioButton.swift in Sources */,
 				CC9B01B02B8B5857000B58B0 /* KioskInitialScreenView.swift in Sources */,
 				CC07A3802B9060CA00F0FD5B /* Menu.swift in Sources */,
+				CCDA516E2BD2CA7A00B078AE /* DescriptionImageView.swift in Sources */,
 				CC68B2802B91C18A00E4E767 /* LabelView.swift in Sources */,
 				CC68B2872B91FE2900E4E767 /* KioskFooterStackView.swift in Sources */,
 				CCAC2CAF2B6B6D8300D73E69 /* HomeView.swift in Sources */,
