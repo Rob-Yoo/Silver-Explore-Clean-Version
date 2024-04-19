@@ -17,7 +17,6 @@ class TouchGestureExploreViewController: UIViewController {
     override func loadView() {
         self.view = sceneView
         self.sceneView.arSceneViewDelegate = self
-//        self.sceneView.touchGestureExploreView.touchGestureExploreViewDelegate = self
         self.sceneView.autoenablesDefaultLighting = true
     }
     
