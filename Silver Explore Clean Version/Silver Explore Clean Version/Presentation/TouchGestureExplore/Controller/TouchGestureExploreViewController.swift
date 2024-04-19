@@ -63,14 +63,14 @@ extension TouchGestureExploreViewController: ARSceneViewDelegate {
 extension TouchGestureExploreViewController {
     func observeModel() {
         self.model.$stage
-            .receive(on: DispatchQueue.main)
+            .receive(on: RunLoop.main)
             .sink { [weak self] newStage in
                 self?.sceneView.update(exploreStage: newStage)
         }
         .store(in: &cancellables)
         
         self.model.$isFinish
-            .receive(on: DispatchQueue.main)
+            .receive(on: RunLoop.main)
             .sink { isFinish in
             if (isFinish) {
                 NavigationManager.shared.pop()
