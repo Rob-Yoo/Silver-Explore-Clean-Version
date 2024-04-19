@@ -8,8 +8,10 @@
 import ARKit
 import UIKit
 
-protocol ARSceneViewDelegate: AnyObject {
+@objc protocol ARSceneViewDelegate: AnyObject {
     func getContainerNode() -> SCNNode?
+    @objc func prevButtonTapped()
+    @objc func nextButtonTapped()
 }
 
 final class ARSceneView: ARSCNView {
@@ -53,7 +55,7 @@ final class ARSceneView: ARSCNView {
             self.touchGestureExploreView.alpha = 1.0
         }
         
-        self.touchGestureExploreView.addUserAction()
+        self.addUserAction()
     }
 }
 
@@ -82,5 +84,21 @@ extension ARSceneView: ARSCNViewDelegate {
         configuration.maximumNumberOfTrackedImages = 1
 
         self.session.run(configuration)
+    }
+}
+
+// MARK: - Communicate with Controller
+extension ARSceneView {
+    func addUserAction() {
+        guard let delegate = arSceneViewDelegate else {
+            fatalError("ARSceneViewDelegate 지정 후 사용해주세요!")
+        }
+        
+        self.touchGestureExploreView.exploreIndicatorStackView.prevButton.addTarget(delegate, action: #selector(delegate.prevButtonTapped), for: .touchUpInside)
+        self.touchGestureExploreView.exploreIndicatorStackView.nextButton.addTarget(delegate, action: #selector(delegate.nextButtonTapped), for: .touchUpInside)
+    }
+
+    func update(exploreStage: StageData) {
+        self.touchGestureExploreView.update(exploreStage: exploreStage)
     }
 }

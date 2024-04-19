@@ -7,16 +7,9 @@
 
 import UIKit
 
-@objc protocol TouchGestureExploreViewDelegate: AnyObject {
-    @objc func prevButtonTapped()
-    @objc func nextButtonTapped()
-}
-
 final class TouchGestureExploreView: UIView {
     private(set) var exploreIndicatorStackView: BlurredExploreIndicatorStackView
     private(set) var exploreStageDescriptionView: BlurredExploreStageDescriptionView
-    
-    weak var touchGestureExploreViewDelegate: TouchGestureExploreViewDelegate?
     
     init(blurEffect: UIBlurEffect) {
         self.exploreIndicatorStackView = BlurredExploreIndicatorStackView(effect: blurEffect)
@@ -60,39 +53,27 @@ final class TouchGestureExploreView: UIView {
             UITapGestureRecognizer(target: self, action: #selector(self.exploreStageDescriptionViewTapped))
         )
     }
+    
+    func update(exploreStage: StageData) {
+        self.updateGestureRecognizer(exploreStage)
+        
+        self.exploreIndicatorStackView.update(exploreStage.title)
+
+        self.exploreStageDescriptionView.isHidden = false
+        self.exploreStageDescriptionView.update(exploreStage.image, exploreStage.description)
+    }
+    
+    private func updateGestureRecognizer(_ exploreStage: StageData) {
+        let currentGestureRecognizers = self.gestureRecognizers ?? [UIGestureRecognizer]()
+        
+        currentGestureRecognizers.forEach { self.removeGestureRecognizer($0) }
+        exploreStage.gestureRecognizers.forEach { self.addGestureRecognizer($0) }
+    }
 }
 
 // MARK: - User Action Handling
 extension TouchGestureExploreView {
     @objc private func exploreStageDescriptionViewTapped() {
         self.exploreStageDescriptionView.isHidden = true
-    }
-}
-
-// MARK: - Communicate with Controller
-extension TouchGestureExploreView {
-    func addUserAction() {
-        guard let delegate = touchGestureExploreViewDelegate else {
-            fatalError("TouchGestureExploreViewDelegate 지정 후 사용해주세요!")
-        }
-        
-        self.exploreIndicatorStackView.prevButton.addTarget(delegate, action: #selector(delegate.prevButtonTapped), for: .touchUpInside)
-        self.exploreIndicatorStackView.nextButton.addTarget(delegate, action: #selector(delegate.nextButtonTapped), for: .touchUpInside)
-    }
-    
-    func update(exploreStage: ExploreStage) {
-        self.updateGestureRecognizer(exploreStage)
-        
-        self.exploreIndicatorStackView.update(exploreStage.title)
-        
-        self.exploreStageDescriptionView.isHidden = false
-        self.exploreStageDescriptionView.update(exploreStage.image, exploreStage.description)
-    }
-    
-    private func updateGestureRecognizer(_ exploreStage: ExploreStage) {
-        let currentGestureRecognizers = self.gestureRecognizers ?? [UIGestureRecognizer]()
-        
-        currentGestureRecognizers.forEach { self.removeGestureRecognizer($0) }
-        exploreStage.gestureRecognizers.forEach { self.addGestureRecognizer($0) }
     }
 }

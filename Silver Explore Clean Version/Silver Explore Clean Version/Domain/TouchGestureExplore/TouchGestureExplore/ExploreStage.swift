@@ -7,12 +7,14 @@
 
 import UIKit
 
-protocol ExploreStage {
+protocol StageData {
     var title: String { get }
     var image: UIImage { get }
     var description: String { get }
     var gestureRecognizers: [UIGestureRecognizer] { get }
-    
+}
+
+protocol ExploreStage: StageData {
     func nextStage(_ context: TouchGestureExploreModel)
     func prevStage(_ context: TouchGestureExploreModel)
 }

@@ -17,7 +17,7 @@ class TouchGestureExploreViewController: UIViewController {
     override func loadView() {
         self.view = sceneView
         self.sceneView.arSceneViewDelegate = self
-        self.sceneView.touchGestureExploreView.touchGestureExploreViewDelegate = self
+//        self.sceneView.touchGestureExploreView.touchGestureExploreViewDelegate = self
         self.sceneView.autoenablesDefaultLighting = true
     }
     
@@ -50,9 +50,7 @@ extension TouchGestureExploreViewController: ARSceneViewDelegate {
     func getContainerNode() -> SCNNode? {
         return self.model.getContainerNodeOfARCharacter()
     }
-}
-
-extension TouchGestureExploreViewController: TouchGestureExploreViewDelegate {
+    
     func prevButtonTapped() {
         self.model.movePrevStage(self.model)
     }
@@ -68,7 +66,7 @@ extension TouchGestureExploreViewController {
         self.model.$stage
             .receive(on: DispatchQueue.main)
             .sink { [weak self] newStage in
-                self?.sceneView.touchGestureExploreView.update(exploreStage: newStage)
+                self?.sceneView.update(exploreStage: newStage)
         }
         .store(in: &cancellables)
         
