@@ -95,7 +95,7 @@ extension CharacterSelectionView {
 
 //MARK: - Communicate With ViewController
 extension CharacterSelectionView {
-    func addUserActionListener() {
+    func addUserAction() {
         guard let delegate = self.characterSelectViewDelegate else {
             fatalError("CharacterSelectViewDelegate 지정 후 호출해주세요!")
         }

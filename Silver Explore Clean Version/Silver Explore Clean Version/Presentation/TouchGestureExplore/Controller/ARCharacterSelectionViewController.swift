@@ -18,7 +18,7 @@ class ARCharacterSelectionViewController: UIViewController {
 
         self.view = characterSelectionView
         self.characterSelectionView.characterSelectViewDelegate = self
-        self.characterSelectionView.addUserActionListener()
+        self.characterSelectionView.addUserAction()
     }
 
     override func viewDidLoad() {

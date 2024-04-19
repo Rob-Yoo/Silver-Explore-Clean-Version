@@ -23,7 +23,7 @@ final class KioskMenuBoardView: UIView {
         super.init(frame: frame)
         self.backgroundColor = .clear
         self.configureSubviews()
-        self.addUserActionListener()
+        self.addUserAction()
     }
     
     required init?(coder: NSCoder) {
@@ -57,7 +57,7 @@ final class KioskMenuBoardView: UIView {
         self.menuCollectionView.dataSource = self
     }
     
-    private func addUserActionListener() {
+    private func addUserAction() {
         self.menuSegmentedControl.addTarget(self, action: #selector(self.segmentChanged), for: .valueChanged)
     }
     

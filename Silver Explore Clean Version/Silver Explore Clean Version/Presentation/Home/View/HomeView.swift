@@ -71,7 +71,7 @@ extension HomeView {
 
 //Mark: - User Action Listener
 extension HomeView {
-    func addUserActionListener() {
+    func addUserAction() {
         guard let delegate = self.homeViewDelegate else {
             fatalError("Delegate 지정 후 호출해주세요!")
         }

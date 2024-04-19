@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
 
         self.view = homeView
         self.homeView.homeViewDelegate = self
-        self.homeView.addUserActionListener()
+        self.homeView.addUserAction()
     }
 
     override func viewDidLoad() {

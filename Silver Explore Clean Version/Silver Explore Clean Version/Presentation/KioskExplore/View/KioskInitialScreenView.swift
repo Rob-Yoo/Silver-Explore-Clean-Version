@@ -15,7 +15,7 @@ final class KioskInitialScreenView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configureSubviews()
-        self.addUserActionListener()
+        self.addUserAction()
     }
     
     required init?(coder: NSCoder) {
@@ -59,7 +59,7 @@ final class KioskInitialScreenView: UIView {
             .centerXAnchor(self.centerXAnchor)
     }
     
-    private func addUserActionListener() {
+    private func addUserAction() {
         self.prevButton.addTarget(self, action: #selector(self.prevButtonTapped), for: .touchUpInside)
     }
     
@@ -102,7 +102,7 @@ final class ImageButtonView: UIView {
         self.imageButton = ImageButton(image: image)
         super.init(frame: .zero)
         self.configure()
-        self.addUserActionListener()
+        self.addUserAction()
     }
     
     required init?(coder: NSCoder) {
@@ -122,7 +122,7 @@ final class ImageButtonView: UIView {
             .heightAnchor(self.imageButton.heightAnchor)
     }
     
-    private func addUserActionListener() {
+    private func addUserAction() {
         self.imageButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
