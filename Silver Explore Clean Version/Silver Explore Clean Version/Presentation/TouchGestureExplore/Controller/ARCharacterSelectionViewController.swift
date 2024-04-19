@@ -25,6 +25,10 @@ class ARCharacterSelectionViewController: UIViewController {
         super.viewDidLoad()
         self.model.addObserver(self)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.model.removeObserver(self)
+    }
 }
 
 //MARK: - User Action Handling
