@@ -26,8 +26,15 @@ class OrderDetailModalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.contentView.addUserAction()
-        self.observeModel()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: .OrderDetailChanged, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        NotificationCenter.default.removeObserver(self, name: .OrderDetailChanged, object: nil)
     }
     
     init(selectedProduct: Product) {
@@ -88,13 +95,6 @@ extension OrderDetailModalViewController: OrderDetailModalViewDelegate {
         
         delegate.addCart(product: self.model)
         self.dismiss(animated: false)
-    }
-}
-
-//MARK: - Observing Model
-extension OrderDetailModalViewController {
-    private func observeModel() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.updateView), name: .OrderDetailChanged, object: nil)
     }
 }
 

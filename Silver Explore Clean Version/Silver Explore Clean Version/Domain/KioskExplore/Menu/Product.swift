@@ -7,28 +7,39 @@
 
 import UIKit
 
-class Product {
+protocol ProductData {
+    var name: String { get }
+    var image: UIImage { get }
+    var price: Int { get }
+    var count: Int { get }
+    var temperature: Temperature { get }
+    var size: Size { get }
+    var iceQuantity: IceQuantity { get }
+    var totalPrice: Int { get }
+}
+
+class Product: ProductData {
     let name: String
     let image: UIImage
     let price: Int
     var count: Int {
         didSet {
-            NotificationCenter.default.post(name: .OrderDetailChanged, object: nil)
+            self.postOrderDetailChanged()
         }
     }
     var temperature: Temperature {
         didSet {
-            NotificationCenter.default.post(name: .OrderDetailChanged, object: nil)
+            self.postOrderDetailChanged()
         }
     }
     var size: Size {
         didSet {
-            NotificationCenter.default.post(name: .OrderDetailChanged, object: nil)
+            self.postOrderDetailChanged()
         }
     }
     var iceQuantity: IceQuantity {
         didSet {
-            NotificationCenter.default.post(name: .OrderDetailChanged, object: nil)
+            self.postOrderDetailChanged()
         }
     }
     
@@ -73,6 +84,10 @@ class Product {
             return Product(name: name, image: image, price: price, temperature: .iceOnly)
         }
         return Product(name: name, image: image, price: price, temperature: .hot)
+    }
+    
+    private func postOrderDetailChanged() {
+        NotificationCenter.default.post(name: .OrderDetailChanged, object: nil)
     }
 }
 

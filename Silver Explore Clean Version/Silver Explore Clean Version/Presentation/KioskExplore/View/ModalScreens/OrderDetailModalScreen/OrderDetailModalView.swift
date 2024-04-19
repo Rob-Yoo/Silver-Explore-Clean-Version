@@ -25,7 +25,7 @@ final class OrderDetailModalView: UIView {
     
     weak var orderDetailModalViewDelegate: OrderDetailModalViewDelegate?
     
-    init(product: Product) {
+    init(product: ProductData) {
         self.bodyView = OrderDetailModalBodyView(product: product)
         super.init(frame: .zero)
         self.backgroundColor = .white
@@ -70,7 +70,7 @@ final class OrderDetailModalView: UIView {
             .centerXAnchor(self.centerXAnchor)
     }
     
-    func update(data: Product) {
+    func update(data: ProductData) {
         self.bodyView.update(data: data)
     }
 }

@@ -12,7 +12,7 @@ final class OrderDetailModalBodyView: UIView {
     private(set) var productDetailStackView: ProductDetailStackView
     private(set) var optionSelectionView: OptionSelectionView
     
-    init(product: Product) {
+    init(product: ProductData) {
         self.productNameLabel = TextLabel(text: product.name).font(.systemFont(ofSize: 40, weight: .bold))
         self.productDetailStackView = ProductDetailStackView(image: product.image, price: product.totalPrice)
         self.optionSelectionView = OptionSelectionView(temperature: product.temperature)
@@ -59,7 +59,7 @@ final class OrderDetailModalBodyView: UIView {
             .centerXAnchor(self.centerXAnchor)
     }
     
-    func update(data: Product) {
+    func update(data: ProductData) {
         self.productDetailStackView.update(count: data.count, price: data.totalPrice)
         self.optionSelectionView.update(temperature: data.temperature)
     }
