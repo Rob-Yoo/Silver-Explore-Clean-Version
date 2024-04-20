@@ -17,37 +17,15 @@ final class Arr: ARCharacterProtocol {
         let initialScale: SCNVector3
         
         self.objectData = ARObjectData(characterContainerNode: containerNode, characterNodeName: String(describing: Arr.self))
-        initialEulerAngle = self.objectData.characterNode.eulerAngles
-        initialScale = self.objectData.characterNode.scale
+        initialEulerAngle = self.objectData.objectNode.eulerAngles
+        initialScale = self.objectData.objectNode.scale
         self.actionData = ARCharacterActionData(initialEulerAngle: initialEulerAngle, initialScale: initialScale)
     }
     
     func getContainerNode() -> SCNNode? {
-        return self.objectData.characterContainerNode
+        return self.objectData.objectContainerNode
     }
-    
-    static func makeContainerNode() -> SCNNode? {
-        /*
-            makeContainerNode를 타입 메서드로 지정하는 이유
-            - 초기화 구문에 SCNNode가 필요하고 SCNNode를 만드는 코드가 길어 함수로 빼려하는데, 인스턴스 메서드는 초기화 문
-            내에서 사용할 수 없기 때문에 외부에서 생성하고 초기화 시켜주기 위해서 타입 메서드로 만듬
-         */
-        let node: SCNNode = SCNNode()
 
-        guard let arrScene = SCNScene(named: "art.scnassets/Arr/Arr.scn") else {
-            return nil
-        }
-        guard let arrNode = arrScene.rootNode.childNode(withName: "Arr", recursively: true) else {
-            return nil
-        }
-
-        arrNode.transform = SCNMatrix4MakeRotation(-GLKMathDegreesToRadians(30), 1, 0, 0)
-        arrNode.scale = SCNVector3(0.00002, 0.00002, 0.00002)
-        
-        node.addChildNode(arrNode)
-        return node
-    }
-    
     func setSceneView(sceneView: ARSCNView) {
         self.objectData.setSceneView(sceneView: sceneView)
     }
@@ -61,7 +39,7 @@ extension Arr {
         let fallAction = SCNAction.moveBy(x: 0, y: -0.03, z: 0, duration: 0.2)
         let jumpSequence = SCNAction.sequence([jumpAction, fallAction])
 
-        self.objectData.characterNode.runAction(jumpSequence)
+        self.objectData.objectNode.runAction(jumpSequence)
     }
     
     func highJump(_ gesture: UILongPressGestureRecognizer) {
@@ -79,9 +57,9 @@ extension Arr {
                 (_, _) in
                 let initialScale = self.actionData.initialScale
 
-                self.objectData.characterNode.scale = SCNVector3(initialScale.x, initialScale.y - 0.000003, initialScale.z)
+                self.objectData.objectNode.scale = SCNVector3(initialScale.x, initialScale.y - 0.000003, initialScale.z)
             }
-            self.objectData.characterNode.runAction(scaleAction)
+            self.objectData.objectNode.runAction(scaleAction)
         }
 
         func highJumpAction(longPressDuration: CFTimeInterval) {
@@ -89,27 +67,27 @@ extension Arr {
                 [weak self] (_, _) in
                 guard let initialScale = self?.actionData.initialScale else { return }
 
-                self?.objectData.characterNode.scale = initialScale
+                self?.objectData.objectNode.scale = initialScale
             }
             let jumpHeight = CGFloat(longPressDuration) * 0.1
             let jumpAction = SCNAction.moveBy(x: 0, y: jumpHeight, z: 0, duration: 0.2)
             let fallAction = SCNAction.moveBy(x: 0, y: -jumpHeight, z: 0, duration: 0.2)
             let jumpSequence = SCNAction.sequence([scaleAction, jumpAction, fallAction])
 
-            self.objectData.characterNode.runAction(jumpSequence)
+            self.objectData.objectNode.runAction(jumpSequence)
         }
     }
 
     func scaleUpAndDown(_ gesture: UIPinchGestureRecognizer) {
         switch gesture.state {
         case .began:
-            self.actionData.updatedScale = CGFloat(self.objectData.characterNode.scale.x)
+            self.actionData.updatedScale = CGFloat(self.objectData.objectNode.scale.x)
         case .changed:
             let scale = gesture.scale
             let scaleValue = self.actionData.updatedScale * scale
             let scaleAction = SCNAction.scale(to: scaleValue, duration: 0.0)
 
-            self.objectData.characterNode.runAction(scaleAction)
+            self.objectData.objectNode.runAction(scaleAction)
         default:
             return
         }
@@ -131,7 +109,7 @@ extension Arr {
             return
         }
 
-        self.objectData.characterNode.runAction(rightAngleRotatingAction)
+        self.objectData.objectNode.runAction(rightAngleRotatingAction)
     }
     
     func eulerAngleRotate(_ gesture: UIPanGestureRecognizer) {
@@ -144,8 +122,8 @@ extension Arr {
             let yRotation = SCNAction.rotateBy(x: 0, y: rotationAngleX, z: 0, duration: 0)
             let xRotation = SCNAction.rotateBy(x: rotationAngleY, y: 0, z: 0, duration: 0)
             
-            self.objectData.characterNode.runAction(yRotation)
-            self.objectData.characterNode.runAction(xRotation)
+            self.objectData.objectNode.runAction(yRotation)
+            self.objectData.objectNode.runAction(xRotation)
         }
     }
     
@@ -154,7 +132,7 @@ extension Arr {
             let rotationAngle = gesture.rotation
             let degrees = -GLKMathRadiansToDegrees(Float(rotationAngle) * 0.005)
             let rotationAction = SCNAction.rotateBy(x: 0, y: 0, z: CGFloat(degrees), duration: 0.0)
-            self.objectData.characterNode.runAction(rotationAction)
+            self.objectData.objectNode.runAction(rotationAction)
         }
     }
     
@@ -162,16 +140,16 @@ extension Arr {
         let initialEulerAngles = self.actionData.initialEulerAngle
         let resetAngleAction = SCNAction.rotateTo(x: CGFloat(initialEulerAngles.x), y: CGFloat(initialEulerAngles.y), z: CGFloat(initialEulerAngles.z), duration: 0.2)
         
-        self.objectData.characterNode.runAction(resetAngleAction)
+        self.objectData.objectNode.runAction(resetAngleAction)
     }
     
     func resetScale() {
         let resetScaleAction = SCNAction.customAction(duration: 0.2) { [weak self] (_, _) in
             guard let initialScale = self?.actionData.initialScale else { return }
             
-            self?.objectData.characterNode.scale = initialScale
+            self?.objectData.objectNode.scale = initialScale
         }
         
-        self.objectData.characterNode.runAction(resetScaleAction)
+        self.objectData.objectNode.runAction(resetScaleAction)
     }
 }

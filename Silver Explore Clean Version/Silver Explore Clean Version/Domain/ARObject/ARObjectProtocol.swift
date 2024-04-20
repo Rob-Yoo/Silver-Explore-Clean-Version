@@ -8,7 +8,6 @@
 import ARKit
 
 protocol ARObjectProtocol {
-    static func makeContainerNode() -> SCNNode?
     func getContainerNode() -> SCNNode?
     func setSceneView(sceneView: ARSCNView)
 }

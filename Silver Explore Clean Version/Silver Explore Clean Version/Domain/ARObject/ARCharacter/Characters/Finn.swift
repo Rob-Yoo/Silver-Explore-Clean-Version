@@ -17,32 +17,13 @@ final class Finn: ARCharacterProtocol {
         let initialScale: SCNVector3
         
         self.objectData = ARObjectData(characterContainerNode: containerNode, characterNodeName: String(describing: Finn.self))
-        initialEulerAngle = self.objectData.characterNode.eulerAngles
-        initialScale = self.objectData.characterNode.scale
+        initialEulerAngle = self.objectData.objectNode.eulerAngles
+        initialScale = self.objectData.objectNode.scale
         self.actionData = ARCharacterActionData(initialEulerAngle: initialEulerAngle, initialScale: initialScale)
     }
     
     func getContainerNode() -> SCNNode? {
-        return self.objectData.characterContainerNode
-    }
-    
-    static func makeContainerNode() -> SCNNode? {
-        let node: SCNNode = SCNNode()
-        
-        guard let finnScene = SCNScene(named: "art.scnassets/Finn/Finn.scn") else {
-            return nil
-        }
-      
-        guard let finnNode = finnScene.rootNode.childNode(withName: "Finn", recursively: true) else {
-            return nil
-        }
-        
-        finnNode.transform = SCNMatrix4MakeRotation(-GLKMathDegreesToRadians(100), 1, 0, 0)
-        finnNode.scale = SCNVector3(0.0009, 0.0007, 0.0007)
-        
-        node.addChildNode(finnNode)
-        
-        return node
+        return self.objectData.objectContainerNode
     }
     
     func setSceneView(sceneView: ARSCNView) {
@@ -58,7 +39,7 @@ extension Finn {
         
         let jumpSequence = SCNAction.sequence([jumpAction, fallAction])
         
-        self.objectData.characterNode.runAction(jumpSequence)
+        self.objectData.objectNode.runAction(jumpSequence)
     }
     
     func highJump(_ gesture: UILongPressGestureRecognizer) {
@@ -76,10 +57,10 @@ extension Finn {
                 [weak self] (_, _) in
                 guard let initialScale = self?.actionData.initialScale else { return }
 
-                self?.objectData.characterNode.scale = SCNVector3(initialScale.x, initialScale.y, initialScale.z - 0.0002)
+                self?.objectData.objectNode.scale = SCNVector3(initialScale.x, initialScale.y, initialScale.z - 0.0002)
             }
 
-            self.objectData.characterNode.runAction(scaleAction)
+            self.objectData.objectNode.runAction(scaleAction)
         }
         
         func highJumpAction(longPressDuration: CFTimeInterval) {
@@ -87,7 +68,7 @@ extension Finn {
                 [weak self] (_, _) in
                 guard let initialScale = self?.actionData.initialScale else { return }
 
-                self?.objectData.characterNode.scale = initialScale
+                self?.objectData.objectNode.scale = initialScale
             }
             
             let jumpHeight = CGFloat(longPressDuration) * 0.1
@@ -95,20 +76,20 @@ extension Finn {
             let fallAction = SCNAction.moveBy(x: 0, y: -jumpHeight, z: 0, duration: 0.2)
             let jumpSequence = SCNAction.sequence([scaleAction, jumpAction, fallAction])
 
-            self.objectData.characterNode.runAction(jumpSequence)
+            self.objectData.objectNode.runAction(jumpSequence)
         }
     }
     
     func scaleUpAndDown(_ gesture: UIPinchGestureRecognizer) {
         switch gesture.state {
         case .began:
-            self.actionData.updatedScale = CGFloat(self.objectData.characterNode.scale.x)
+            self.actionData.updatedScale = CGFloat(self.objectData.objectNode.scale.x)
         case .changed:
             let scale = gesture.scale
             let scaleValue = self.actionData.updatedScale * scale
             let scaleAction = SCNAction.scale(to: scaleValue, duration: 0.0)
 
-            self.objectData.characterNode.runAction(scaleAction)
+            self.objectData.objectNode.runAction(scaleAction)
         default:
             return
         }
@@ -131,7 +112,7 @@ extension Finn {
             rightAngleRotatingAction = SCNAction.rotateBy(x: CGFloat(GLKMathDegreesToRadians(90)), y: 0.0 , z: 0.0, duration: 0.2)
         }
 
-        self.objectData.characterNode.runAction(rightAngleRotatingAction)
+        self.objectData.objectNode.runAction(rightAngleRotatingAction)
     }
     
     func eulerAngleRotate(_ gesture: UIPanGestureRecognizer) {
@@ -144,8 +125,8 @@ extension Finn {
             let yRotation = SCNAction.rotateBy(x: 0, y: rotationAngleX, z: 0, duration: 0)
             let xRotation = SCNAction.rotateBy(x: rotationAngleY, y: 0, z: 0, duration: 0)
             
-            self.objectData.characterNode.runAction(yRotation)
-            self.objectData.characterNode.runAction(xRotation)
+            self.objectData.objectNode.runAction(yRotation)
+            self.objectData.objectNode.runAction(xRotation)
         }
     }
     
@@ -155,7 +136,7 @@ extension Finn {
             let degrees = -GLKMathRadiansToDegrees(Float(rotationAngle) * 0.005)
             let rotationAction = SCNAction.rotateBy(x: 0, y: 0, z: CGFloat(degrees), duration: 0.0)
             
-            self.objectData.characterNode.runAction(rotationAction)
+            self.objectData.objectNode.runAction(rotationAction)
         }
     }
     
@@ -163,16 +144,16 @@ extension Finn {
         let initialEulerAngles = self.actionData.initialEulerAngle
         let resetAngleAction = SCNAction.rotateTo(x: CGFloat(initialEulerAngles.x), y: CGFloat(initialEulerAngles.y), z: CGFloat(initialEulerAngles.z), duration: 0.2)
         
-        self.objectData.characterNode.runAction(resetAngleAction)
+        self.objectData.objectNode.runAction(resetAngleAction)
     }
     
     func resetScale() {
         let resetScaleAction = SCNAction.customAction(duration: 0.2) { [weak self] (_, _) in
             guard let initialScale = self?.actionData.initialScale else { return }
 
-            self?.objectData.characterNode.scale = initialScale
+            self?.objectData.objectNode.scale = initialScale
         }
         
-        self.objectData.characterNode.runAction(resetScaleAction)
+        self.objectData.objectNode.runAction(resetScaleAction)
     }
 }
