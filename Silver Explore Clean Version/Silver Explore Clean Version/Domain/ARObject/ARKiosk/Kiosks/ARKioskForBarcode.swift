@@ -33,7 +33,7 @@ class ARKioskForBarcode: ARKioskProtocol {
     }
     
     func getContainerNode() -> SCNNode? {
-        return self.objectData.characterContainerNode
+        return self.objectData.objectContainerNode
     }
     
     func setSceneView(sceneView: ARSCNView) {
@@ -54,19 +54,19 @@ extension ARKioskForBarcode {
             return
         }
 
-        self.objectData.characterNode.runAction(rightAngleRotatingAction)
+        self.objectData.objectNode.runAction(rightAngleRotatingAction)
     }
     
     func scaleUpAndDown(_ gesture: UIPinchGestureRecognizer) {
         switch gesture.state {
         case .began:
-            self.updatedScale = CGFloat(self.objectData.characterNode.scale.x)
+            self.updatedScale = CGFloat(self.objectData.objectNode.scale.x)
         case .changed:
             let scale = gesture.scale
             let scaleValue = self.updatedScale * scale
             let scaleAction = SCNAction.scale(to: scaleValue, duration: 0.0)
             
-            self.objectData.characterNode.runAction(scaleAction)
+            self.objectData.objectNode.runAction(scaleAction)
         default:
             return
         }

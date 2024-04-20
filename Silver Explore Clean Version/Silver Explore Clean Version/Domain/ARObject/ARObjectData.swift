@@ -9,12 +9,12 @@ import ARKit
 
 struct ARObjectData {
     var sceneView: ARSCNView = .init(frame: .zero)
-    let characterContainerNode: SCNNode
-    let characterNode: SCNNode
+    let objectContainerNode: SCNNode
+    let objectNode: SCNNode
     
     init(characterContainerNode: SCNNode, characterNodeName: String) {
-        self.characterContainerNode = characterContainerNode
-        self.characterNode = characterContainerNode.childNode(withName: characterNodeName, recursively: true)!
+        self.objectContainerNode = characterContainerNode
+        self.objectNode = characterContainerNode.childNode(withName: characterNodeName, recursively: true)!
     }
     
     mutating func setSceneView(sceneView: ARSCNView) { self.sceneView = sceneView }
