@@ -10,7 +10,7 @@ import UIKit
 import Combine
 
 class TouchGestureExploreViewController: UIViewController {
-    private let sceneView = ARSceneView(frame: .infinite)
+    private let sceneView: ARSceneView
     private let model: TouchGestureExploreModel
     private var cancellables = Set<AnyCancellable>()
     
@@ -29,6 +29,7 @@ class TouchGestureExploreViewController: UIViewController {
     
     init(arCharacter: ARCharacterProtocol) {
         self.model = TouchGestureExploreModel(arCharacter: arCharacter)
+        self.sceneView = ARSceneView(firstStage: self.model.stage)
         super.init(nibName: nil, bundle: nil)
     }
     
