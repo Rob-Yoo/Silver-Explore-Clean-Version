@@ -12,7 +12,7 @@ protocol ARCharacterCreator {
 }
 
 struct ARCharacterFactory {
-    static func createARCharcter(_ arCharacterCreator: ARCharacterCreator) -> ARCharacterProtocol {
+    static func createARCharacter(_ arCharacterCreator: ARCharacterCreator) -> ARCharacterProtocol {
         return arCharacterCreator.createARCharacter()
     }
 }

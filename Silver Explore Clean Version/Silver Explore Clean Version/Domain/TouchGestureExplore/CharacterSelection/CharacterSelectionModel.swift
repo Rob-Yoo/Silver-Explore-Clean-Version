@@ -19,7 +19,7 @@ class CharacterSelectionModel {
             return nil
         }
 
-        return ARCharacterFactory.createARCharcter(creator)
+        return ARCharacterFactory.createARCharacter(creator)
     }
 }
 
