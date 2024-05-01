@@ -26,12 +26,19 @@ final class TemperatureOptionView: UIStackView {
             self.hotButton = MultiStateButton(state: .selected, title: "HOT", color: .hot)
             self.iceButton = MultiStateButton(state: .unselected, title: "ICE", color: .ice)
         }
+
         super.init(frame: .zero)
+
         self.configure()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.addUserAction(notification:)), name: .OrderDetailViewUserAction, object: nil)
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .OrderDetailViewUserAction, object: nil)
     }
     
     private func configure() {
@@ -43,6 +50,15 @@ final class TemperatureOptionView: UIStackView {
         self.arrangedViews.forEach {
             self.addArrangedSubview($0)
         }
+    }
+    
+    @objc private func addUserAction(notification: Notification) {
+        guard let delegate = notification.object as? OrderDetailModalViewDelegate else {
+            fatalError("TemperatureOptionView: 잘못된 Object가 Post 되었습니다!")
+        }
+        
+        self.hotButton.addTarget(delegate, action: #selector(delegate.hotButtonTapped), for: .touchUpInside)
+        self.iceButton.addTarget(delegate, action: #selector(delegate.iceButtonTapped), for: .touchUpInside)
     }
     
     func update(temperature: Temperature) {

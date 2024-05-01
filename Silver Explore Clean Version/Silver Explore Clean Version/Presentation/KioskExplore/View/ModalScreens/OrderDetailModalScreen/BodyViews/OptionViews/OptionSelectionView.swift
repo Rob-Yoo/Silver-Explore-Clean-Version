@@ -22,11 +22,17 @@ final class OptionSelectionView: UIView {
         self.iceQuantityOptionSegmentedControl = SegmentedControl(items: ["적게", "보통", "많게"], defaultIndex: iceQuantity.rawValue)
 
         super.init(frame: .zero)
+
         self.configure(temperature: temperature)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.addUserAction(notification:)), name: .OrderDetailViewUserAction, object: nil)
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .OrderDetailViewUserAction, object: nil)
     }
     
     private func configure(temperature: Temperature) {
@@ -74,6 +80,15 @@ final class OptionSelectionView: UIView {
         self.iceQunatityOptionLabel
             .trailingAnchor(self.iceQuantityOptionSegmentedControl.leadingAnchor, padding: -25)
             .centerYAnchor(self.iceQuantityOptionSegmentedControl.centerYAnchor)
+    }
+    
+    @objc private func addUserAction(notification: Notification) {
+        guard let delegate = notification.object as? OrderDetailModalViewDelegate else {
+            fatalError("OptionSelectionView: 잘못된 Object가 Post 되었습니다!")
+        }
+        
+        self.sizeOptionSegmentedControl.addTarget(delegate, action: #selector(delegate.sizeOptionControlled(_:)), for: .valueChanged)
+        self.iceQuantityOptionSegmentedControl.addTarget(delegate, action: #selector(delegate.iceQuantityOptionControlled(_:)), for: .valueChanged)
     }
     
     func update(temperature: Temperature) {

@@ -33,10 +33,15 @@ class FooterButtonsView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configure()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.addUserAction(notification:)), name: .OrderDetailViewUserAction, object: nil)
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .OrderDetailViewUserAction, object: nil)
     }
     
     private func configure() {
@@ -49,5 +54,13 @@ class FooterButtonsView: UIStackView {
             self.addArrangedSubview($0)
         }
     }
-    
+
+    @objc private func addUserAction(notification: Notification) {
+        guard let delegate = notification.object as? OrderDetailModalViewDelegate else {
+            fatalError("FooterButtonsView: 잘못된 Object가 Post 되었습니다!")
+        }
+        
+        self.cancelButton.addTarget(delegate, action: #selector(delegate.cancelButtonTapped), for: .touchUpInside)
+        self.addCartButton.addTarget(delegate, action: #selector(delegate.addCartButtonTapped), for: .touchUpInside)
+    }
 }

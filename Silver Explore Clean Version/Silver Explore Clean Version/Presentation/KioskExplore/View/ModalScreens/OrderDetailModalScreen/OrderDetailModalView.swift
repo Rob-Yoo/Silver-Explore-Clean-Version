@@ -82,45 +82,6 @@ extension OrderDetailModalView {
             fatalError("OrderDetailModalViewDelegate 지정 후 사용해주세요!")
         }
         
-        self.addUserActionToCountControlView(delegate: delegate)
-        self.addUserActionToTemperatureOptionView(delegate: delegate)
-        self.addUserActionToOptionSelectionView(delegate: delegate)
-        self.addUserActionToFooterButtonsView(delegate: delegate)
-    }
-    
-    private func addUserActionToCountControlView(delegate: OrderDetailModalViewDelegate) {
-        let targetView = self.bodyView.productDetailStackView.rightView.countControlStackView
-        let minusButton = targetView.minusButton
-        let plusButton = targetView.plusButton
-        
-        minusButton.addTarget(delegate, action: #selector(delegate.minusButtonTapped), for: .touchUpInside)
-        plusButton.addTarget(delegate, action: #selector(delegate.plusButtonTapped), for: .touchUpInside)
-    }
-    
-    private func addUserActionToTemperatureOptionView(delegate: OrderDetailModalViewDelegate) {
-        let targetView = self.bodyView.optionSelectionView.temperatureOptionView
-        let hotButton = targetView.hotButton
-        let iceButton = targetView.iceButton
-        
-        hotButton.addTarget(delegate, action: #selector(delegate.hotButtonTapped), for: .touchUpInside)
-        iceButton.addTarget(delegate, action: #selector(delegate.iceButtonTapped), for: .touchUpInside)
-    }
-    
-    private func addUserActionToOptionSelectionView(delegate: OrderDetailModalViewDelegate) {
-        let targetView = self.bodyView.optionSelectionView
-        let sizeOptionSegmentedControl = targetView.sizeOptionSegmentedControl
-        let iceQuantityOptionSegmentedControl = targetView.iceQuantityOptionSegmentedControl
-
-        sizeOptionSegmentedControl.addTarget(delegate, action: #selector(delegate.sizeOptionControlled(_:)), for: .valueChanged)
-        iceQuantityOptionSegmentedControl.addTarget(delegate, action: #selector(delegate.iceQuantityOptionControlled(_:)), for: .valueChanged)
-    }
-    
-    private func addUserActionToFooterButtonsView(delegate: OrderDetailModalViewDelegate) {
-        let targetView = self.footerButtonsView
-        let cancelButton = targetView.cancelButton
-        let addCartButton = targetView.addCartButton
-        
-        cancelButton.addTarget(delegate, action: #selector(delegate.cancelButtonTapped), for: .touchUpInside)
-        addCartButton.addTarget(delegate, action: #selector(delegate.addCartButtonTapped), for: .touchUpInside)
+        NotificationCenter.default.post(name: .OrderDetailViewUserAction, object: delegate)
     }
 }

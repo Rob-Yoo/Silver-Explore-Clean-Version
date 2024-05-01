@@ -24,11 +24,17 @@ final class CountControlStackView: UIStackView {
         self.countLabel = TextLabel(text: "\(initCount)").font(font)
 
         super.init(frame: .zero)
+        
         self.configure()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.addUserAction(notification:)), name: .OrderDetailViewUserAction, object: nil)
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .OrderDetailViewUserAction, object: nil)
     }
     
     private func configure() {
@@ -38,6 +44,15 @@ final class CountControlStackView: UIStackView {
         self.arrangedViews.forEach {
             self.addArrangedSubview($0)
         }
+    }
+    
+    @objc private func addUserAction(notification: Notification) {
+        guard let delegate = notification.object as? OrderDetailModalViewDelegate else {
+            fatalError("CountControlStackView: 잘못된 Object가 Post 되었습니다!")
+        }
+        
+        self.minusButton.addTarget(delegate, action: #selector(delegate.minusButtonTapped), for: .touchUpInside)
+        self.plusButton.addTarget(delegate, action: #selector(delegate.plusButtonTapped), for: .touchUpInside)
     }
     
     func update(count: Int) {

@@ -8,5 +8,6 @@
 import Foundation
 
 extension Notification.Name {
+    static let OrderDetailViewUserAction = Notification.Name(rawValue: "OrderDetailViewUserAction")
     static let OrderDetailChanged = Notification.Name(rawValue: "OrderDetailChanged")
 }

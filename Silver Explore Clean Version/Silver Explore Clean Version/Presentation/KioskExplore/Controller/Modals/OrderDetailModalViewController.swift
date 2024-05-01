@@ -67,7 +67,9 @@ extension OrderDetailModalViewController: OrderDetailModalViewDelegate {
     }
     
     @objc func iceButtonTapped() {
-        self.model.changeTemperature(.ice)
+        if (self.model.temperature != .iceOnly) {
+            self.model.changeTemperature(.ice)
+        }
     }
     
     @objc func sizeOptionControlled(_ sender: UISegmentedControl) {
