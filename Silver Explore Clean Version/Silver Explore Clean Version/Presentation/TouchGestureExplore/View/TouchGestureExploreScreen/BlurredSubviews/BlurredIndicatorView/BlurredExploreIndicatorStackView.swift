@@ -19,8 +19,15 @@ final class BlurredExploreIndicatorStackView: UIStackView {
         self.prevButton = BlurredButton.makePrevButton(blurEffect: effect)
         self.nextButton = BlurredButton.makeNextButton(blurEffect: effect)
         self.exploreStageTitleView = BlurredExploreStageTitleView(effect: effect, title: stageTitle)
+
         super.init(frame: .zero)
+
         self.configure()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.addUserAction(notification:)), name: .ARSceneViewUserAction, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .ARSceneViewUserAction, object: nil)
     }
     
     required init(coder: NSCoder) {
@@ -60,6 +67,15 @@ final class BlurredExploreIndicatorStackView: UIStackView {
     private func configureExploreStageTitleView() {
         self.exploreStageTitleView.layer.cornerRadius = 10
         self.exploreStageTitleView.clipsToBounds = true
+    }
+    
+    @objc private func addUserAction(notification: Notification) {
+        guard let delegate = notification.object as? ARSceneViewDelegate else {
+            fatalError("BlurredExploreIndicatorStackView: 잘못된 Object가 Post 되었습니다!")
+        }
+
+        self.prevButton.addTarget(delegate, action: #selector(delegate.prevButtonTapped), for: .touchUpInside)
+        self.nextButton.addTarget(delegate, action: #selector(delegate.nextButtonTapped), for: .touchUpInside)
     }
     
     func update(_ title: String) {

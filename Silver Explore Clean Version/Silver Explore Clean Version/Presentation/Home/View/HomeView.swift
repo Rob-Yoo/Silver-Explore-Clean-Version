@@ -75,11 +75,7 @@ extension HomeView {
         guard let delegate = self.homeViewDelegate else {
             fatalError("Delegate 지정 후 호출해주세요!")
         }
-
-        self.buttonsView.touchGestureExploreBtn.addTarget(delegate, action: #selector(delegate.touchGestureExploreBtnTapped), for: .touchUpInside)
         
-        self.buttonsView.kioskExploreBtn.addTarget(delegate, action: #selector(delegate.kioskExploreBtnTapped), for: .touchUpInside)
-        
-        self.buttonsView.aiExploreBtn.addTarget(delegate, action: #selector(delegate.aiExploreBtnTapped), for: .touchUpInside)
+        NotificationCenter.default.post(name: .HomeViewUserAction, object: delegate)
     }
 }

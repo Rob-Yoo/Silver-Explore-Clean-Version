@@ -17,10 +17,15 @@ final class SelectionStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.configureView()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.addUserAction(notification:)), name: .CharacterSelectionViewUserAction, object: nil)
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .CharacterSelectionViewUserAction, object: nil)
     }
     
     private func configureView() {
@@ -30,6 +35,19 @@ final class SelectionStackView: UIStackView {
         self.selectionViews.forEach {
             self.addArrangedSubview($0)
         }
+    }
+    
+    @objc private func addUserAction(notification: Notification) {
+        guard let delegate = notification.object as? CharacterSelectViewDelegate else {
+            fatalError("SelectionStackView: 잘못된 Object가 Post 되었습니다!")
+        }
+        
+        self.arrSelectionView.addGestureRecognizer(
+            UITapGestureRecognizer(target: delegate, action: #selector(delegate.arrSelected))
+        )
+        self.finnSelectionView.addGestureRecognizer(
+            UITapGestureRecognizer(target: delegate, action: #selector(delegate.finnSelected))
+        )
     }
     
     func update(isSelectedView: UIView) {

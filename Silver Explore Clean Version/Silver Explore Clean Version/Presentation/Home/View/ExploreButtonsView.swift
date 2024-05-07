@@ -16,10 +16,15 @@ final class ExploreButtonsView: UIView {
         super.init(frame: .zero)
         self.backgroundColor = .clear
         self.configureSubviews()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.addUserAction(notification:)), name: .HomeViewUserAction, object: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func configureSubviews() {
@@ -44,5 +49,15 @@ final class ExploreButtonsView: UIView {
             .bottomAnchor(self.bottomAnchor)
             .centerXAnchor(self.centerXAnchor)
             .size(.init(width: btnWidth, height: btnHeight))
+    }
+    
+    @objc private func addUserAction(notification: Notification) {
+        guard let delegate = notification.object as? HomeViewDelegate else {
+            fatalError("ExploreButtonsView: 잘못된 Object가 Post 되었습니다!")
+        }
+
+        self.touchGestureExploreBtn.addTarget(delegate, action: #selector(delegate.touchGestureExploreBtnTapped), for: .touchUpInside)
+        self.kioskExploreBtn.addTarget(delegate, action: #selector(delegate.kioskExploreBtnTapped), for: .touchUpInside)
+        self.aiExploreBtn.addTarget(delegate, action: #selector(delegate.aiExploreBtnTapped), for: .touchUpInside)
     }
 }

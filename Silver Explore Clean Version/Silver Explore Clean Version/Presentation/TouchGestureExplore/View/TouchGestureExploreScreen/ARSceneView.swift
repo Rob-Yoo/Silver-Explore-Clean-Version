@@ -98,8 +98,7 @@ extension ARSceneView {
             fatalError("ARSceneViewDelegate 지정 후 사용해주세요!")
         }
         
-        self.touchGestureExploreView.exploreIndicatorStackView.prevButton.addTarget(delegate, action: #selector(delegate.prevButtonTapped), for: .touchUpInside)
-        self.touchGestureExploreView.exploreIndicatorStackView.nextButton.addTarget(delegate, action: #selector(delegate.nextButtonTapped), for: .touchUpInside)
+        NotificationCenter.default.post(name: .ARSceneViewUserAction, object: delegate)
     }
 
     func update(exploreStage: StageData) {

@@ -91,6 +91,7 @@ extension CharacterSelectionView {
             .bottomAnchor(self.bottomAnchor, padding: -70)
             .size(.init(width: btnWidth, height: btnHeight))
     }
+
 }
 
 //MARK: - Communicate With ViewController
@@ -101,16 +102,9 @@ extension CharacterSelectionView {
         }
 
         self.prevButton.addTarget(delegate, action: #selector(delegate.prevButtonTapped), for: .touchUpInside)
-
-        self.selectionStackView.arrSelectionView.addGestureRecognizer(
-            UITapGestureRecognizer(target: delegate, action: #selector(delegate.arrSelected))
-        )
-        
-        self.selectionStackView.finnSelectionView.addGestureRecognizer(
-            UITapGestureRecognizer(target: delegate, action: #selector(delegate.finnSelected))
-        )
-        
         self.exploreStartBtn.addTarget(delegate, action: #selector(delegate.exploreStartButtonTapped), for: .touchUpInside)
+
+        NotificationCenter.default.post(name: .CharacterSelectionViewUserAction, object: delegate)
     }
     
     func update(_ willUpdateView: UIView) {
