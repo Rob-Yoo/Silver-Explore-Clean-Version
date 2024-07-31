@@ -79,7 +79,8 @@ https://github.com/user-attachments/assets/9f08680d-9c4a-472b-baa3-df00f9529291
   |Controller(ViewController)|
   |:-:|
   |<img width="600" alt="VC" src="https://github.com/user-attachments/assets/70e256b1-8580-4e95-afc4-ab3d73a1f357">|
-  |Delegate 패턴을 통해 RootView로부터 User Action을 전달받고 Model 변경 후 Model의 변화를 감지 후 UI 업데이트 지시|
+  |Delegate 패턴을 통해 RootView로부터 User Action을 전달받고 Model 변경
+   Model 변경 후 Model의 변화를 감지 후 UI 업데이트 지시|
 
 <br>
 
