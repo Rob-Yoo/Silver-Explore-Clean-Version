@@ -71,14 +71,14 @@ https://github.com/user-attachments/assets/9f08680d-9c4a-472b-baa3-df00f9529291
   
   |Model|View|
   |-|-|
-  |<img width="500" alt="Model" src="https://github.com/user-attachments/assets/af760ef1-d281-49a3-beca-cec3c905f27c">|<img width="800" alt="View" src="https://github.com/user-attachments/assets/b547ad71-e047-45c1-88bc-ec9025ba8597">|
+  |<img width="300" alt="Model" src="https://github.com/user-attachments/assets/af760ef1-d281-49a3-beca-cec3c905f27c">|<img width="600" alt="View" src="https://github.com/user-attachments/assets/b547ad71-e047-45c1-88bc-ec9025ba8597">|
   |Model과 ViewController간에 옵저버 패턴 적용|RootView로부터 UI 업데이트를 계층적으로 수행|
 
   <br>
   
   |Controller(ViewController)|
-  |-|
-  |<img width="800" alt="VC" src="https://github.com/user-attachments/assets/70e256b1-8580-4e95-afc4-ab3d73a1f357">|
+  |:-:|
+  |<img width="600" alt="VC" src="https://github.com/user-attachments/assets/70e256b1-8580-4e95-afc4-ab3d73a1f357">|
   |Delegate 패턴을 통해 RootView로부터 User Action을 전달받고 Model 변경 후 Model의 변화를 감지 후 UI 업데이트 지시|
 
 <br>
