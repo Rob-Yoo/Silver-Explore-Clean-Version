@@ -67,13 +67,23 @@ https://github.com/user-attachments/assets/9f08680d-9c4a-472b-baa3-df00f9529291
   - 따라서, 적절한 역할 분리를 통해 ViewController의 책임을 덜어내고자 `MVC 아키텍처` 도입
    
 - 결론
-  |Model|View|Controller|
+  |Model|View|Controller(ViewController)|
   |-|-|-|
   |<img width="850" alt="Model" src="https://github.com/user-attachments/assets/af760ef1-d281-49a3-beca-cec3c905f27c">|<img width="2000" alt="View" src="https://github.com/user-attachments/assets/b547ad71-e047-45c1-88bc-ec9025ba8597">|<img width="3000" alt="VC" src="https://github.com/user-attachments/assets/70e256b1-8580-4e95-afc4-ab3d73a1f357">|
     |Model과 ViewController간에 옵저버 패턴 적용|RootView로부터 UI 업데이트를 계층적으로 수행|Delegate 패턴을 통해 User Action을 전달받고 Model 변경 후 UI 업데이트 지시|
 
+<br>
 
+### 3D 오브젝트에 대한 객체지향 설계
 
+- 고민 지점
+
+  - 3D 오브젝트 객체의 다형성을 활용하기 위한 설계
+  - 인터페이스 분리 원칙을 준수한 프로토콜 설계
+
+- 결론
+
+  <img width="2000" alt="프로토콜 설계" src="https://github.com/user-attachments/assets/13fd36a3-64e0-43e1-bdf1-a11b47f2c420">
 
 
 
