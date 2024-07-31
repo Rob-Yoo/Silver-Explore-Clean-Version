@@ -64,8 +64,8 @@ https://github.com/user-attachments/assets/9f08680d-9c4a-472b-baa3-df00f9529291
 ### MVC 아키텍처
 
 - 고민 지점
-  - 모든 코드가 ViewController에 존재함으로써 Massive해짐
-  - 따라서, 적절한 역할 분리를 통해 ViewController의 책임을 덜어내고자 `MVC 아키텍처` 도입
+  - 모든 코드가 ViewController에 존재함으로써 ViewController가 많은 책임을 가지게 됨
+  - 따라서, 적절한 역할 분리를 통해 ViewController의 책임을 덜어내고자 `MVC 아키텍처` 적용
    
 - 결과
   
