@@ -93,7 +93,9 @@ https://github.com/user-attachments/assets/9f08680d-9c4a-472b-baa3-df00f9529291
 
 - 결과
 
-  <img width="2000" alt="프로토콜 설계" src="https://github.com/user-attachments/assets/13fd36a3-64e0-43e1-bdf1-a11b47f2c420">
+<img width="1000" alt="프로토콜 설계" src="https://github.com/user-attachments/assets/227e62a4-e521-4b51-bffa-c9fe88ae0575">
+
+  
 
 
 <br>
