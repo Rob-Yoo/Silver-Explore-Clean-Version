@@ -103,5 +103,12 @@ https://github.com/user-attachments/assets/9f08680d-9c4a-472b-baa3-df00f9529291
 
 ## 🚨 주요 이슈와 해결 과정
 
+### 터치 제스처 탐험하기에서 단계별 UIGestureRecognizer와 SceneKit Animation이 제대로 동작하지 않는 이슈
 
+- 문제 상황
 
+  - 다양한 UIGestureRecognizer와 그에 맞는 SceneKit Animation 메서드들이 단계에 따라 추가되고 사라져야함
+  - 관련 코드들이 여러 파일에서 복잡하게 얽혀 있어 상태 관리에 어려움을 겪음
+ 
+- 해결 방식
+    
