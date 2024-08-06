@@ -109,7 +109,7 @@
 
 ## 🚨 주요 이슈와 해결 과정
 
-### 터치 제스처 탐험하기에서 단계별 UIGestureRecognizer와 SceneKit Animation이 제대로 동작하지 않는 이슈
+### 터치 제스처 탐험하기에서 단계별 UIGestureRecognizer와 SceneKit Animation간의 동기화 이슈
 
 - 문제 상황
 
@@ -117,4 +117,4 @@
   - 관련 코드들이 여러 파일에서 복잡하게 얽혀 있어 상태 관리에 어려움을 겪음
  
 - 해결 방식
-    
+  - 상태 패턴 사용
